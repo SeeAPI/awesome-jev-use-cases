@@ -14,3 +14,6 @@ Initial collection of 16 projects with a Chinese-first homepage, English transla
 
 - 默认首页调整为英文 README.md，中文移至 README_zh.md；同步语言徽章与贡献指南。
 - Switched the default README to English, with Simplified Chinese in README_zh.md.
+
+- 从 7 条提供的帖子核查补充 11 个项目，案例总数更新为 27；增加 Vercel 与 Cloudflare 接入资源，平台渠道不计入案例数量。
+- Reviewed seven supplied posts; added 11 projects (27 total) and two separate access-channel resources, with source attribution and implementation limits.

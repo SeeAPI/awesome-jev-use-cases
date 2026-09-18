@@ -13,7 +13,7 @@ Jev 的接口围绕三类判断展开：**Choice** 从候选项中选择，**Nou
 
 本仓库由 SeeAPI 收集与整理 Jev 的公开应用案例，重点说明每个项目解决什么问题、Jev 负责哪一步、实现方式以及证据边界，涵盖内容审核、自动化、模型路由、代码审查和语义搜索等方向。Jev 模型、官方 SDK 和第三方 MCP 集成分别承担不同角色，相关来源见下文。
 
-本清单收录 16 个公开项目：原帖中的 14 个项目，以及补充的 2 个内容审核项目。已阅读各项目当前 README，对图片审核、桌面自动化和交易判断补查了实现代码；未运行项目或调用付费 API。项目存在、作者报告的效果、实际生产可用性是不同层次的证据。
+本清单收录 27 个公开项目：首批 16 个，以及后续核查补充的 11 个。另列出 2 个平台接入渠道，不计入项目数量。各条目依据作者 README、项目文档或实现代码核查；未运行项目或调用付费 API。项目存在、作者报告的效果、实际生产可用性是不同层次的证据。
 
 ## Jev 模型与官方接入方式
 
@@ -28,6 +28,15 @@ Jev 的接口围绕三类判断展开：**Choice** 从候选项中选择，**Nou
 | Jev MCP（jkudish） | 为 Agent 提供三类 Jev 判断工具的第三方集成 | [jev-mcp](https://github.com/jkudish/jev-mcp) |
 
 本次在官方 GitHub 组织中查到的是 SDK 与开发工具，未找到官方公开的 Jev 模型权重仓库。SDK 开源不等于模型权重开源；社区中的同名复现也不能直接视为官方 Jev。
+
+### 其他接入渠道
+
+以下属于接入资源，不额外计作应用案例：
+
+- **Vercel AI Gateway**：通过 AI SDK 的 evaluation 接口使用 `typesafe-ai/jev`，返回结构化判断。[官方文档](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway) · [Vercel 发布帖](https://x.com/vercel_dev/status/2100378959653507175)。
+- **Cloudflare**：官方文档展示以 `env.AI.run('typesafe/jev', ...)` 传入状态和问题，并提供客服路由、风险评估等示例。[官方模型文档](https://developers.cloudflare.com/ai/models/typesafe/jev/) · [Yusuke Wada 的介绍](https://x.com/yusukebe/status/2100750454393348237)。
+
+两个平台的模型标识与请求接口不同，应分别遵循各自文档，不混用示例。本次未调用付费 API 验证这些渠道。
 
 ### 三类典型判断
 
@@ -139,9 +148,30 @@ print(response.choices["category"].choice)
 - **边界**：模型判断不是权限系统；自动执行仍由调用方流程决定。
 - **来源**：[项目 README](https://github.com/sharziki/semdecide)。
 
+### 9. typesafe-computer-use
+
+- **场景与做法**：Mac 自动化工具先用 OCR 与确定性处理读取屏幕，再由 Jev 选择动作，需要自由文字时才调用写作模型。
+- **可借鉴点**：屏幕信息解析 → 有限动作选择 → 桌面执行。
+- **边界**：感知由 OCR 和本地代码完成，不是 Jev 直接看截图；作者的性能比较涉及特定预处理，本次未复现。
+- **来源**：[项目](https://github.com/awlevin/typesafe-computer-use) · [发现来源帖子](https://x.com/studio_yebisu/status/2100686990090047569)。
+
+### 10. Jev Browser
+
+- **场景与做法**：通过已有浏览器工具持续观察、操作和验证；规划 Agent 提供目标与导航方向，Jev 选择实际观察到的页面元素。
+- **可借鉴点**：一次规划，循环执行有限范围内的浏览器判断。
+- **边界**：非官方集成，需要兼容的浏览器工具；与 browser-use/jev-ultrafast 是不同项目，并非独立浏览器服务。
+- **来源**：[项目](https://github.com/vlad-terin/jev-browser) · [发现来源帖子](https://x.com/studio_yebisu/status/2100686990090047569)。
+
+### 11. Mobile Jev
+
+- **场景与做法**：通过 Mobilerun 在真实 Android 设备上运行，由 Jev 选择操作，提供可视化工作台、CLI 和执行轨迹。
+- **可借鉴点**：目标 → 手机状态 → 动作选择 → 设备执行。
+- **边界**：README 中的 Uber 演示到达支付方式选择，未展示完成叫车；约 21 秒、9 个动作是单次演示数据。
+- **来源**：[项目](https://github.com/droidrun/mobile-jev) · [发现来源帖子](https://x.com/studio_yebisu/status/2100686990090047569)。
+
 ## 模型成本与代码工作流
 
-### 9. Jev Codex Router
+### 12. Jev Codex Router
 
 - **场景**：按编程任务难度选择模型与推理深度。
 - **做法**：每轮先由 Jev 分类，再按策略路由到不同模型，记录结果并处理低置信度或错误。
@@ -149,7 +179,7 @@ print(response.choices["category"].choice)
 - **边界**：约 60% 成本下降来自作者对 237 个真实 turn 的回放自测，不是 SeeAPI 实测或普遍承诺。
 - **来源**：[项目及回测入口](https://github.com/0xNatoshi/jev-codex-router)。
 
-### 10. Winnow
+### 13. Winnow
 
 - **场景**：压缩进入 Claude Code 上下文的长工具输出。
 - **做法**：Jev 判断分块内容是否与当前任务有关；高置信度无关内容替换为摘要或占位说明，原文缓存并支持按需恢复。不确定内容保留。
@@ -157,7 +187,7 @@ print(response.choices["category"].choice)
 - **边界**：筛选判断与摘要生成是不同步骤；配置其他判断适配器时不能把结果一概归为 Jev 效果。
 - **来源**：[项目 README](https://github.com/GhalebDweikat/winnow)。
 
-### 11. Jev Review
+### 14. Jev Review
 
 - **场景**：对 Git diff 或代码库进行结构化风险审查。
 - **做法**：依次判断风险、文件特征、证据位置、机制和严重性，并按条件路由后续审查。
@@ -165,9 +195,23 @@ print(response.choices["category"].choice)
 - **边界**：作者将其定位为实验；当前不集成编译器诊断或静态分析，结果是审查线索而非缺陷证明。
 - **来源**：[项目 README](https://github.com/devagrawal09/jev-review)。
 
+### 15. jev-router — gargpratyush
+
+- **场景与做法**：启动原生 Claude Code 或 Codex CLI，并在新用户轮次开始时按任务难度选择快速或强能力模型。
+- **可借鉴点**：判断当前轮次的任务，再选择执行模型。
+- **边界**：与 0xNatoshi 的 Jev Codex Router 是不同项目；README 描述的是按新用户轮次路由，不是每个内部工具步骤重新选择。
+- **来源**：[项目](https://github.com/gargpratyush/jev-router) · [发现来源帖子](https://x.com/studio_yebisu/status/2100686990090047569)。
+
+### 16. eve — typed evaluation and model selection
+
+- **场景与做法**：Agent 框架默认使用 Jev 做自动模型选择和结构化评估，文档还展示了工具执行审批中的判断与人工复核。
+- **可借鉴点**：将结构化评估接入模型路由、工具和审批流程。
+- **边界**：Jev 是评估器，不是 eve 的唯一运行模型；底层 AI SDK evaluation 规范仍为实验性。
+- **来源**：[项目](https://github.com/vercel/eve) · [发现来源帖子](https://x.com/yibie/status/2100619188062523695) · [Implementation / 文档](https://github.com/vercel/eve/blob/main/docs/guides/evaluate.md)。
+
 ## 语义搜索与知识导航
 
-### 12. Blink
+### 17. Blink
 
 - **场景**：根据自然语言问题在代码目录中查找相关文件。
 - **做法**：Jev 对文件和目录名称进行判断，多个 walker 按路径倾向继续探索。
@@ -175,7 +219,7 @@ print(response.choices["category"].choice)
 - **边界**：结果百分比是到达该文件的 walker 占比，不能直接当成文件正确率；这也不是完整源码语义索引。
 - **来源**：[项目 README](https://github.com/ellipsis-dev/blink)。
 
-### 13. neo4jev
+### 18. neo4jev
 
 - **场景**：在 Neo4j 知识图谱中按目标逐跳选择关系。
 - **做法**：将出边转换为 Choice 选项，同时用 Noul 判断是否到达目标，再用 beam search 探索候选路径。
@@ -183,9 +227,25 @@ print(response.choices["category"].choice)
 - **边界**：演示项目；缺少有效 API 调用时存在明确标注的替代答案路径，演示运行不等于每一步都来自 Jev。
 - **来源**：[项目 README](https://github.com/jexp/neo4jev)。
 
+## 数据分类与办公效率
+
+### 19. Judge Sheets — predictive spreadsheets
+
+- **场景与做法**：输入 Urgency 等列标题后，Jev 推断预测类型；确认后通过 JUDGE、PICK、RATE 函数填充各行，同一文本的问题合并请求，结果流式返回并触发表格重算。
+- **可借鉴点**：表头意图 → 判断类型 → 逐行评估 → 表格重算。
+- **边界**：独立表格演示，并非 Google Sheets 插件；约 100 毫秒指单次判断或表头解析，不是整列处理时间。速度为作者报告，也有 mock 模式。
+- **来源**：[项目](https://github.com/dabit3/jev-experiments/tree/main/judge-sheets) · [发现来源帖子](https://x.com/dabit3/status/2100780008193020049)。
+
+### 20. Notra — typed evaluation in analytics
+
+- **场景与做法**：代码提供通过 Vercel AI Gateway 调用 Jev 的评估客户端、NOTRA_JEV_CLASSIFIERS 开关，并在品牌提及分析中接入可选的结构化评估。
+- **可借鉴点**：在已有分析工作流中加入结构化判断，并保留 LLM 回退。
+- **边界**：代码能证明接入路径，不能独立证明线上启用状态或延迟；所查流程仍由 LLM 提供竞争对手信息与引用片段。
+- **来源**：[项目](https://github.com/usenotra/notra) · [发现来源帖子](https://x.com/yibie/status/2100619188062523695) · [Implementation / 文档](https://github.com/usenotra/notra/blob/main/packages/ai/src/evaluation/client.ts)。
+
 ## 实验与垂直场景
 
-### 14. TypeSafe AI Playground
+### 21. TypeSafe AI Playground
 
 - **场景**：通过 Rust CLI 探索 PHI（可识别个人的健康信息）检测、代码注释审核等小型判断任务。
 - **做法**：向 Jev 提交明确的分类或评分问题，展示概率或评分结果。
@@ -193,7 +253,7 @@ print(response.choices["category"].choice)
 - **边界**：实验工具不构成医疗隐私合规认证；评分与置信概率也不能混用。
 - **来源**：[项目 README](https://github.com/markjaquith/typesafe-ai-playground)。
 
-### 15. Prism 的 Jev 判断服务
+### 22. Prism 的 Jev 判断服务
 
 - **场景**：对流动性策略中的分布方式、有害交易流、恢复持有与市场压力给出辅助判断。
 - **做法**：`engine/jev-service.ts` 将窄问题映射到 Choice 与 Noul，与既有启发式判断对应。
@@ -201,7 +261,7 @@ print(response.choices["category"].choice)
 - **边界**：所核查 Jev 模块明确为 shadow/advisory，不能宣传为 Jev 自动交易或盈利案例。
 - **来源**：[项目](https://github.com/irfndi/prism-liquidity-agent)、[Jev 服务实现](https://github.com/irfndi/prism-liquidity-agent/blob/main/engine/jev-service.ts)。
 
-### 16. 1v1 Jev — Quickscope Arena
+### 23. 1v1 Jev — Quickscope Arena
 
 - **场景**：浏览器 FPS 游戏中控制对手移动、瞄准、射击等动作。
 - **做法**：服务端将结构化游戏状态转换为 Choice/Noul 问题；README 描述决策频率约为 9 Hz，并提供模型不可用时的启发式回退。
@@ -209,7 +269,37 @@ print(response.choices["category"].choice)
 - **边界**：9 Hz 是该项目的决策循环描述，不是所有 Jev 请求的通用性能指标；不是纯视觉游戏控制证据。
 - **来源**：[项目 README](https://github.com/emrickgarrett/OneVOneJev)。
 
+### 24. jev-trader
+
+- **场景与做法**：读取 Monad 上 Kuru MON-USDC 订单簿，用 Jev 判断买卖方向，由程序处理报价、限额与执行。
+- **可借鉴点**：订单簿状态 → 方向判断 → 程序处理订单。
+- **边界**：默认模型为 mock 动量启发式，需显式配置才能调用 Jev；无私钥时模拟执行，README 中的部署也标注为 dry-run/mock。不能据此证明盈利。
+- **来源**：[项目](https://github.com/jarrodwatts/jev-trader) · [发现来源帖子](https://x.com/studio_yebisu/status/2100686990090047569)。
+
+### 25. TypeSafe Mario
+
+- **场景与做法**：将模拟器遥测与内存状态转换为结构化信息，Jev 选择 NES 手柄动作，并给出跳跃和危险程度判断。
+- **可借鉴点**：结构化游戏状态 → Choice/Noul/Score → 手柄输入。
+- **边界**：模型不接收截图；这是实验性控制器，不能作为通用视觉游戏能力的证据。
+- **来源**：[项目](https://github.com/fhshaik/typesafe-mario) · [发现来源帖子](https://x.com/yibie/status/2100619188062523695)。
+
+### 26. jev-drone
+
+- **场景与做法**：MuJoCo 四旋翼模拟器将相机深度与分割结果转换为场景数据，由 Jev 建议机动动作和风险，普通代码负责飞控与安全。
+- **可借鉴点**：代码感知 → 战术判断 → 受约束的控制。
+- **边界**：模拟飞行而非真实无人机飞行；Jev 接收 JSON 而非图像，仅提供建议。作者报告单次成功路线，同时明确运行结果存在较大波动。
+- **来源**：[项目](https://github.com/RomanSlack/jev-drone) · [发现来源帖子](https://x.com/yibie/status/2100619188062523695)。
+
+### 27. tsai-sc — StarCraft Strongarm
+
+- **场景与做法**：读取星际争霸试玩版 Strongarm 任务的结构化游戏状态，由 Jev 选择指令，再以鼠标键盘执行。
+- **可借鉴点**：结构化策略游戏状态 → 指令选择 → 输入执行。
+- **边界**：读取状态和推理时游戏会暂停；作者提供了限定任务的完成证据，并非实时竞技评测，也不是纯像素输入 Agent。
+- **来源**：[项目](https://github.com/phyous/tsai-sc) · [发现来源帖子](https://x.com/yibie/status/2100619188062523695)。
+
 ## 发现来源与更新方式
+
+本轮新增线索来自 [StudioYebisu 的项目合集](https://x.com/studio_yebisu/status/2100686990090047569)、[yibie 的案例介绍](https://x.com/yibie/status/2100619188062523695)及 [Nader Dabit 的预测式表格演示](https://x.com/dabit3/status/2100780008193020049)。同一项目只计一次；社区仿制模型不作为官方 Jev 的应用案例收录。
 
 案例线索来自[思维怪怪的原帖](https://x.com/0xLogicrw/status/2100478725393686556)，并参考社区目录 [yibie/awesome-jev](https://github.com/yibie/awesome-jev)、[hellogumbo/awesome-jev](https://github.com/hellogumbo/awesome-jev) 和 [rhc98/awesome-jev](https://github.com/rhc98/awesome-jev)。条目描述以项目自己的 README 或实现代码为核查依据，使用独立撰写的中文摘要。
 
