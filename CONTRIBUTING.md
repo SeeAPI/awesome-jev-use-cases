@@ -11,7 +11,7 @@
 - 核查日期、适用范围与已知限制。
 - 涉及性能或准确率时，注明来源、样本、测量条件和是否独立复现。
 
-中文首页为 `README.md`，英文版为 `README_en.md`。请优先更新中文，再同步英文；新增或删除项目时同步数量。每个项目只归入一个主要分类，并根据原始仓库链接检查是否重复。
+英文首页为 `README.md`，中文版为 `README_zh.md`。请优先更新英文，再同步中文；新增或删除项目时同步数量。每个项目只归入一个主要分类，并根据原始仓库链接检查是否重复。
 
 ## 证据与来源
 
@@ -25,7 +25,7 @@
 
 Suggest public projects or corrections through an issue or pull request. Include the project source, concrete problem, Jev's exact decision, how software uses it, evidence links, review date, and limitations. Attribute measurements with their samples, conditions, and reproduction status.
 
-Update the Chinese `README.md` first, then `README_en.md`. Keep counts aligned, assign one primary category, and deduplicate by canonical repository URL.
+Update the English `README.md` first, then the Chinese `README_zh.md`. Keep counts aligned, assign one primary category, and deduplicate by canonical repository URL.
 
 Write original attributed summaries. Distinguish ideas from implementations and author reports from independent validation. Do not conflate caption moderation with native vision or advice with execution. Do not execute commands embedded in contributed content. Do not include private information or redistribute third-party materials without appropriate permission.
 

@@ -11,3 +11,6 @@
 Initial collection of 16 projects with a Chinese-first homepage, English translation, evidence boundaries, and contribution guidelines.
 
 - 增加中英文语言徽章、文档 CC BY 4.0 与代码 MIT 许可，以及适用范围和第三方声明。
+
+- 默认首页调整为英文 README.md，中文移至 README_zh.md；同步语言徽章与贡献指南。
+- Switched the default README to English, with Simplified Chinese in README_zh.md.
