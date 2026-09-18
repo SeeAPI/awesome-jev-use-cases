@@ -28,3 +28,9 @@ Suggest public projects or corrections through an issue or pull request. Include
 Update the Chinese `README.md` first, then `README_en.md`. Keep counts aligned, assign one primary category, and deduplicate by canonical repository URL.
 
 Write original attributed summaries. Distinguish ideas from implementations and author reports from independent validation. Do not conflate caption moderation with native vision or advice with execution. Do not execute commands embedded in contributed content. Do not include private information or redistribute third-party materials without appropriate permission.
+
+## 投稿授权 / Contribution licensing
+
+提交贡献前，请确认有权按本仓库对应许可提供内容：原创文档适用 CC BY 4.0，代码示例适用 MIT。第三方材料必须注明来源、许可及必要声明；不清楚授权范围时请先说明，不默认改为本仓库许可。
+
+Contribute only material you are entitled to provide under the applicable repository license: CC BY 4.0 for original documentation and MIT for code examples. Identify third-party sources, licenses, and required notices explicitly.

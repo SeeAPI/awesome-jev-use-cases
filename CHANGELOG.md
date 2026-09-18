@@ -9,3 +9,5 @@
 - 扩充模型介绍，区分 Jev、官方 SDK 与第三方 MCP，并加入官方来源和 Python 调用示例。
 
 Initial collection of 16 projects with a Chinese-first homepage, English translation, evidence boundaries, and contribution guidelines.
+
+- 增加中英文语言徽章、文档 CC BY 4.0 与代码 MIT 许可，以及适用范围和第三方声明。

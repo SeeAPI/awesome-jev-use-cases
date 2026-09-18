@@ -1,6 +1,7 @@
 # Awesome Jev Use Cases
 
-[简体中文](README.md) | English
+[![简体中文](https://img.shields.io/badge/语言-简体中文-blue)](README.md) [![English](https://img.shields.io/badge/Language-English-lightgrey)](README_en.md)
+[![Docs: CC BY 4.0](https://img.shields.io/badge/Docs-CC_BY_4.0-blue)](LICENSE) [![Code: MIT](https://img.shields.io/badge/Code-MIT-green)](LICENSE-CODE)
 
 A curated collection of real projects using **[Jev](https://typesafe.ai/)**, TypeSafe AI's System One model for typed decisions. Curated by [SeeAPI](https://github.com/SeeAPI).
 
@@ -275,3 +276,7 @@ Additional discovery directories:
 Entries are independently summarized from their linked project sources. Third-party software, media, and documentation remain subject to their respective licenses; this repository does not redistribute their implementations or screenshots.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) to suggest a concrete project or correction. Please update both language versions and preserve source attribution and evidence boundaries.
+
+## License
+
+Original documentation is licensed under [CC BY 4.0](LICENSE); code examples are licensed under [MIT](LICENSE-CODE). Attribute SeeAPI contributors, link to the source and documentation license, and indicate changes when reusing the documentation. Third-party projects and materials retain their own rights and licenses. See [licensing scope](NOTICE.md) and [third-party notices](THIRD_PARTY_NOTICES.md).

@@ -1,6 +1,7 @@
 # Awesome Jev Use Cases — Jev 应用场景与案例
 
-简体中文 | [English](README_en.md)
+[![简体中文](https://img.shields.io/badge/语言-简体中文-blue)](README.md) [![English](https://img.shields.io/badge/Language-English-lightgrey)](README_en.md)
+[![Docs: CC BY 4.0](https://img.shields.io/badge/Docs-CC_BY_4.0-blue)](LICENSE) [![Code: MIT](https://img.shields.io/badge/Code-MIT-green)](LICENSE-CODE)
 
 由 [SeeAPI](https://github.com/SeeAPI) 整理。最近核查：2026-09-18。
 
@@ -213,3 +214,7 @@ print(response.choices["category"].choice)
 案例线索来自[思维怪怪的原帖](https://x.com/0xLogicrw/status/2100478725393686556)，并参考社区目录 [yibie/awesome-jev](https://github.com/yibie/awesome-jev)、[hellogumbo/awesome-jev](https://github.com/hellogumbo/awesome-jev) 和 [rhc98/awesome-jev](https://github.com/rhc98/awesome-jev)。条目描述以项目自己的 README 或实现代码为核查依据，使用独立撰写的中文摘要。
 
 后续条目至少保留：项目、场景、Jev 的具体职责、可借鉴点、边界、公开来源及核查日期。作者报告的数据注明来源和样本条件；没有运行验证的项目不标记为“SeeAPI 实测”。
+
+## 许可证
+
+本仓库原创文档采用 [CC BY 4.0](LICENSE)，代码示例采用 [MIT](LICENSE-CODE)。转载文档时请署名 SeeAPI contributors、链接来源与许可证，并注明修改。第三方项目及引用材料保留各自权利和许可；详见[授权范围说明](NOTICE.md)与[第三方许可声明](THIRD_PARTY_NOTICES.md)。
