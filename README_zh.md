@@ -146,6 +146,10 @@ print(response.choices["category"].choice)
 
 **演示素材**: [原作者航班搜索演示](https://github.com/browser-use/jev-ultrafast/blob/main/docs/demo.mp4)
 
+<img src="assets/cases/browser-use__jev-ultrafast.png" alt="航班搜索结果" width="720" />
+
+原作者素材：航班搜索结果；图中数据为作者记录，并非 SeeAPI 实测。 MIT · [来源](https://github.com/browser-use/jev-ultrafast/blob/452c1ad2dd628008f1d5608f28158d76e49e6cc0/docs/flights-result.png) · [许可与署名](THIRD_PARTY_NOTICES.md)
+
 ### 6. agent-desktop 中的 Jev 桌面控制
 
 - **场景**：通过桌面应用的 Accessibility Tree 选择控件和动作。
@@ -186,6 +190,8 @@ print(response.choices["category"].choice)
 - **边界**：非官方集成，需要兼容的浏览器工具；与 browser-use/jev-ultrafast 是不同项目，并非独立浏览器服务。
 - **来源**：[项目](https://github.com/vlad-terin/jev-browser) · [发现来源帖子](https://x.com/studio_yebisu/status/2100686990090047569)。
 
+**演示素材**: [原作者浏览器演示](https://github.com/user-attachments/assets/2e456743-96d5-4ad9-8ca3-97f7b6ed11f2)
+
 ### 11. Mobile Jev
 
 - **场景与做法**：通过 Mobilerun 在真实 Android 设备上运行，由 Jev 选择操作，提供可视化工作台、CLI 和执行轨迹。
@@ -194,6 +200,10 @@ print(response.choices["category"].choice)
 - **来源**：[项目](https://github.com/droidrun/mobile-jev) · [发现来源帖子](https://x.com/studio_yebisu/status/2100686990090047569)。
 
 **演示素材**: [Android 演示：Uber 路线输入至支付方式选择](https://github.com/droidrun/mobile-jev/blob/main/docs/media/uber-demo.mp4)
+
+<img src="assets/cases/droidrun__mobile-jev.jpg" alt="Android Uber 演示" width="720" />
+
+原作者素材：Android Uber 演示；图中数据为作者记录，并非 SeeAPI 实测。 MIT · [来源](https://github.com/droidrun/mobile-jev/blob/395fc222beac4f059f9a0beb337d114a2b066e99/docs/media/uber-demo.jpg) · [许可与署名](THIRD_PARTY_NOTICES.md)
 
 ### 12. zod-jev — 表单语义校验
 
@@ -273,6 +283,10 @@ print(response.choices["category"].choice)
 - **边界**：与 0xNatoshi 的 Jev Codex Router 是不同项目；README 描述的是按新用户轮次路由，不是每个内部工具步骤重新选择。
 - **来源**：[项目](https://github.com/gargpratyush/jev-router) · [发现来源帖子](https://x.com/studio_yebisu/status/2100686990090047569)。
 
+<img src="assets/cases/gargpratyush__jev-router.png" alt="模型选择界面" width="720" />
+
+原作者素材：模型选择界面；图中数据为作者记录，并非 SeeAPI 实测。 MIT · [来源](https://github.com/gargpratyush/jev-router/blob/86660a0248eba0e4523f81645ac2925e9808c000/docs/model-picker.png) · [许可与署名](THIRD_PARTY_NOTICES.md)
+
 ### 21. eve — typed evaluation and model selection
 
 - **场景与做法**：Agent 框架默认使用 Jev 做自动模型选择和结构化评估，文档还展示了工具执行审批中的判断与人工复核。
@@ -287,6 +301,8 @@ print(response.choices["category"].choice)
 概念验证装饰器将 DSPy 中的布尔、枚举及指定评分字段交给 Jev，自由文本仍交给生成模型。
 
 **边界:** 作者对照仅使用三个示例，不能推导普遍的成本或速度提升。
+
+**演示素材**: [作者三个示例对照图](https://github.com/typesafeainate/dspy-typesafeify/blob/708f1d109fc9316bdbb5674bdb10cf18b55be137/examples/typesafe_dspy_ticket_triage/benchmark.svg)
 
 ### 23. jevlogs — 运维日志语义分流
 
@@ -398,6 +414,12 @@ Jev 按多个维度为产品想法评分，本地加权规则将结果组合为�
 
 **边界:** 仅分析文本，不含图片、视频和完整对话语境，可能误判讽刺表达。
 
+<img src="assets/cases/sriganesh__jevibe-check.png" alt="语气标签与帖子过滤" width="720" />
+
+原作者素材：语气标签与帖子过滤；图中数据为作者记录，并非 SeeAPI 实测。 MIT · [来源](https://github.com/sriganesh/jevibe-check/blob/8c6ab8837265b762699dc6b4a130f9a9a369fd89/docs/screenshots/post-filter.png) · [许可与署名](THIRD_PARTY_NOTICES.md)
+
+**演示素材**: [动态演示](https://github.com/sriganesh/jevibe-check/blob/8c6ab8837265b762699dc6b4a130f9a9a369fd89/docs/jevibecheck.gif)
+
 ### 36. JEV Resume Analyzer — 可追溯简历自查
 
 [项目来源](https://github.com/awun8191/jev-resume-analyzer)
@@ -421,6 +443,10 @@ Jev 按多个维度为产品想法评分，本地加权规则将结果组合为�
 批量标注应用评论的情绪、主题、缺陷与流失信号，再支持本地重排，并与 Gemini 对照。
 
 **边界:** 发布耗时来自一组记录运行；模型间一致率或与星级的一致性不等于真实准确率。
+
+<img src="assets/cases/goodrahstar__jev-column-race.png" alt="作者记录的对照运行" width="720" />
+
+原作者素材：作者记录的对照运行；图中数据为作者记录，并非 SeeAPI 实测。 MIT · [来源](https://github.com/goodrahstar/jev-column-race/blob/d9ee360ccd84462f4eab9493a7c2c617d0dab9df/docs/verdict.png) · [许可与署名](THIRD_PARTY_NOTICES.md)
 
 
 ## 实验与垂直场景
@@ -491,6 +517,12 @@ Jev 为潜行游戏守卫判断威胁、怀疑程度与意图，服务器代码�
 
 **边界:** 项目也有脚本模式；作者记录的一次真实运行不能证明重复成功率。
 
+<img src="assets/cases/AbdelStark__heist-one.jpg" alt="游戏演示画面" width="720" />
+
+原作者素材：游戏演示画面；图中数据为作者记录，并非 SeeAPI 实测。 MIT · [来源](https://github.com/AbdelStark/heist-one/blob/632c9a55a1e5eb2cbf0b9f87db575f0b5eb36e8c/apps/video/public/extraction.jpg) · [许可与署名](THIRD_PARTY_NOTICES.md)
+
+**演示素材**: [原作者 37 秒演示视频](https://github.com/AbdelStark/heist-one/releases/download/v0.1.0/heist-one-launch.mp4)
+
 ### 47. TypeSafe Minecraft — 游戏动作实验
 
 [项目来源](https://github.com/ellistev/typesafe-minecraft-demo)
@@ -526,6 +558,10 @@ Jev 根据结构化 Minecraft 状态选择动作，Mineflayer 执行，代码提
 
 **边界:** 作者报告的结果受上下文与阈值影响；不是 NSFW 评测，也不构成完整安全边界。
 
+<img src="assets/cases/Gaurav-Gosain__jev-sec-bench.png" alt="作者安全评测仪表盘" width="720" />
+
+原作者素材：作者安全评测仪表盘；图中数据为作者记录，并非 SeeAPI 实测。 MIT · [来源](https://github.com/Gaurav-Gosain/jev-sec-bench/blob/fdb16b94d37535db9bad77f8ef0faa971bd7d69a/docs/overview.png) · [许可与署名](THIRD_PARTY_NOTICES.md)
+
 ### 51. Jev Behavior Study — 能力与失败边界
 
 [项目来源](https://github.com/RINNECODER/jev-behavior-study)
@@ -533,6 +569,12 @@ Jev 根据结构化 Minecraft 状态选择动作，Mineflayer 执行，代码提
 通过文本任务、贪吃蛇和 3D 城市实验研究问题表述及失败边界，提供报告与运行记录。
 
 **边界:** 属于合成、特定任务观察；重复调用不等于独立问题，代码辅助控制与直接控制需区分。
+
+<img src="assets/cases/RINNECODER__jev-behavior-study.png" alt="贪吃蛇研究界面" width="720" />
+
+原作者素材：贪吃蛇研究界面；图中数据为作者记录，并非 SeeAPI 实测。 MIT · [来源](https://github.com/RINNECODER/jev-behavior-study/blob/e4a1d7ec691a91f33d3b5879a780e6f27328f173/snake_demo/research/preview.png) · [许可与署名](THIRD_PARTY_NOTICES.md)
+
+**演示素材**: [城市实验回放](https://rinnecoder.github.io/jev-behavior-study/city_demo/) · [无辅助贪吃蛇运行记录](https://rinnecoder.github.io/jev-behavior-study/snake_demo/web/unassisted.html)
 
 ### 52. jev-rerank-bench — 检索重排对照评测
 
@@ -542,6 +584,10 @@ Jev 根据结构化 Minecraft 状态选择动作，Mineflayer 执行，代码提
 
 **边界:** 汇总均值不足以确定胜者；按数据集或按查询加权会改变比较结果。
 
+<img src="assets/cases/anessbelbati__jev-rerank-bench.png" alt="作者检索评测图表" width="720" />
+
+原作者素材：作者检索评测图表；图中数据为作者记录，并非 SeeAPI 实测。 MIT · [来源](https://github.com/anessbelbati/jev-rerank-bench/blob/cd9a35b22aeb4187334f7018a0ee1960a7470586/results/quality.png) · [许可与署名](THIRD_PARTY_NOTICES.md)
+
 ### 53. jev-phishing-bench — 钓鱼邮件与原子信号
 
 [项目来源](https://github.com/anisselbd/jev-phishing-bench)
@@ -549,6 +595,8 @@ Jev 根据结构化 Minecraft 状态选择动作，Mineflayer 执行，代码提
 比较直接钓鱼邮件判断与原子信号方案，后者由 Jev 提供信号、本地分类器组合。
 
 **边界:** 合成邮件可能存在模板捷径；直接判断与留出实验测试集不同，不能直接相减作为提升幅度。
+
+**演示素材**: [作者评测图表](https://github.com/anisselbd/jev-phishing-bench/blob/1d56e8c64d029a9554a0874e2ef2901ed196e230/results/chart.png)
 
 ### 54. jev-headline-bench — 标题A/B胜负预测
 
@@ -565,6 +613,8 @@ Jev 根据结构化 Minecraft 状态选择动作，Mineflayer 执行，代码提
 将 120 份葡语司法文书的 12 个变量交给 Jev 标注，与生成模型的结构化输出比较。
 
 **边界:** 参考标签流程含模型标注与仲裁，报告准确率并非完全基于人工金标准；不是法律意见工具。
+
+**演示素材**: [作者分字段评测图表](https://github.com/lab-dados/jev-anotacao-sentencas/blob/fe10f3347ed7220d11321aab94f9206fdc21eddf/docs/relatorio_files/figure-typst/fig-campos-output-1.png)
 
 
 ## 发现来源与更新方式

@@ -170,6 +170,10 @@ A browser agent that turns visible controls into indexed candidates. Jev chooses
 
 **Demo material**: [Original flight-search demo](https://github.com/browser-use/jev-ultrafast/blob/main/docs/demo.mp4)
 
+<img src="assets/cases/browser-use__jev-ultrafast.png" alt="Flight-search result" width="720" />
+
+Original author material: Flight-search result. Measurements shown are author-reported, not SeeAPI tests. MIT · [Source](https://github.com/browser-use/jev-ultrafast/blob/452c1ad2dd628008f1d5608f28158d76e49e6cc0/docs/flights-result.png) · [License and attribution](THIRD_PARTY_NOTICES.md)
+
 ### 6. Jev desktop control in agent-desktop
 
 [Repository](https://github.com/lahfir/agent-desktop) · [Jev loop](https://github.com/lahfir/agent-desktop/blob/main/scripts/jev/run.mjs)
@@ -222,6 +226,8 @@ An agent skill and runtime that uses existing browser tools in a continuous obse
 
 **Scope:** An unofficial integration requiring compatible browser tools; it is distinct from browser-use/jev-ultrafast and is not a browser service by itself.
 
+**Demo material**: [Original browser demo](https://github.com/user-attachments/assets/2e456743-96d5-4ad9-8ca3-97f7b6ed11f2)
+
 ### 11. Mobile Jev
 
 [Project](https://github.com/droidrun/mobile-jev) · [Discovery post](https://x.com/studio_yebisu/status/2100686990090047569)
@@ -233,6 +239,10 @@ A mobile agent uses Jev to select actions on a real Android device through Mobil
 **Scope:** The documented Uber demo reaches payment selection, not a completed booking. The reported 21 seconds for nine actions is one recorded task, not a general latency guarantee.
 
 **Demo material**: [Android demo: Uber route to payment selection](https://github.com/droidrun/mobile-jev/blob/main/docs/media/uber-demo.mp4)
+
+<img src="assets/cases/droidrun__mobile-jev.jpg" alt="Android Uber demonstration" width="720" />
+
+Original author material: Android Uber demonstration. Measurements shown are author-reported, not SeeAPI tests. MIT · [Source](https://github.com/droidrun/mobile-jev/blob/395fc222beac4f059f9a0beb337d114a2b066e99/docs/media/uber-demo.jpg) · [License and attribution](THIRD_PARTY_NOTICES.md)
 
 ### 12. zod-jev — semantic validation
 
@@ -321,6 +331,10 @@ Routes fresh user turns in Claude Code and Codex to fast or strong model tiers w
 
 **Scope:** A separate project from Jev Codex Router by 0xNatoshi. Its README describes per-user-turn routing, not a fresh model choice for every internal tool step.
 
+<img src="assets/cases/gargpratyush__jev-router.png" alt="Model selection interface" width="720" />
+
+Original author material: Model selection interface. Measurements shown are author-reported, not SeeAPI tests. MIT · [Source](https://github.com/gargpratyush/jev-router/blob/86660a0248eba0e4523f81645ac2925e9808c000/docs/model-picker.png) · [License and attribution](THIRD_PARTY_NOTICES.md)
+
 ### 21. eve — typed evaluation and model selection
 
 [Project](https://github.com/vercel/eve) · [Discovery post](https://x.com/yibie/status/2100619188062523695) · [Implementation / 文档](https://github.com/vercel/eve/blob/main/docs/guides/evaluate.md)
@@ -338,6 +352,8 @@ The agent framework uses Jev by default for automatic model selection and typed 
 A proof-of-concept decorator routes boolean, enum and configured score fields to Jev while a generative model handles free text.
 
 **Scope:** The author's comparison uses three examples; it does not establish general cost or speed improvements.
+
+**Demo material**: [Author three-example comparison chart](https://github.com/typesafeainate/dspy-typesafeify/blob/708f1d109fc9316bdbb5674bdb10cf18b55be137/examples/typesafe_dspy_ticket_triage/benchmark.svg)
 
 ### 23. jevlogs — log triage
 
@@ -459,6 +475,12 @@ Labels Bluesky posts and drafts using Jev choices, with custom classifiers and f
 
 **Scope:** Text-only analysis excludes images, videos and wider conversation context; sarcasm can be misclassified.
 
+<img src="assets/cases/sriganesh__jevibe-check.png" alt="Tone labels and post filtering" width="720" />
+
+Original author material: Tone labels and post filtering. Measurements shown are author-reported, not SeeAPI tests. MIT · [Source](https://github.com/sriganesh/jevibe-check/blob/8c6ab8837265b762699dc6b4a130f9a9a369fd89/docs/screenshots/post-filter.png) · [License and attribution](THIRD_PARTY_NOTICES.md)
+
+**Demo material**: [Animated demo](https://github.com/sriganesh/jevibe-check/blob/8c6ab8837265b762699dc6b4a130f9a9a369fd89/docs/jevibecheck.gif)
+
 ### 36. JEV Resume Analyzer
 
 [Project](https://github.com/awun8191/jev-resume-analyzer)
@@ -482,6 +504,10 @@ Uses Choice for team assignment, Score for priority, and Noul for refund intent,
 Batches sentiment, topic, bug and churn judgments over app reviews, then allows local reranking; includes a comparison with Gemini.
 
 **Scope:** The published timing is from a recorded run pair. Agreement between models or with star ratings is not ground-truth accuracy.
+
+<img src="assets/cases/goodrahstar__jev-column-race.png" alt="Author-recorded comparison" width="720" />
+
+Original author material: Author-recorded comparison. Measurements shown are author-reported, not SeeAPI tests. MIT · [Source](https://github.com/goodrahstar/jev-column-race/blob/d9ee360ccd84462f4eab9493a7c2c617d0dab9df/docs/verdict.png) · [License and attribution](THIRD_PARTY_NOTICES.md)
 
 
 ## Experiments & specialized applications
@@ -570,6 +596,12 @@ Jev judges threats, suspicion and intentions for guards; server code controls le
 
 **Scope:** Scripted mode is available; a recorded live run does not establish repeated success.
 
+<img src="assets/cases/AbdelStark__heist-one.jpg" alt="Game demonstration frame" width="720" />
+
+Original author material: Game demonstration frame. Measurements shown are author-reported, not SeeAPI tests. MIT · [Source](https://github.com/AbdelStark/heist-one/blob/632c9a55a1e5eb2cbf0b9f87db575f0b5eb36e8c/apps/video/public/extraction.jpg) · [License and attribution](THIRD_PARTY_NOTICES.md)
+
+**Demo material**: [Original 37-second film](https://github.com/AbdelStark/heist-one/releases/download/v0.1.0/heist-one-launch.mp4)
+
 ### 47. TypeSafe Minecraft — structured action control
 
 [Project](https://github.com/ellistev/typesafe-minecraft-demo)
@@ -605,6 +637,10 @@ Evaluates prompt-injection detection and vulnerable-code judgments with publishe
 
 **Scope:** Reported results depend on context and thresholds; this is not an NSFW benchmark or a complete security boundary.
 
+<img src="assets/cases/Gaurav-Gosain__jev-sec-bench.png" alt="Author security benchmark dashboard" width="720" />
+
+Original author material: Author security benchmark dashboard. Measurements shown are author-reported, not SeeAPI tests. MIT · [Source](https://github.com/Gaurav-Gosain/jev-sec-bench/blob/fdb16b94d37535db9bad77f8ef0faa971bd7d69a/docs/overview.png) · [License and attribution](THIRD_PARTY_NOTICES.md)
+
 ### 51. Jev Behavior Study
 
 [Project](https://github.com/RINNECODER/jev-behavior-study)
@@ -612,6 +648,12 @@ Evaluates prompt-injection detection and vulnerable-code judgments with publishe
 Studies question framing and failure modes through text tasks, Snake and a 3D city, with reports and recorded traces.
 
 **Scope:** Synthetic task-specific observations; repeated calls are not independent problems, and assisted control differs from direct control.
+
+<img src="assets/cases/RINNECODER__jev-behavior-study.png" alt="Snake study interface" width="720" />
+
+Original author material: Snake study interface. Measurements shown are author-reported, not SeeAPI tests. MIT · [Source](https://github.com/RINNECODER/jev-behavior-study/blob/e4a1d7ec691a91f33d3b5879a780e6f27328f173/snake_demo/research/preview.png) · [License and attribution](THIRD_PARTY_NOTICES.md)
+
+**Demo material**: [City replay lab](https://rinnecoder.github.io/jev-behavior-study/city_demo/) · [Unassisted Snake runs](https://rinnecoder.github.io/jev-behavior-study/snake_demo/web/unassisted.html)
 
 ### 52. jev-rerank-bench — retrieval evaluation
 
@@ -621,6 +663,10 @@ Compares Jev relevance rubrics with other rerankers on shared BM25 candidates an
 
 **Scope:** The headline averages do not establish a winner; weighting datasets versus queries changes the comparison.
 
+<img src="assets/cases/anessbelbati__jev-rerank-bench.png" alt="Author retrieval evaluation chart" width="720" />
+
+Original author material: Author retrieval evaluation chart. Measurements shown are author-reported, not SeeAPI tests. MIT · [Source](https://github.com/anessbelbati/jev-rerank-bench/blob/cd9a35b22aeb4187334f7018a0ee1960a7470586/results/quality.png) · [License and attribution](THIRD_PARTY_NOTICES.md)
+
 ### 53. jev-phishing-bench — email signals
 
 [Project](https://github.com/anisselbd/jev-phishing-bench)
@@ -628,6 +674,8 @@ Compares Jev relevance rubrics with other rerankers on shared BM25 candidates an
 Compares direct phishing judgments with atomic Jev signals combined by a local classifier.
 
 **Scope:** Synthetic emails contain potential shortcuts; direct and held-out experiments have different test sets and must not be conflated.
+
+**Demo material**: [Author benchmark chart](https://github.com/anisselbd/jev-phishing-bench/blob/1d56e8c64d029a9554a0874e2ef2901ed196e230/results/chart.png)
 
 ### 54. jev-headline-bench — headline selection
 
@@ -644,6 +692,8 @@ Asks Jev to choose between historical Upworthy headlines and compares choices wi
 Compares typed annotation of 12 variables in 120 Portuguese judicial documents with generative-model structured outputs.
 
 **Scope:** The reference process includes model-generated labels and adjudication; reported accuracy is not based entirely on human gold labels.
+
+**Demo material**: [Author per-field evaluation chart](https://github.com/lab-dados/jev-anotacao-sentencas/blob/fe10f3347ed7220d11321aab94f9206fdc21eddf/docs/relatorio_files/figure-typst/fig-campos-output-1.png)
 
 
 ## Evidence & scope

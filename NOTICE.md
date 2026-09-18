@@ -23,6 +23,6 @@ Linked third-party projects, models, SDKs, trademarks, and external media remain
 
 ## 收录图片 / Reproduced images
 
-`assets/cases/jev-review-dashboard.png` 与 `assets/cases/jev-drone-climb.png` 保留各自来源仓库的 MIT 许可，具体版权和完整许可见 THIRD_PARTY_NOTICES.md；它们不适用本仓库原创文档的 CC BY 4.0。图片内容未修改，仅设置 README 显示宽度。素材中的第三方商标等权利仍属于各自权利人。外部截图与视频链接不表示本仓库拥有或重新授权该素材。
+`assets/cases/` 中收录的案例图片 保留各自来源仓库的 MIT 许可，具体版权和完整许可见 THIRD_PARTY_NOTICES.md；它们不适用本仓库原创文档的 CC BY 4.0。图片内容未修改，仅设置 README 显示宽度。素材中的第三方商标等权利仍属于各自权利人。外部截图与视频链接不表示本仓库拥有或重新授权该素材。
 
-The two PNG files in `assets/cases/` retain their upstream MIT licenses and copyright notices, reproduced in THIRD_PARTY_NOTICES.md; they are excluded from the CC BY 4.0 grant for our original documentation. Image contents are unchanged; only README display width is set. Third-party trademarks and other underlying rights remain with their respective holders. Links to external media do not assert ownership or grant reuse rights.
+The reproduced case images in `assets/cases/` retain their upstream MIT licenses and copyright notices, reproduced in THIRD_PARTY_NOTICES.md; they are excluded from the CC BY 4.0 grant for our original documentation. Image contents are unchanged; only README display width is set. Third-party trademarks and other underlying rights remain with their respective holders. Links to external media do not assert ownership or grant reuse rights.

@@ -26,3 +26,6 @@ Initial collection of 16 projects with a Chinese-first homepage, English transla
 
 - 核对新增来源中的 42 条记录，跳过 14 个已收录项目，补充 28 个应用、集成与评测研究；中英文同步更新为 55 条，研究类独立分类，并保留模拟模式与证据限制。
 - Compared 42 source records with the collection, skipped 14 existing projects, and added 28 applications, integrations and studies (55 total). Updated both languages and separated benchmarks from application cases.
+
+- 核查全部 55 个案例的 README 与文件树，新增 9 张保留上游 MIT 许可的图片，补充原作者演示、GIF、回放和评测图表入口，并记录逐案例素材覆盖情况。
+- Reviewed READMEs and repository trees for all 55 cases; added nine MIT-licensed images, original demo/GIF/replay/chart links, and a per-case media coverage audit.
