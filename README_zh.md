@@ -3,101 +3,29 @@
 [![English](https://img.shields.io/badge/Language-English-blue)](README.md) [![简体中文](https://img.shields.io/badge/语言-简体中文-lightgrey)](README_zh.md)
 [![Docs: CC BY 4.0](https://img.shields.io/badge/Docs-CC_BY_4.0-blue)](LICENSE) [![Code: MIT](https://img.shields.io/badge/Code-MIT-green)](LICENSE-CODE)
 
-由 [SeeAPI](https://github.com/SeeAPI) 整理。
+探索 **[Jev](https://typesafe.ai/)** 在内容审核、自动化、模型路由和语义搜索中的真实用法，了解每个项目中 Jev 负责哪一步判断、如何接入软件流程，以及值得借鉴的实现方式。
+
+![Awesome Jev Use Cases — 真实项目与结构化判断，由 SeeAPI 整理的独立社区案例集。](assets/banner.png)
 
 **55 个项目 · 最近核查：2026-09-18**
 
-**Jev 是 TypeSafe AI 面向软件自动化推出的 System One 模型，专注于快速、结构化的判断。** 公司创始人 Diogo Almeida 曾在 OpenAI 参与指令遵循与对话能力相关研究，这些工作构成了 ChatGPT 背后研究基础的一部分。Jev 将重点放在程序中的决策环节：接收待处理内容或应用状态，根据预设问题与标准返回选择、评分或概率，再由业务代码决定后续动作。[官方介绍与创始人背景](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
+**[浏览案例](#按场景浏览) · [了解 Jev](#jev-是什么) · [接入指南](#模型来源与接入方式) · [提交案例](CONTRIBUTING.md)**
 
-例如，客服系统可以用它判断工单应分给哪个团队；AI Agent 可以用它筛选相关资料、选择下一步操作或检查外部输入；模型网关可以用它判断任务类型，再选择适合的模型执行。它的核心用途是把工作流中反复出现的小判断变成可调用的组件。
+Jev 是 TypeSafe AI 面向结构化判断推出的 System One 模型，返回选择、评分或概率，由应用代码据此决定下一步动作。
 
-Jev 的接口围绕三类判断展开：**Choice** 从候选项中选择，**Noul** 返回条件成立的概率，**Score** 按有序标准评分。与主要生成自然语言的聊天模型相比，Jev 更侧重提供程序可以据此分支、排序和筛选的决策结果。应用仍需设置阈值，并为不确定的结果安排复核或回退流程；概率输出不代表判断一定正确。
+由 [SeeAPI](https://github.com/SeeAPI) 整理的独立社区案例集，非 TypeSafe 官方项目。详见[核查范围与来源](#发现来源与更新方式)。
 
-本仓库由 SeeAPI 收集与整理 Jev 的公开应用案例，重点说明每个项目解决什么问题、Jev 负责哪一步、实现方式以及证据边界，涵盖内容审核、自动化、模型路由、代码审查和语义搜索等方向。Jev 模型、官方 SDK 和第三方 MCP 集成分别承担不同角色，相关来源见下文。
+## 按场景浏览
 
-## 模型来源与接入方式
-
-**Jev 由 TypeSafe AI 提供。** 可以根据应用运行环境，以及需要直接调用 API 还是让现有 Agent 使用工具，选择合适的接入方式。下面三类资源承担不同职责，平台接入渠道不额外计入应用案例数量。
-
-### TypeSafe 官方直连
-
-独立开发应用或首次接入时，可以先参考 TypeSafe 官方文档和 SDK，了解基础接口。下方的 Python 示例也使用这条接入路径。
-
-| 资源 | 用途 | 来源 |
-| --- | --- | --- |
-| TypeSafe 官方文档 | 了解模型概念与 API 用法 | [Introduction](https://docs.typesafe.ai/introduction) |
-| 官方 Python SDK | 在 Python 程序中调用 TypeSafe API | [typesafe-sdk-python](https://github.com/typesafe-ai/typesafe-sdk-python) |
-| 官方 JavaScript / TypeScript SDK | 在 JS / TS 程序中调用 TypeSafe API | [typesafe-sdk-js](https://github.com/typesafe-ai/typesafe-sdk-js) |
-| 官方 GitHub 组织 | 查找 TypeSafe 维护的开发资源 | [typesafe-ai](https://github.com/typesafe-ai) |
-
-本次在官方 GitHub 组织中查到的是 SDK 与开发工具，未找到官方公开的 Jev 模型权重仓库。SDK 开源不等于模型权重开源；社区复现属于独立项目。
-
-### 第三方平台接入
-
-这里的“第三方”是相对于 TypeSafe 而言。以下两个渠道均有平台自己发布的接入文档，适合已经使用对应运行环境或模型调用接口的应用。
-
-| 平台 | 适用情况 | 文档中的接入方式 | 来源 |
-| --- | --- | --- | --- |
-| Vercel AI Gateway | 应用使用 AI SDK evaluation 接口 | 通过 evaluation API 调用 `typesafe-ai/jev` | [Vercel 文档](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway) · [发布帖](https://x.com/vercel_dev/status/2100378959653507175) |
-| Cloudflare | 应用使用 Cloudflare AI binding | 通过 `env.AI.run('typesafe/jev', ...)` 传入状态与问题 | [Cloudflare 文档](https://developers.cloudflare.com/ai/models/typesafe/jev/) · [发现来源帖子](https://x.com/yusukebe/status/2100750454393348237) |
-
-模型标识、认证、请求格式与计费以所选平台为准，不能直接混用不同平台的示例。当前条目已对照平台文档核查，未调用付费 API 实测；收录不代表价格、速度或可用性排名与保证。
-
-### Agent 工具与 MCP 集成
-
-这类工具适合让现有 Agent 调用 Jev 完成判断，属于软件集成，不是独立的模型托管渠道，也不是 Jev 模型本体。
-
-| 工具 | 用途 | 来源 |
-| --- | --- | --- |
-| Jev MCP（jkudish） | 事实核验、输入筛查与语义候选排序 | [项目仓库](https://github.com/jkudish/jev-mcp) |
-| Typesafe MCP（itsmostafa） | 通过 `evaluate` 工具向支持的 Agent 客户端提供结构化判断 | [项目仓库](https://github.com/itsmostafa/typesafe-mcp) |
-
-两个项目均在文档中要求 TypeSafe API 密钥。下方案例清单保留其详细介绍，每个项目只计一次；在自己的程序中直接调用 Jev 时，无需经过 MCP。
-
-### 接入资源收录标准
-
-收录的渠道应明确提供 TypeSafe Jev，具有可用的公开接入文档与服务方信息，并能说明具体的集成价值。条目记录用途、来源与核查范围，不追求穷尽全部服务商。未来若收录 SeeAPI，也必须满足相同标准，并披露 SeeAPI 是本仓库维护方。详见[贡献要求](CONTRIBUTING.md)。
-
-### 三类典型判断
-
-- **Choice**：从候选项中选择，例如把工单分配给账单、技术或其他队列。
-- **Noul**：对一个条件成立的可能性给出概率，例如判断消息是否包含垃圾信息。
-- **Score**：根据有序标准评分，例如评估回答质量或风险等级。
-
-这些判断由应用代码连接到后续动作。接入时可以直接使用官方 SDK，也可以通过第三方 MCP 工具交给 Agent 调用；不需要经过 `jkudish/jev-mcp` 才能使用 Jev。
-
-### Python 接入示例：工单分类
-
-先安装官方 SDK：
-
-```bash
-uv add typesafe-sdk
-```
-
-将 `TYPESAFE_API_KEY` 设置在运行环境中，再调用接口：
-
-```python
-from typesafe_sdk import Choice, TypeSafeClient
-
-with TypeSafeClient() as client:
-    response = client.system_one(
-        state={"document": "同一笔订单被扣款两次，请帮我处理。"},
-        questions={
-            "category": Choice(
-                instructions="这条工单应归入哪个类别？",
-                criteria={
-                    "billing": "账单、扣款或退款问题",
-                    "technical": "技术故障或集成问题",
-                    "other": "其他问题",
-                },
-            ),
-        },
-    )
-
-print(response.choices["category"].choice)
-```
-
-示例根据[官方 Python SDK 快速入门](https://github.com/typesafe-ai/typesafe-sdk-python#quickstart)调整工单文本和分类标准，展示真实接口结构；本仓库未执行该 API 请求，不提供虚构的运行结果。
+| 分类 | 项目数 | 可以找到什么 |
+| --- | ---: | --- |
+| [内容审核与安全](#内容审核与安全) | 4 | 内容筛查、风险判断与审核处置 |
+| [自动化与开发工具接入](#自动化与开发工具接入) | 12 | 桌面、浏览器、移动端及工作流集成 |
+| [模型成本与代码工作流](#模型成本与代码工作流) | 9 | 模型选择、代码审查与 Agent 任务分配 |
+| [语义搜索与知识导航](#语义搜索与知识导航) | 4 | 图谱导航、语义搜索与结果重排序 |
+| [数据分类与办公效率](#数据分类与办公效率) | 9 | 表格、文档分析与工单分类 |
+| [实验与垂直场景](#实验与垂直场景) | 11 | 游戏、控制系统及垂直领域应用 |
+| [评测与行为研究](#评测与行为研究) | 6 | 作者报告的评测与模型行为研究 |
 
 ## 内容审核与安全
 
@@ -616,6 +544,97 @@ Jev 根据结构化 Minecraft 状态选择动作，Mineflayer 执行，代码提
 
 **演示素材**: [作者分字段评测图表](https://github.com/lab-dados/jev-anotacao-sentencas/blob/fe10f3347ed7220d11321aab94f9206fdc21eddf/docs/relatorio_files/figure-typst/fig-campos-output-1.png)
 
+## Jev 是什么？
+
+**Jev 是 TypeSafe AI 面向软件自动化推出的 System One 模型，专注于快速、结构化的判断。** 公司创始人 Diogo Almeida 曾在 OpenAI 参与指令遵循与对话能力相关研究，这些工作构成了 ChatGPT 背后研究基础的一部分。Jev 将重点放在程序中的决策环节：接收待处理内容或应用状态，根据预设问题与标准返回选择、评分或概率，再由业务代码决定后续动作。[官方介绍与创始人背景](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
+
+例如，客服系统可以用它判断工单应分给哪个团队；AI Agent 可以用它筛选相关资料、选择下一步操作或检查外部输入；模型网关可以用它判断任务类型，再选择适合的模型执行。它的核心用途是把工作流中反复出现的小判断变成可调用的组件。
+
+Jev 的接口围绕三类判断展开：**Choice** 从候选项中选择，**Noul** 返回条件成立的概率，**Score** 按有序标准评分。与主要生成自然语言的聊天模型相比，Jev 更侧重提供程序可以据此分支、排序和筛选的决策结果。应用仍需设置阈值，并为不确定的结果安排复核或回退流程；概率输出不代表判断一定正确。
+
+## 模型来源与接入方式
+
+**Jev 由 TypeSafe AI 提供。** 可以根据应用运行环境，以及需要直接调用 API 还是让现有 Agent 使用工具，选择合适的接入方式。下面三类资源承担不同职责，平台接入渠道不额外计入应用案例数量。
+
+### TypeSafe 官方直连
+
+独立开发应用或首次接入时，可以先参考 TypeSafe 官方文档和 SDK，了解基础接口。下方的 Python 示例也使用这条接入路径。
+
+| 资源 | 用途 | 来源 |
+| --- | --- | --- |
+| TypeSafe 官方文档 | 了解模型概念与 API 用法 | [Introduction](https://docs.typesafe.ai/introduction) |
+| 官方 Python SDK | 在 Python 程序中调用 TypeSafe API | [typesafe-sdk-python](https://github.com/typesafe-ai/typesafe-sdk-python) |
+| 官方 JavaScript / TypeScript SDK | 在 JS / TS 程序中调用 TypeSafe API | [typesafe-sdk-js](https://github.com/typesafe-ai/typesafe-sdk-js) |
+| 官方 GitHub 组织 | 查找 TypeSafe 维护的开发资源 | [typesafe-ai](https://github.com/typesafe-ai) |
+
+本次在官方 GitHub 组织中查到的是 SDK 与开发工具，未找到官方公开的 Jev 模型权重仓库。SDK 开源不等于模型权重开源；社区复现属于独立项目。
+
+### 第三方平台接入
+
+这里的“第三方”是相对于 TypeSafe 而言。以下两个渠道均有平台自己发布的接入文档，适合已经使用对应运行环境或模型调用接口的应用。
+
+| 平台 | 适用情况 | 文档中的接入方式 | 来源 |
+| --- | --- | --- | --- |
+| Vercel AI Gateway | 应用使用 AI SDK evaluation 接口 | 通过 evaluation API 调用 `typesafe-ai/jev` | [Vercel 文档](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway) · [发布帖](https://x.com/vercel_dev/status/2100378959653507175) |
+| Cloudflare | 应用使用 Cloudflare AI binding | 通过 `env.AI.run('typesafe/jev', ...)` 传入状态与问题 | [Cloudflare 文档](https://developers.cloudflare.com/ai/models/typesafe/jev/) · [发现来源帖子](https://x.com/yusukebe/status/2100750454393348237) |
+
+模型标识、认证、请求格式与计费以所选平台为准，不能直接混用不同平台的示例。当前条目已对照平台文档核查，未调用付费 API 实测；收录不代表价格、速度或可用性排名与保证。
+
+### Agent 工具与 MCP 集成
+
+这类工具适合让现有 Agent 调用 Jev 完成判断，属于软件集成，不是独立的模型托管渠道，也不是 Jev 模型本体。
+
+| 工具 | 用途 | 来源 |
+| --- | --- | --- |
+| Jev MCP（jkudish） | 事实核验、输入筛查与语义候选排序 | [项目仓库](https://github.com/jkudish/jev-mcp) |
+| Typesafe MCP（itsmostafa） | 通过 `evaluate` 工具向支持的 Agent 客户端提供结构化判断 | [项目仓库](https://github.com/itsmostafa/typesafe-mcp) |
+
+两个项目均在文档中要求 TypeSafe API 密钥。上方案例清单保留其详细介绍，每个项目只计一次；在自己的程序中直接调用 Jev 时，无需经过 MCP。
+
+### 接入资源收录标准
+
+收录的渠道应明确提供 TypeSafe Jev，具有可用的公开接入文档与服务方信息，并能说明具体的集成价值。条目记录用途、来源与核查范围，不追求穷尽全部服务商。未来若收录 SeeAPI，也必须满足相同标准，并披露 SeeAPI 是本仓库维护方。详见[贡献要求](CONTRIBUTING.md)。
+
+### 三类典型判断
+
+- **Choice**：从候选项中选择，例如把工单分配给账单、技术或其他队列。
+- **Noul**：对一个条件成立的可能性给出概率，例如判断消息是否包含垃圾信息。
+- **Score**：根据有序标准评分，例如评估回答质量或风险等级。
+
+这些判断由应用代码连接到后续动作。接入时可以直接使用官方 SDK，也可以通过第三方 MCP 工具交给 Agent 调用；不需要经过 `jkudish/jev-mcp` 才能使用 Jev。
+
+### Python 接入示例：工单分类
+
+先安装官方 SDK：
+
+```bash
+uv add typesafe-sdk
+```
+
+将 `TYPESAFE_API_KEY` 设置在运行环境中，再调用接口：
+
+```python
+from typesafe_sdk import Choice, TypeSafeClient
+
+with TypeSafeClient() as client:
+    response = client.system_one(
+        state={"document": "同一笔订单被扣款两次，请帮我处理。"},
+        questions={
+            "category": Choice(
+                instructions="这条工单应归入哪个类别？",
+                criteria={
+                    "billing": "账单、扣款或退款问题",
+                    "technical": "技术故障或集成问题",
+                    "other": "其他问题",
+                },
+            ),
+        },
+    )
+
+print(response.choices["category"].choice)
+```
+
+示例根据[官方 Python SDK 快速入门](https://github.com/typesafe-ai/typesafe-sdk-python#quickstart)调整工单文本和分类标准，展示真实接口结构；本仓库未执行该 API 请求，不提供虚构的运行结果。
 
 ## 发现来源与更新方式
 

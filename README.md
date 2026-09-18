@@ -3,116 +3,29 @@
 [![English](https://img.shields.io/badge/Language-English-blue)](README.md) [![简体中文](https://img.shields.io/badge/语言-简体中文-lightgrey)](README_zh.md)
 [![Docs: CC BY 4.0](https://img.shields.io/badge/Docs-CC_BY_4.0-blue)](LICENSE) [![Code: MIT](https://img.shields.io/badge/Code-MIT-green)](LICENSE-CODE)
 
-A curated collection of real projects using **[Jev](https://typesafe.ai/)**, TypeSafe AI's System One model for typed decisions. Curated by [SeeAPI](https://github.com/SeeAPI).
+Explore real projects using **[Jev](https://typesafe.ai/)** for moderation, automation, model routing, and semantic search. Each entry explains what Jev decides, how the decision fits into software, and what you can learn from the implementation.
+
+![Awesome Jev Use Cases — Real projects. Typed decisions. Curated by SeeAPI.](assets/banner.png)
 
 **55 projects · Last reviewed: September 18, 2026**
 
-Find concrete examples of what Jev decides, how that decision fits into software, and what the available evidence does—and does not—show.
+**[Browse cases](#browse-by-use-case) · [What is Jev?](#what-is-jev) · [Integration guide](#model-origin--access-options) · [Suggest a case](CONTRIBUTING.md)**
 
-**Jev is TypeSafe AI’s System One model for software automation, focused on fast, structured judgments.** Founder Diogo Almeida previously worked at OpenAI on instruction following and conversational capabilities, contributing to the research behind ChatGPT. Jev focuses on decisions within applications: it takes content or application state, evaluates predefined questions and criteria, and returns choices, scores, or probabilities that business logic uses to determine the next action. [Official introduction and founder background](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
+Jev is TypeSafe AI’s System One model for structured judgments: choices, scores, and probabilities that application code uses to select the next action.
 
-Examples include assigning support tickets to teams, filtering relevant context for an agent, choosing the next action, screening external inputs, or classifying a task before routing it to another model. The common pattern is turning repeated, bounded judgments into callable software components.
+An independent community collection curated by [SeeAPI](https://github.com/SeeAPI), not an official TypeSafe project. See [review scope](#evidence--scope).
 
-**Choice** selects among candidates, **Noul** returns the probability that a condition holds, and **Score** rates an input against ordered criteria. Compared with chat models primarily used to generate language, Jev focuses on decisions for branching, ranking, and filtering. Applications still need thresholds, review paths, and fallbacks; probability outputs do not guarantee correct judgments.
+## Browse by use case
 
-SeeAPI curates the projects below to explain the problem each solves, Jev's specific role, the implementation pattern, and the limits of the available evidence. This is an independent community collection, not an official TypeSafe project.
-
-## Contents
-
-- [Model origin & access options](#model-origin--access-options)
-- [Content moderation & safety](#content-moderation--safety)
-- [Automation & integrations](#automation--integrations)
-- [Model routing & code workflows](#model-routing--code-workflows)
-- [Semantic search & graph navigation](#semantic-search--graph-navigation)
-- [Data classification & productivity](#data-classification--productivity)
-- [Experiments & specialized applications](#experiments--specialized-applications)
-- [Benchmarks & behavior studies](#benchmarks--behavior-studies)
-- [Evidence & scope](#evidence--scope)
-- [Sources & contributions](#sources--contributions)
-
-## Model origin & access options
-
-**Jev is provided by TypeSafe AI.** Choose an access route based on where your application runs and whether you need direct API calls or tools for an existing agent. The resources below serve different roles; platform access channels are not counted as additional application cases.
-
-### TypeSafe official direct access
-
-For a standalone application or your first integration, start with TypeSafe's documentation and official SDKs. They provide the baseline API interface used by the Python example below.
-
-| Resource | Purpose | Source |
-| --- | --- | --- |
-| TypeSafe documentation | Model concepts and API usage | [Introduction](https://docs.typesafe.ai/introduction) |
-| Official Python SDK | Call the TypeSafe API from Python | [typesafe-sdk-python](https://github.com/typesafe-ai/typesafe-sdk-python) |
-| Official JavaScript / TypeScript SDK | Call the TypeSafe API from JS / TS | [typesafe-sdk-js](https://github.com/typesafe-ai/typesafe-sdk-js) |
-| Official GitHub organization | Find resources maintained by TypeSafe | [typesafe-ai](https://github.com/typesafe-ai) |
-
-Our review found SDKs and developer tools in the official organization, but no official public Jev model-weight repository. Open-source SDKs do not establish that model weights are open; community reproductions are separate projects.
-
-### Third-party platform access
-
-“Third-party” here means a platform other than TypeSafe. Both entries below have documentation published by the platform itself. They can be useful when your application already uses that platform's runtime or model-access interface.
-
-| Platform | When it fits | Documented integration | Sources |
-| --- | --- | --- | --- |
-| Vercel AI Gateway | An application using the AI SDK evaluation interface | `typesafe-ai/jev` through the evaluation API | [Vercel documentation](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway) · [Announcement](https://x.com/vercel_dev/status/2100378959653507175) |
-| Cloudflare | An application using the Cloudflare AI binding | `env.AI.run('typesafe/jev', ...)` with state and typed questions | [Cloudflare documentation](https://developers.cloudflare.com/ai/models/typesafe/jev/) · [Discovery post](https://x.com/yusukebe/status/2100750454393348237) |
-
-Model IDs, authentication, request schemas, and billing depend on the chosen provider. Follow its documentation rather than mixing examples across platforms. These entries were checked against provider documentation, not tested through paid API calls. Inclusion is not a ranking or a guarantee of cost, speed, or availability.
-
-### Agent tools & MCP integrations
-
-Use these when an existing agent needs to call Jev judgments as tools. They are software integrations, not separate model-hosting providers or the Jev model itself.
-
-| Tool | Role | Source |
-| --- | --- | --- |
-| Jev MCP by jkudish | Claim verification, input screening, and semantic candidate ranking | [Repository](https://github.com/jkudish/jev-mcp) |
-| Typesafe MCP by itsmostafa | An `evaluate` tool exposing typed questions to supported agent clients | [Repository](https://github.com/itsmostafa/typesafe-mcp) |
-
-Both projects document TypeSafe API-key requirements. Their fuller entries appear in the project collection below and are counted only once. An MCP integration is optional when calling Jev directly from your own code.
-
-### How access resources are selected
-
-We list a channel when it identifies the TypeSafe Jev model, publishes usable integration documentation and provider information, and offers a clear integration benefit. We record its purpose, source, and verification limits rather than maintaining an exhaustive provider directory. Any future listing of SeeAPI must meet the same criteria and disclose that SeeAPI maintains this collection. See [contribution requirements](CONTRIBUTING.md).
-
-### Three typical judgments
-
-- **Choice:** select a candidate, such as billing, technical, or another ticket queue.
-- **Noul:** estimate whether a condition holds, such as whether a message is spam.
-- **Score:** rate against ordered criteria, such as answer quality or risk severity.
-
-Application code connects these judgments to actions. You can use an official SDK directly or expose judgments to an agent through an MCP integration; `jkudish/jev-mcp` is not a required intermediary.
-
-### Python example: ticket classification
-
-Install the official SDK:
-
-```bash
-uv add typesafe-sdk
-```
-
-Set `TYPESAFE_API_KEY` in the runtime environment, then call the API:
-
-```python
-from typesafe_sdk import Choice, TypeSafeClient
-
-with TypeSafeClient() as client:
-    response = client.system_one(
-        state={"document": "I was charged twice for the same order. Please help."},
-        questions={
-            "category": Choice(
-                instructions="Which category should receive this ticket?",
-                criteria={
-                    "billing": "Billing, charges, or refunds",
-                    "technical": "Technical failures or integration issues",
-                    "other": "Other issues",
-                },
-            ),
-        },
-    )
-
-print(response.choices["category"].choice)
-```
-
-Adapted from the [official Python SDK quickstart](https://github.com/typesafe-ai/typesafe-sdk-python#quickstart), with different ticket text and classification criteria. This API request has not been executed for the collection; no example output is fabricated.
+| Category | Projects | Explore |
+| --- | ---: | --- |
+| [Content moderation & safety](#content-moderation--safety) | 4 | Content screening, risk judgments, and moderation actions |
+| [Automation & integrations](#automation--integrations) | 12 | Desktop, browser, mobile, and workflow integrations |
+| [Model routing & code workflows](#model-routing--code-workflows) | 9 | Model selection, code review, and agent assignment |
+| [Semantic search & graph navigation](#semantic-search--graph-navigation) | 4 | Graph navigation, semantic search, and reranking |
+| [Data classification & productivity](#data-classification--productivity) | 9 | Spreadsheets, document analysis, and ticket classification |
+| [Experiments & specialized applications](#experiments--specialized-applications) | 11 | Games, control systems, and specialized applications |
+| [Benchmarks & behavior studies](#benchmarks--behavior-studies) | 6 | Author-reported evaluations and model behavior studies |
 
 ## Content moderation & safety
 
@@ -695,6 +608,97 @@ Compares typed annotation of 12 variables in 120 Portuguese judicial documents w
 
 **Demo material**: [Author per-field evaluation chart](https://github.com/lab-dados/jev-anotacao-sentencas/blob/fe10f3347ed7220d11321aab94f9206fdc21eddf/docs/relatorio_files/figure-typst/fig-campos-output-1.png)
 
+## What is Jev?
+
+**Jev is TypeSafe AI’s System One model for software automation, focused on fast, structured judgments.** Founder Diogo Almeida previously worked at OpenAI on instruction following and conversational capabilities, contributing to the research behind ChatGPT. Jev focuses on decisions within applications: it takes content or application state, evaluates predefined questions and criteria, and returns choices, scores, or probabilities that business logic uses to determine the next action. [Official introduction and founder background](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
+
+Examples include assigning support tickets to teams, filtering relevant context for an agent, choosing the next action, screening external inputs, or classifying a task before routing it to another model. The common pattern is turning repeated, bounded judgments into callable software components.
+
+**Choice** selects among candidates, **Noul** returns the probability that a condition holds, and **Score** rates an input against ordered criteria. Compared with chat models primarily used to generate language, Jev focuses on decisions for branching, ranking, and filtering. Applications still need thresholds, review paths, and fallbacks; probability outputs do not guarantee correct judgments.
+
+## Model origin & access options
+
+**Jev is provided by TypeSafe AI.** Choose an access route based on where your application runs and whether you need direct API calls or tools for an existing agent. The resources below serve different roles; platform access channels are not counted as additional application cases.
+
+### TypeSafe official direct access
+
+For a standalone application or your first integration, start with TypeSafe's documentation and official SDKs. They provide the baseline API interface used by the Python example below.
+
+| Resource | Purpose | Source |
+| --- | --- | --- |
+| TypeSafe documentation | Model concepts and API usage | [Introduction](https://docs.typesafe.ai/introduction) |
+| Official Python SDK | Call the TypeSafe API from Python | [typesafe-sdk-python](https://github.com/typesafe-ai/typesafe-sdk-python) |
+| Official JavaScript / TypeScript SDK | Call the TypeSafe API from JS / TS | [typesafe-sdk-js](https://github.com/typesafe-ai/typesafe-sdk-js) |
+| Official GitHub organization | Find resources maintained by TypeSafe | [typesafe-ai](https://github.com/typesafe-ai) |
+
+Our review found SDKs and developer tools in the official organization, but no official public Jev model-weight repository. Open-source SDKs do not establish that model weights are open; community reproductions are separate projects.
+
+### Third-party platform access
+
+“Third-party” here means a platform other than TypeSafe. Both entries below have documentation published by the platform itself. They can be useful when your application already uses that platform's runtime or model-access interface.
+
+| Platform | When it fits | Documented integration | Sources |
+| --- | --- | --- | --- |
+| Vercel AI Gateway | An application using the AI SDK evaluation interface | `typesafe-ai/jev` through the evaluation API | [Vercel documentation](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway) · [Announcement](https://x.com/vercel_dev/status/2100378959653507175) |
+| Cloudflare | An application using the Cloudflare AI binding | `env.AI.run('typesafe/jev', ...)` with state and typed questions | [Cloudflare documentation](https://developers.cloudflare.com/ai/models/typesafe/jev/) · [Discovery post](https://x.com/yusukebe/status/2100750454393348237) |
+
+Model IDs, authentication, request schemas, and billing depend on the chosen provider. Follow its documentation rather than mixing examples across platforms. These entries were checked against provider documentation, not tested through paid API calls. Inclusion is not a ranking or a guarantee of cost, speed, or availability.
+
+### Agent tools & MCP integrations
+
+Use these when an existing agent needs to call Jev judgments as tools. They are software integrations, not separate model-hosting providers or the Jev model itself.
+
+| Tool | Role | Source |
+| --- | --- | --- |
+| Jev MCP by jkudish | Claim verification, input screening, and semantic candidate ranking | [Repository](https://github.com/jkudish/jev-mcp) |
+| Typesafe MCP by itsmostafa | An `evaluate` tool exposing typed questions to supported agent clients | [Repository](https://github.com/itsmostafa/typesafe-mcp) |
+
+Both projects document TypeSafe API-key requirements. Their fuller entries appear in the project collection above and are counted only once. An MCP integration is optional when calling Jev directly from your own code.
+
+### How access resources are selected
+
+We list a channel when it identifies the TypeSafe Jev model, publishes usable integration documentation and provider information, and offers a clear integration benefit. We record its purpose, source, and verification limits rather than maintaining an exhaustive provider directory. Any future listing of SeeAPI must meet the same criteria and disclose that SeeAPI maintains this collection. See [contribution requirements](CONTRIBUTING.md).
+
+### Three typical judgments
+
+- **Choice:** select a candidate, such as billing, technical, or another ticket queue.
+- **Noul:** estimate whether a condition holds, such as whether a message is spam.
+- **Score:** rate against ordered criteria, such as answer quality or risk severity.
+
+Application code connects these judgments to actions. You can use an official SDK directly or expose judgments to an agent through an MCP integration; `jkudish/jev-mcp` is not a required intermediary.
+
+### Python example: ticket classification
+
+Install the official SDK:
+
+```bash
+uv add typesafe-sdk
+```
+
+Set `TYPESAFE_API_KEY` in the runtime environment, then call the API:
+
+```python
+from typesafe_sdk import Choice, TypeSafeClient
+
+with TypeSafeClient() as client:
+    response = client.system_one(
+        state={"document": "I was charged twice for the same order. Please help."},
+        questions={
+            "category": Choice(
+                instructions="Which category should receive this ticket?",
+                criteria={
+                    "billing": "Billing, charges, or refunds",
+                    "technical": "Technical failures or integration issues",
+                    "other": "Other issues",
+                },
+            ),
+        },
+    )
+
+print(response.choices["category"].choice)
+```
+
+Adapted from the [official Python SDK quickstart](https://github.com/typesafe-ai/typesafe-sdk-python#quickstart), with different ticket text and classification criteria. This API request has not been executed for the collection; no example output is fabricated.
 
 ## Evidence & scope
 
