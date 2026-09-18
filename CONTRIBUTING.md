@@ -34,3 +34,9 @@ Write original attributed summaries. Distinguish ideas from implementations and 
 提交贡献前，请确认有权按本仓库对应许可提供内容：原创文档适用 CC BY 4.0，代码示例适用 MIT。第三方材料必须注明来源、许可及必要声明；不清楚授权范围时请先说明，不默认改为本仓库许可。
 
 Contribute only material you are entitled to provide under the applicable repository license: CC BY 4.0 for original documentation and MIT for code examples. Identify third-party sources, licenses, and required notices explicitly.
+
+## 接入渠道收录 / Access-channel listings
+
+接入渠道必须明确提供 TypeSafe Jev，提供公开可用的接入文档、服务方信息及具体集成价值。提交时注明接入接口或模型标识、官方来源、核查日期和验证程度，披露与本仓库维护方的关系。社区同名复现不能当作官方模型渠道，MCP 工具单列为软件集成，平台渠道不计入应用项目数量。未经验证的价格、速度和可用性不作比较承诺。
+
+Channels must identify TypeSafe Jev, publish usable integration documentation and provider information, and explain a concrete integration benefit. Include the interface or model ID, authoritative source, review date, verification level, and any relationship to this repository's maintainers. Distinguish community reproductions from official-model access and MCP tools from hosting providers. Platform channels do not increase the application-project count. Do not promise comparative cost, speed, or availability without evidence.

@@ -3,7 +3,9 @@
 [![English](https://img.shields.io/badge/Language-English-blue)](README.md) [![简体中文](https://img.shields.io/badge/语言-简体中文-lightgrey)](README_zh.md)
 [![Docs: CC BY 4.0](https://img.shields.io/badge/Docs-CC_BY_4.0-blue)](LICENSE) [![Code: MIT](https://img.shields.io/badge/Code-MIT-green)](LICENSE-CODE)
 
-由 [SeeAPI](https://github.com/SeeAPI) 整理。最近核查：2026-09-18。
+由 [SeeAPI](https://github.com/SeeAPI) 整理。
+
+**27 个项目 · 最近核查：2026-09-18**
 
 **Jev 是 TypeSafe AI 面向软件自动化推出的 System One 模型，专注于快速、结构化的判断。** 公司创始人 Diogo Almeida 曾在 OpenAI 参与指令遵循与对话能力相关研究，这些工作构成了 ChatGPT 背后研究基础的一部分。Jev 将重点放在程序中的决策环节：接收待处理内容或应用状态，根据预设问题与标准返回选择、评分或概率，再由业务代码决定后续动作。[官方介绍与创始人背景](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
 
@@ -13,30 +15,48 @@ Jev 的接口围绕三类判断展开：**Choice** 从候选项中选择，**Nou
 
 本仓库由 SeeAPI 收集与整理 Jev 的公开应用案例，重点说明每个项目解决什么问题、Jev 负责哪一步、实现方式以及证据边界，涵盖内容审核、自动化、模型路由、代码审查和语义搜索等方向。Jev 模型、官方 SDK 和第三方 MCP 集成分别承担不同角色，相关来源见下文。
 
-本清单收录 27 个公开项目：首批 16 个，以及后续核查补充的 11 个。另列出 2 个平台接入渠道，不计入项目数量。各条目依据作者 README、项目文档或实现代码核查；未运行项目或调用付费 API。项目存在、作者报告的效果、实际生产可用性是不同层次的证据。
+## 模型来源与接入方式
 
-## Jev 模型与官方接入方式
+**Jev 由 TypeSafe AI 提供。** 可以根据应用运行环境，以及需要直接调用 API 还是让现有 Agent 使用工具，选择合适的接入方式。下面三类资源承担不同职责，平台接入渠道不额外计入应用案例数量。
 
-**Jev 由 TypeSafe AI 提供；`jkudish/jev-mcp` 是调用 Jev 的第三方 MCP 工具，不是 Jev 模型本体、权重仓库或官方 SDK。** 它把事实核验、输入筛查和语义排序封装成 Agent 可以调用的工具，需要 TypeSafe API 密钥。该项目作为应用案例收录在下方第 4 项。
+### TypeSafe 官方直连
 
-| 资源 | 定位 | 链接 |
+独立开发应用或首次接入时，可以先参考 TypeSafe 官方文档和 SDK，了解基础接口。下方的 Python 示例也使用这条接入路径。
+
+| 资源 | 用途 | 来源 |
 | --- | --- | --- |
-| TypeSafe AI 官方文档 | 了解 Jev、System One 和接口用法 | [Introduction](https://docs.typesafe.ai/introduction) |
-| TypeSafe 官方 GitHub 组织 | 查找官方维护的开发资源 | [typesafe-ai](https://github.com/typesafe-ai) |
+| TypeSafe 官方文档 | 了解模型概念与 API 用法 | [Introduction](https://docs.typesafe.ai/introduction) |
 | 官方 Python SDK | 在 Python 程序中调用 TypeSafe API | [typesafe-sdk-python](https://github.com/typesafe-ai/typesafe-sdk-python) |
 | 官方 JavaScript / TypeScript SDK | 在 JS / TS 程序中调用 TypeSafe API | [typesafe-sdk-js](https://github.com/typesafe-ai/typesafe-sdk-js) |
-| Jev MCP（jkudish） | 为 Agent 提供三类 Jev 判断工具的第三方集成 | [jev-mcp](https://github.com/jkudish/jev-mcp) |
+| 官方 GitHub 组织 | 查找 TypeSafe 维护的开发资源 | [typesafe-ai](https://github.com/typesafe-ai) |
 
-本次在官方 GitHub 组织中查到的是 SDK 与开发工具，未找到官方公开的 Jev 模型权重仓库。SDK 开源不等于模型权重开源；社区中的同名复现也不能直接视为官方 Jev。
+本次在官方 GitHub 组织中查到的是 SDK 与开发工具，未找到官方公开的 Jev 模型权重仓库。SDK 开源不等于模型权重开源；社区复现属于独立项目。
 
-### 其他接入渠道
+### 第三方平台接入
 
-以下属于接入资源，不额外计作应用案例：
+这里的“第三方”是相对于 TypeSafe 而言。以下两个渠道均有平台自己发布的接入文档，适合已经使用对应运行环境或模型调用接口的应用。
 
-- **Vercel AI Gateway**：通过 AI SDK 的 evaluation 接口使用 `typesafe-ai/jev`，返回结构化判断。[官方文档](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway) · [Vercel 发布帖](https://x.com/vercel_dev/status/2100378959653507175)。
-- **Cloudflare**：官方文档展示以 `env.AI.run('typesafe/jev', ...)` 传入状态和问题，并提供客服路由、风险评估等示例。[官方模型文档](https://developers.cloudflare.com/ai/models/typesafe/jev/) · [Yusuke Wada 的介绍](https://x.com/yusukebe/status/2100750454393348237)。
+| 平台 | 适用情况 | 文档中的接入方式 | 来源 |
+| --- | --- | --- | --- |
+| Vercel AI Gateway | 应用使用 AI SDK evaluation 接口 | 通过 evaluation API 调用 `typesafe-ai/jev` | [Vercel 文档](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway) · [发布帖](https://x.com/vercel_dev/status/2100378959653507175) |
+| Cloudflare | 应用使用 Cloudflare AI binding | 通过 `env.AI.run('typesafe/jev', ...)` 传入状态与问题 | [Cloudflare 文档](https://developers.cloudflare.com/ai/models/typesafe/jev/) · [发现来源帖子](https://x.com/yusukebe/status/2100750454393348237) |
 
-两个平台的模型标识与请求接口不同，应分别遵循各自文档，不混用示例。本次未调用付费 API 验证这些渠道。
+模型标识、认证、请求格式与计费以所选平台为准，不能直接混用不同平台的示例。当前条目已对照平台文档核查，未调用付费 API 实测；收录不代表价格、速度或可用性排名与保证。
+
+### Agent 工具与 MCP 集成
+
+这类工具适合让现有 Agent 调用 Jev 完成判断，属于软件集成，不是独立的模型托管渠道，也不是 Jev 模型本体。
+
+| 工具 | 用途 | 来源 |
+| --- | --- | --- |
+| Jev MCP（jkudish） | 事实核验、输入筛查与语义候选排序 | [项目仓库](https://github.com/jkudish/jev-mcp) |
+| Typesafe MCP（itsmostafa） | 通过 `evaluate` 工具向支持的 Agent 客户端提供结构化判断 | [项目仓库](https://github.com/itsmostafa/typesafe-mcp) |
+
+两个项目均在文档中要求 TypeSafe API 密钥。下方案例清单保留其详细介绍，每个项目只计一次；在自己的程序中直接调用 Jev 时，无需经过 MCP。
+
+### 接入资源收录标准
+
+收录的渠道应明确提供 TypeSafe Jev，具有可用的公开接入文档与服务方信息，并能说明具体的集成价值。条目记录用途、来源与核查范围，不追求穷尽全部服务商。未来若收录 SeeAPI，也必须满足相同标准，并披露 SeeAPI 是本仓库维护方。详见[贡献要求](CONTRIBUTING.md)。
 
 ### 三类典型判断
 
@@ -298,6 +318,8 @@ print(response.choices["category"].choice)
 - **来源**：[项目](https://github.com/phyous/tsai-sc) · [发现来源帖子](https://x.com/yibie/status/2100619188062523695)。
 
 ## 发现来源与更新方式
+
+各条目依据作者 README、项目文档或实现代码核查；未运行项目或调用付费 API。作者报告的效果不等同于独立验证或生产可用性证明。
 
 本轮新增线索来自 [StudioYebisu 的项目合集](https://x.com/studio_yebisu/status/2100686990090047569)、[yibie 的案例介绍](https://x.com/yibie/status/2100619188062523695)及 [Nader Dabit 的预测式表格演示](https://x.com/dabit3/status/2100780008193020049)。同一项目只计一次；社区仿制模型不作为官方 Jev 的应用案例收录。
 

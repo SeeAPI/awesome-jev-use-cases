@@ -19,7 +19,7 @@ SeeAPI curates the projects below to explain the problem each solves, Jev's spec
 
 ## Contents
 
-- [Model origin & official integrations](#model-origin--official-integrations)
+- [Model origin & access options](#model-origin--access-options)
 - [Content moderation & safety](#content-moderation--safety)
 - [Automation & integrations](#automation--integrations)
 - [Model routing & code workflows](#model-routing--code-workflows)
@@ -29,28 +29,48 @@ SeeAPI curates the projects below to explain the problem each solves, Jev's spec
 - [Evidence & scope](#evidence--scope)
 - [Sources & contributions](#sources--contributions)
 
-## Model origin & official integrations
+## Model origin & access options
 
-**Jev is provided by TypeSafe AI. [`jkudish/jev-mcp`](https://github.com/jkudish/jev-mcp) is a third-party MCP integration, not the model itself, a model-weight repository, or an official SDK.** It packages claim verification, input screening, and semantic ranking as agent tools and requires a TypeSafe API key. It is included as project 4 below.
+**Jev is provided by TypeSafe AI.** Choose an access route based on where your application runs and whether you need direct API calls or tools for an existing agent. The resources below serve different roles; platform access channels are not counted as additional application cases.
 
-| Resource | Purpose | Link |
+### TypeSafe official direct access
+
+For a standalone application or your first integration, start with TypeSafe's documentation and official SDKs. They provide the baseline API interface used by the Python example below.
+
+| Resource | Purpose | Source |
 | --- | --- | --- |
-| Official documentation | Jev, System One, and API usage | [Introduction](https://docs.typesafe.ai/introduction) |
-| Official GitHub organization | Resources maintained by TypeSafe | [typesafe-ai](https://github.com/typesafe-ai) |
+| TypeSafe documentation | Model concepts and API usage | [Introduction](https://docs.typesafe.ai/introduction) |
 | Official Python SDK | Call the TypeSafe API from Python | [typesafe-sdk-python](https://github.com/typesafe-ai/typesafe-sdk-python) |
 | Official JavaScript / TypeScript SDK | Call the TypeSafe API from JS / TS | [typesafe-sdk-js](https://github.com/typesafe-ai/typesafe-sdk-js) |
-| Jev MCP by jkudish | Third-party integration exposing three judgment tools | [jev-mcp](https://github.com/jkudish/jev-mcp) |
+| Official GitHub organization | Find resources maintained by TypeSafe | [typesafe-ai](https://github.com/typesafe-ai) |
 
-Our review found SDKs and developer tools in the official organization, but no official public Jev model-weight repository. Open-source SDKs do not establish that model weights are open, and community reproductions should not be treated as the official model.
+Our review found SDKs and developer tools in the official organization, but no official public Jev model-weight repository. Open-source SDKs do not establish that model weights are open; community reproductions are separate projects.
 
-### Additional access channels
+### Third-party platform access
 
-These are integration resources, not additional application cases:
+“Third-party” here means a platform other than TypeSafe. Both entries below have documentation published by the platform itself. They can be useful when your application already uses that platform's runtime or model-access interface.
 
-- **Vercel AI Gateway:** supports `typesafe-ai/jev` through the AI SDK evaluation interface for typed decisions. [Official documentation](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway) · [Vercel announcement](https://x.com/vercel_dev/status/2100378959653507175).
-- **Cloudflare:** documents `env.AI.run('typesafe/jev', ...)` for state and typed questions, including support routing and risk-assessment examples. [Official model documentation](https://developers.cloudflare.com/ai/models/typesafe/jev/) · [Yusuke Wada's post](https://x.com/yusukebe/status/2100750454393348237).
+| Platform | When it fits | Documented integration | Sources |
+| --- | --- | --- | --- |
+| Vercel AI Gateway | An application using the AI SDK evaluation interface | `typesafe-ai/jev` through the evaluation API | [Vercel documentation](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway) · [Announcement](https://x.com/vercel_dev/status/2100378959653507175) |
+| Cloudflare | An application using the Cloudflare AI binding | `env.AI.run('typesafe/jev', ...)` with state and typed questions | [Cloudflare documentation](https://developers.cloudflare.com/ai/models/typesafe/jev/) · [Discovery post](https://x.com/yusukebe/status/2100750454393348237) |
 
-The model IDs and request interfaces differ between platforms; follow each provider's documentation rather than mixing examples. These channels were not tested with paid API calls for this collection.
+Model IDs, authentication, request schemas, and billing depend on the chosen provider. Follow its documentation rather than mixing examples across platforms. These entries were checked against provider documentation, not tested through paid API calls. Inclusion is not a ranking or a guarantee of cost, speed, or availability.
+
+### Agent tools & MCP integrations
+
+Use these when an existing agent needs to call Jev judgments as tools. They are software integrations, not separate model-hosting providers or the Jev model itself.
+
+| Tool | Role | Source |
+| --- | --- | --- |
+| Jev MCP by jkudish | Claim verification, input screening, and semantic candidate ranking | [Repository](https://github.com/jkudish/jev-mcp) |
+| Typesafe MCP by itsmostafa | An `evaluate` tool exposing typed questions to supported agent clients | [Repository](https://github.com/itsmostafa/typesafe-mcp) |
+
+Both projects document TypeSafe API-key requirements. Their fuller entries appear in the project collection below and are counted only once. An MCP integration is optional when calling Jev directly from your own code.
+
+### How access resources are selected
+
+We list a channel when it identifies the TypeSafe Jev model, publishes usable integration documentation and provider information, and offers a clear integration benefit. We record its purpose, source, and verification limits rather than maintaining an exhaustive provider directory. Any future listing of SeeAPI must meet the same criteria and disclose that SeeAPI maintains this collection. See [contribution requirements](CONTRIBUTING.md).
 
 ### Three typical judgments
 
@@ -377,7 +397,7 @@ A harness reads structured game state, asks Jev to choose commands, and executes
 
 ## Evidence & scope
 
-The 27 project entries were reviewed against author READMEs, project documentation, or implementation files. Relevant implementation files were additionally inspected for the image-moderation pipeline, desktop integration, and Prism's Jev service. No project was installed, benchmarked, or tested through paid model calls for this collection.
+Project entries were reviewed against author READMEs, project documentation, or implementation files. Relevant implementation files were additionally inspected for the image-moderation pipeline, desktop integration, and Prism's Jev service. No project was installed, benchmarked, or tested through paid model calls for this collection.
 
 - **Project evidence:** the linked author documentation or implementation describes a concrete Jev integration.
 - **Reported measurements:** attributed to their authors, with important conditions retained.

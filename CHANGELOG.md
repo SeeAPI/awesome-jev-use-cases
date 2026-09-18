@@ -17,3 +17,6 @@ Initial collection of 16 projects with a Chinese-first homepage, English transla
 
 - 从 7 条提供的帖子核查补充 11 个项目，案例总数更新为 27；增加 Vercel 与 Cloudflare 接入资源，平台渠道不计入案例数量。
 - Reviewed seven supplied posts; added 11 projects (27 total) and two separate access-channel resources, with source attribution and implementation limits.
+
+- 按官方直连、第三方平台和 Agent/MCP 工具重组接入资源，补充适用情况与收录标准；项目总数仍为 27。
+- Reorganized access resources into direct TypeSafe access, third-party platforms, and agent/MCP tools, with selection criteria; project count remains 27.
