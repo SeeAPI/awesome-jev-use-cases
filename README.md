@@ -5,7 +5,7 @@
 
 A curated collection of real projects using **[Jev](https://typesafe.ai/)**, TypeSafe AI's System One model for typed decisions. Curated by [SeeAPI](https://github.com/SeeAPI).
 
-**27 projects · Last reviewed: September 18, 2026**
+**55 projects · Last reviewed: September 18, 2026**
 
 Find concrete examples of what Jev decides, how that decision fits into software, and what the available evidence does—and does not—show.
 
@@ -26,6 +26,7 @@ SeeAPI curates the projects below to explain the problem each solves, Jev's spec
 - [Semantic search & graph navigation](#semantic-search--graph-navigation)
 - [Data classification & productivity](#data-classification--productivity)
 - [Experiments & specialized applications](#experiments--specialized-applications)
+- [Benchmarks & behavior studies](#benchmarks--behavior-studies)
 - [Evidence & scope](#evidence--scope)
 - [Sources & contributions](#sources--contributions)
 
@@ -167,6 +168,8 @@ A browser agent that turns visible controls into indexed candidates. Jev chooses
 
 **Scope:** the reported roughly 7.1-second flight search is a specific author-measured run, timed after the initial page observation. It is not a general browser-task speed guarantee.
 
+**Demo material**: [Original flight-search demo](https://github.com/browser-use/jev-ultrafast/blob/main/docs/demo.mp4)
+
 ### 6. Jev desktop control in agent-desktop
 
 [Repository](https://github.com/lahfir/agent-desktop) · [Jev loop](https://github.com/lahfir/agent-desktop/blob/main/scripts/jev/run.mjs)
@@ -176,6 +179,8 @@ A Jev integration reads an operating-system accessibility tree, selects an opera
 **Pattern:** separate interface observation, model decisions, and execution.
 
 **Scope:** agent-desktop is a broader desktop tool with a specific Jev integration, not an exclusively Jev-based project.
+
+**Demo material**: [Original desktop demonstration](https://github.com/user-attachments/assets/9b2c9f8c-a49d-4b69-b6cf-11d9e0d40ceb)
 
 ### 7. Typesafe MCP — itsmostafa
 
@@ -227,9 +232,52 @@ A mobile agent uses Jev to select actions on a real Android device through Mobil
 
 **Scope:** The documented Uber demo reaches payment selection, not a completed booking. The reported 21 seconds for nine actions is one recorded task, not a general latency guarantee.
 
+**Demo material**: [Android demo: Uber route to payment selection](https://github.com/droidrun/mobile-jev/blob/main/docs/media/uber-demo.mp4)
+
+### 12. zod-jev — semantic validation
+
+[Project](https://github.com/jomatsu/zod-jev)
+
+Adds Jev semantic checks to Zod schemas, turning probabilities into validation issues alongside ordinary shape checks.
+
+**Scope:** Uncertain and unavailable judgments need explicit handling; a passing check does not establish factual correctness.
+
+### 13. HA-Jev — Home Assistant decisions
+
+[Project](https://github.com/AboveColin/HA-Jev)
+
+Turns home entity states into Jev probabilities, choices and scores exposed as sensors or automation responses.
+
+**Scope:** Device-state quality and automation policies determine whether a judgment is useful; integration was not run here.
+
+### 14. n8n TypeSafe community node
+
+[Project](https://github.com/DomMonte/n8n-nodes-typesafe-ai)
+
+Exposes typed TypeSafe questions inside n8n so downstream workflow nodes can branch on answers.
+
+**Scope:** A community integration; installation eligibility and retry handling depend on the n8n environment and workflow.
+
+### 15. Unclutter — page clutter filtering
+
+[Project](https://github.com/kitze/unclutter)
+
+A browser extension classifies page elements with Jev and hides selected clutter using reusable rules.
+
+**Scope:** Uncertain elements should remain; hiding a consent dialog does not make a consent choice for the user.
+
+### 16. jev-mobile — Android Settings PoC
+
+[Project](https://github.com/Friedjof/jev-mobile)
+
+Uses semantic UI state, stability checks and bounded action choices for an Android observe–decide–act loop.
+
+**Scope:** The author exercised Android Settings; this is distinct from droidrun/mobile-jev and is not a general mobile agent.
+
+
 ## Model routing & code workflows
 
-### 12. Jev Codex Router
+### 17. Jev Codex Router
 
 [Repository and backtest](https://github.com/0xNatoshi/jev-codex-router)
 
@@ -239,7 +287,7 @@ Classifies coding turns with Jev and applies a policy to select a model and reas
 
 **Scope:** the reported roughly 60% savings comes from the author's replay of 237 real turns. It is not a SeeAPI measurement or a guaranteed saving.
 
-### 13. Winnow
+### 18. Winnow
 
 [Repository](https://github.com/GhalebDweikat/winnow)
 
@@ -249,7 +297,7 @@ Judges blocks of long Claude Code tool outputs for task relevance. Confidently i
 
 **Scope:** judgment and summary generation are separate stages. Results using an alternative judge adapter should not be attributed to Jev.
 
-### 14. Jev Review
+### 19. Jev Review
 
 [Repository](https://github.com/devagrawal09/jev-review)
 
@@ -259,7 +307,11 @@ Reviews diffs or codebases through staged judgments about risk, file profiles, e
 
 **Scope:** an experiment that currently does not integrate compiler diagnostics or static analyzers. Findings are review leads, not proof of defects.
 
-### 15. jev-router — gargpratyush
+<img src="assets/cases/jev-review-dashboard.png" alt="Jev Review dashboard" width="720" />
+
+Original material: Dev Agrawal · MIT · Unmodified · [Source](https://github.com/devagrawal09/jev-review/blob/31f89602797fb7bea007f8a480bf368bf564954e/docs/dashboard.png) · [License and attribution](THIRD_PARTY_NOTICES.md)
+
+### 20. jev-router — gargpratyush
 
 [Project](https://github.com/gargpratyush/jev-router) · [Discovery post](https://x.com/studio_yebisu/status/2100686990090047569)
 
@@ -269,7 +321,7 @@ Routes fresh user turns in Claude Code and Codex to fast or strong model tiers w
 
 **Scope:** A separate project from Jev Codex Router by 0xNatoshi. Its README describes per-user-turn routing, not a fresh model choice for every internal tool step.
 
-### 16. eve — typed evaluation and model selection
+### 21. eve — typed evaluation and model selection
 
 [Project](https://github.com/vercel/eve) · [Discovery post](https://x.com/yibie/status/2100619188062523695) · [Implementation / 文档](https://github.com/vercel/eve/blob/main/docs/guides/evaluate.md)
 
@@ -279,9 +331,42 @@ The agent framework uses Jev by default for automatic model selection and typed 
 
 **Scope:** Jev is the evaluator, not the sole model powering eve. The underlying AI SDK evaluation specification is experimental.
 
+### 22. DSPy typesafeify — hybrid inference
+
+[Project](https://github.com/typesafeainate/dspy-typesafeify)
+
+A proof-of-concept decorator routes boolean, enum and configured score fields to Jev while a generative model handles free text.
+
+**Scope:** The author's comparison uses three examples; it does not establish general cost or speed improvements.
+
+### 23. jevlogs — log triage
+
+[Project](https://github.com/reachjalil/jevlogs)
+
+Scores diagnostic value and priority of OpenTelemetry logs before expensive analysis, while retaining an archive.
+
+**Scope:** Annotation alone does not skip downstream analysis; savings depend on forwarding mode and policy.
+
+### 24. SwarmRouter — agent assignment
+
+[Project](https://github.com/ndolinschi/swarmrouter) · [Implementation](https://github.com/ndolinschi/swarmrouter/blob/37a895b82633fc1964577c89dfee8b87f6914cc2/src/lib/product.ts)
+
+Selects a specialist agent and judges ambiguity or the need for collaboration using typed questions.
+
+**Scope:** Routing recommendations do not demonstrate an executed multi-agent workflow; keyless demo responses are local heuristics.
+
+### 25. jev-axi — judgment CLI for agents
+
+[Project](https://github.com/shiftynick/jev-axi)
+
+Provides typed commands for guard checks, build-log triage, diff review and bulk filtering, with reusable question recipes.
+
+**Scope:** The author's agent experiment reduced file reads without reducing cost; judgments do not replace source inspection or a complete safety boundary.
+
+
 ## Semantic search & graph navigation
 
-### 17. Blink
+### 26. Blink
 
 [Repository](https://github.com/ellipsis-dev/blink)
 
@@ -291,7 +376,7 @@ Finds files from natural-language queries by having Jev score file and folder na
 
 **Scope:** result percentages represent the share of walkers reaching a file, not file correctness probabilities. This is not a full source-code semantic index.
 
-### 18. neo4jev
+### 27. neo4jev
 
 [Repository](https://github.com/jexp/neo4jev)
 
@@ -301,9 +386,26 @@ Navigates a Neo4j graph by presenting outgoing relationships as Choice options, 
 
 **Scope:** a demo with explicitly labeled stand-in answers when real TypeSafe calls fail. A running demo alone does not prove that every answer came from Jev.
 
+### 28. Sift — search result reranking
+
+[Project](https://github.com/tylergibbs1/sift)
+
+A Chrome extension asks Jev about relevance, promotional content and depth, then reranks Google results in code.
+
+**Scope:** Judgments use result snippets rather than full pages; search intent affects filtering.
+
+### 29. Every — function-level semantic search
+
+[Project](https://github.com/sufianetaouil/every)
+
+Parses source into functions and asks Jev a yes/no question for each, returning ranked matches with cached scores.
+
+**Scope:** Function-local judgments do not establish whole-program dataflow; scanned source is sent to TypeSafe.
+
+
 ## Data classification & productivity
 
-### 19. Judge Sheets — predictive spreadsheets
+### 30. Judge Sheets — predictive spreadsheets
 
 [Project](https://github.com/dabit3/jev-experiments/tree/main/judge-sheets) · [Discovery post](https://x.com/dabit3/status/2100780008193020049)
 
@@ -313,7 +415,9 @@ Typing a column header such as Urgency lets Jev infer a prediction schema; confi
 
 **Scope:** A standalone spreadsheet demo, not a Google Sheets integration. Roughly 100 ms refers to individual judgments or header interpretation, not the entire column. Timings are author-reported; mock mode is also available.
 
-### 20. Notra — typed evaluation in analytics
+**Demo material**: [Original screenshot and animated demo](https://github.com/dabit3/jev-experiments/tree/main/judge-sheets#judge-sheets--predictive-spreadsheets)
+
+### 31. Notra — typed evaluation in analytics
 
 [Project](https://github.com/usenotra/notra) · [Discovery post](https://x.com/yibie/status/2100619188062523695) · [Implementation / 文档](https://github.com/usenotra/notra/blob/main/packages/ai/src/evaluation/client.ts)
 
@@ -323,9 +427,66 @@ The codebase includes a Jev evaluation client through Vercel AI Gateway, a NOTRA
 
 **Scope:** Source inspection establishes an integration path, not independently verified production deployment or latency. Existing LLM judgment still supplies competitor information and excerpts in the inspected workflow.
 
+### 32. human-compiler — writing diagnostics
+
+[Project](https://github.com/asfarsadewa/human-compiler)
+
+Combines local text analysis with Jev questions about clarity, intent and tone; deterministic rules render diagnostics.
+
+**Scope:** Diagnostics reflect chosen rubrics and thresholds, not objective writing quality or generated explanations.
+
+### 33. Kill My Idea — idea scoring
+
+[Project](https://github.com/monteduro/killmyidea)
+
+Jev scores a product idea against several criteria; local weighting maps the results to a product verdict.
+
+**Scope:** Heuristic feedback, not validated prediction of business success; the project also supports mock data.
+
+### 34. Jev CV Screening
+
+[Project](https://github.com/gtaras7/typesafe-jev/tree/main/cv-screen)
+
+Stores typed CV judgments separately from local scoring rules, allowing supported policy changes to reuse existing answers.
+
+**Scope:** New questions require new judgments. The example policy includes age and military-service criteria; it is not an endorsed hiring policy or validated fairness assessment.
+
+### 35. Jevibe Check — social tone labels
+
+[Project](https://github.com/sriganesh/jevibe-check)
+
+Labels Bluesky posts and drafts using Jev choices, with custom classifiers and filtering controls.
+
+**Scope:** Text-only analysis excludes images, videos and wider conversation context; sarcasm can be misclassified.
+
+### 36. JEV Resume Analyzer
+
+[Project](https://github.com/awun8191/jev-resume-analyzer)
+
+Reviews extracted CV text against explicit rubrics and optional job requirements, showing questions and answer distributions.
+
+**Scope:** Missing, inapplicable and unassessable evidence remain distinct; it does not provide a validated hiring prediction or ATS score.
+
+### 37. LaneBreak — support ticket routing
+
+[Project](https://github.com/ndolinschi/lanebreak) · [Implementation](https://github.com/ndolinschi/lanebreak/blob/acf11293f36597c8fb706ae492a9468455b69928/src/lib/product.ts)
+
+Uses Choice for team assignment, Score for priority, and Noul for refund intent, churn signals and human escalation.
+
+**Scope:** Without an API key the implementation uses local heuristic demo responses; those are not Jev results.
+
+### 38. Jev Column Race — review annotation
+
+[Project](https://github.com/goodrahstar/jev-column-race)
+
+Batches sentiment, topic, bug and churn judgments over app reviews, then allows local reranking; includes a comparison with Gemini.
+
+**Scope:** The published timing is from a recorded run pair. Agreement between models or with star ratings is not ground-truth accuracy.
+
+
 ## Experiments & specialized applications
 
-### 21. TypeSafe AI Playground
+### 39. TypeSafe AI Playground
 
 [Repository](https://github.com/markjaquith/typesafe-ai-playground)
 
@@ -335,7 +496,7 @@ A Rust CLI exploring tasks such as protected health information detection and co
 
 **Scope:** experimental tooling, not a privacy-compliance certification. Rubric scores and confidence probabilities should not be conflated.
 
-### 22. Prism's Jev judgment service
+### 40. Prism's Jev judgment service
 
 [Repository](https://github.com/irfndi/prism-liquidity-agent) · [Jev service](https://github.com/irfndi/prism-liquidity-agent/blob/main/engine/jev-service.ts)
 
@@ -345,7 +506,7 @@ Maps liquidity-strategy questions about distribution choice, toxic flow, recover
 
 **Scope:** the inspected Jev module explicitly states shadow/advisory use. It is not evidence of profitable autonomous trading by Jev.
 
-### 23. 1v1 Jev — Quickscope Arena
+### 41. 1v1 Jev — Quickscope Arena
 
 [Repository](https://github.com/emrickgarrett/OneVOneJev)
 
@@ -355,7 +516,7 @@ A browser FPS opponent controlled through Choice/Noul questions about movement, 
 
 **Scope:** the README's approximately 9 Hz loop describes this project, not a universal Jev performance figure. The agent is not shown to operate from raw visual input alone.
 
-### 24. jev-trader
+### 42. jev-trader
 
 [Project](https://github.com/jarrodwatts/jev-trader) · [Discovery post](https://x.com/studio_yebisu/status/2100686990090047569)
 
@@ -365,7 +526,7 @@ A trading experiment asks Jev for buy/sell judgments from the Kuru MON-USDC orde
 
 **Scope:** The default model is a mock momentum heuristic; Jev requires explicit configuration. Without a private key the app dry-runs, and the linked deployment is documented as dry-run/mock. No profitability claim is established.
 
-### 25. TypeSafe Mario
+### 43. TypeSafe Mario
 
 [Project](https://github.com/fhshaik/typesafe-mario) · [Discovery post](https://x.com/yibie/status/2100619188062523695)
 
@@ -375,7 +536,7 @@ An emulator harness converts telemetry and RAM into structured state; Jev select
 
 **Scope:** The model does not receive screenshots. This is an experimental controller, not evidence of general visual game-playing ability.
 
-### 26. jev-drone
+### 44. jev-drone
 
 [Project](https://github.com/RomanSlack/jev-drone) · [Discovery post](https://x.com/yibie/status/2100619188062523695)
 
@@ -385,7 +546,11 @@ A MuJoCo quadrotor simulation converts camera depth and segmentation into symbol
 
 **Scope:** Simulation rather than real-world flight; Jev receives JSON rather than images and is advisory. The author reports one successful course run with substantial run-to-run variance.
 
-### 27. tsai-sc — StarCraft Strongarm
+<img src="assets/cases/jev-drone-climb.png" alt="MuJoCo drone simulation and Jev tactical judgments" width="720" />
+
+Original material: the jev-drone authors · MIT · Unmodified · [Source](https://github.com/RomanSlack/jev-drone/blob/cbeb53ce4f17a06ea490ae43effcdad231143610/docs/climb.png) · [License and attribution](THIRD_PARTY_NOTICES.md)
+
+### 45. tsai-sc — StarCraft Strongarm
 
 [Project](https://github.com/phyous/tsai-sc) · [Discovery post](https://x.com/yibie/status/2100619188062523695)
 
@@ -394,6 +559,92 @@ A harness reads structured game state, asks Jev to choose commands, and executes
 **Pattern:** Structured strategy-game state → command selection → input execution.
 
 **Scope:** The game pauses during state reads and inference. The author provides completion evidence for a bounded mission; this is not a real-time competitive-play benchmark or pixel-only agent.
+
+**Demo material**: [Original videos and evidence bundle (1× and 8× playback)](https://github.com/phyous/tsai-sc/releases/tag/v0.1.0)
+
+### 46. HEIST ONE — stealth-game guards
+
+[Project](https://github.com/AbdelStark/heist-one)
+
+Jev judges threats, suspicion and intentions for guards; server code controls legal actions, physics and fallbacks.
+
+**Scope:** Scripted mode is available; a recorded live run does not establish repeated success.
+
+### 47. TypeSafe Minecraft — structured action control
+
+[Project](https://github.com/ellistev/typesafe-minecraft-demo)
+
+Jev selects Minecraft actions from structured observations; Mineflayer executes them with code-supplied candidates and checks.
+
+**Scope:** The earlier video used high-level control; the newer direct-action controller is a separate experiment, not screenshot-based vision.
+
+### 48. Jev for Engineers
+
+[Project](https://github.com/Foadsf/jev-for-engineers)
+
+Eight Python examples apply typed judgments to engineering workflows such as CAD, BOMs and change control, with decisions made in code.
+
+**Scope:** Small synthetic examples and uncalibrated thresholds do not establish suitability for real engineering decisions.
+
+### 49. Jev literature screening
+
+[Project](https://github.com/PistachioAIHQ/jev-synergy-screening)
+
+Combines inclusion choices and atomic eligibility judgments for title-and-abstract screening against an author's documented review protocol.
+
+**Scope:** The current README evaluates Cohen ADHD abstract triage; limited abstracts and filtering rules can miss eligible papers. This is a research workflow.
+
+
+## Benchmarks & behavior studies
+
+### 50. jev-sec-bench — security judgments
+
+[Project](https://github.com/Gaurav-Gosain/jev-sec-bench)
+
+Evaluates prompt-injection detection and vulnerable-code judgments with published datasets and per-sample results.
+
+**Scope:** Reported results depend on context and thresholds; this is not an NSFW benchmark or a complete security boundary.
+
+### 51. Jev Behavior Study
+
+[Project](https://github.com/RINNECODER/jev-behavior-study)
+
+Studies question framing and failure modes through text tasks, Snake and a 3D city, with reports and recorded traces.
+
+**Scope:** Synthetic task-specific observations; repeated calls are not independent problems, and assisted control differs from direct control.
+
+### 52. jev-rerank-bench — retrieval evaluation
+
+[Project](https://github.com/anessbelbati/jev-rerank-bench)
+
+Compares Jev relevance rubrics with other rerankers on shared BM25 candidates and publishes saved responses and scoring code.
+
+**Scope:** The headline averages do not establish a winner; weighting datasets versus queries changes the comparison.
+
+### 53. jev-phishing-bench — email signals
+
+[Project](https://github.com/anisselbd/jev-phishing-bench)
+
+Compares direct phishing judgments with atomic Jev signals combined by a local classifier.
+
+**Scope:** Synthetic emails contain potential shortcuts; direct and held-out experiments have different test sets and must not be conflated.
+
+### 54. jev-headline-bench — headline selection
+
+[Project](https://github.com/Gaurav-Gosain/jev-headline-bench)
+
+Asks Jev to choose between historical Upworthy headlines and compares choices with recorded click outcomes.
+
+**Scope:** Historical within-article pairs do not replace a randomized A/B test on a new site's audience.
+
+### 55. Jev judicial-text annotation
+
+[Project](https://github.com/lab-dados/jev-anotacao-sentencas)
+
+Compares typed annotation of 12 variables in 120 Portuguese judicial documents with generative-model structured outputs.
+
+**Scope:** The reference process includes model-generated labels and adjudication; reported accuracy is not based entirely on human gold labels.
+
 
 ## Evidence & scope
 
@@ -417,7 +668,7 @@ Additional discovery directories:
 - [hellogumbo/awesome-jev](https://github.com/hellogumbo/awesome-jev)
 - [rhc98/awesome-jev](https://github.com/rhc98/awesome-jev)
 
-Entries are independently summarized from their linked project sources. Third-party software, media, and documentation remain subject to their respective licenses; this repository does not redistribute their implementations or screenshots.
+Entries are independently summarized from their linked project sources. Screenshots and demo links show the original authors’ work, not SeeAPI test results. Selected screenshots are reproduced with upstream license and attribution notices; other media remain hosted at their source. Third-party materials retain their own licenses and are not relicensed under our documentation license. See the [media source register](assets/cases/README.md).
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) to suggest a concrete project or correction. Please update both language versions and preserve source attribution and evidence boundaries.
 

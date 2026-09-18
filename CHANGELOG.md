@@ -20,3 +20,9 @@ Initial collection of 16 projects with a Chinese-first homepage, English transla
 
 - 按官方直连、第三方平台和 Agent/MCP 工具重组接入资源，补充适用情况与收录标准；项目总数仍为 27。
 - Reorganized access resources into direct TypeSafe access, third-party platforms, and agent/MCP tools, with selection criteria; project count remains 27.
+
+- 为 7 个案例补充素材：2 张保留上游 MIT 许可的截图，以及 5 组原作者演示链接；增加素材来源与署名记录。
+- Added media to seven cases: two upstream MIT-licensed screenshots and five sets of original demo links, with attribution and media provenance.
+
+- 核对新增来源中的 42 条记录，跳过 14 个已收录项目，补充 28 个应用、集成与评测研究；中英文同步更新为 55 条，研究类独立分类，并保留模拟模式与证据限制。
+- Compared 42 source records with the collection, skipped 14 existing projects, and added 28 applications, integrations and studies (55 total). Updated both languages and separated benchmarks from application cases.
