@@ -1,5 +1,9 @@
 # Media coverage / 素材覆盖核查
 
+This is the earlier 55-case media audit; numbers below refer to that snapshot. The later 19-case content update did not repeat a full media-tree audit. See the [update review](../../docs/reviews/2026-09-18-case-update.md).
+
+本表保留此前 55 条案例的素材核查快照，编号对应当时版本。后续 19 条内容更新未重复开展完整素材文件树核查，详见[本轮更新核查](../../docs/reviews/2026-09-18-case-update.md)。
+
 Reviewed on 2026-09-18: linked project READMEs and complete repository file trees. This is not an exhaustive search of social posts, releases, or the web. No matching media found in this scope does not mean none exist.
 
 核查范围：项目 README 与完整仓库文件树，不代表已穷尽社交帖子、Release 或全网。未找到对应素材不等于不存在。

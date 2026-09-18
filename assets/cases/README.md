@@ -40,4 +40,4 @@ Judge Sheets media are linked only: no repository license was identified during 
 - [lab-dados/jev-anotacao-sentencas: Author per-field evaluation chart / 作者分字段评测图表](https://github.com/lab-dados/jev-anotacao-sentencas/blob/fe10f3347ed7220d11321aab94f9206fdc21eddf/docs/relatorio_files/figure-typst/fig-campos-output-1.png)
 - [typesafeainate/dspy-typesafeify: Author three-example comparison chart / 作者三个示例对照图](https://github.com/typesafeainate/dspy-typesafeify/blob/708f1d109fc9316bdbb5674bdb10cf18b55be137/examples/typesafe_dspy_ticket_triage/benchmark.svg)
 
-[Full collection media audit / 全部案例素材核查](AUDIT.md)
+[Earlier 55-case media audit / 此前 55 条案例素材核查](AUDIT.md)

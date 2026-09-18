@@ -2,6 +2,9 @@
 
 ## 2026-09-18
 
+- 按收集视图完整返回的 63 条记录核对，44 条已收录，新增 19 条；保留视图外的 11 条原有案例，中英文共 74 条。新增条目按现有七类组织，保留实现模式、证据边界与核查日期，同步导航数量；未转载内部附件或执行案例。
+- Compared all 63 records returned by the supplied collection view: 44 already included, 19 added, and 11 existing cases outside that view retained (74 total). Updated both languages and category counts; preserved evidence limits and review dates without redistributing internal attachments or executing projects. See the [review record](docs/reviews/2026-09-18-case-update.md).
+
 - 首批收录 16 个 Jev 应用项目，中文首页优先，并提供英文版。
 - 覆盖内容审核、自动化、工具集成、模型路由、代码审查、语义搜索、知识图谱与垂直实验。
 - 根据当前实现，将 typesafe-on-neon 更新为安全审核网关，注明其独立的视觉描述步骤。
