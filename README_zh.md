@@ -7,7 +7,7 @@
 
 ![Awesome Jev Use Cases — 真实项目与结构化判断，由 SeeAPI 整理的独立社区案例集。](assets/banner.png)
 
-**74 个项目 · 最近核查：2026-09-18**
+**78 个项目 · 最近更新：2026-09-19**
 
 **[浏览案例](#按场景浏览) · [了解 Jev](#jev-是什么) · [接入指南](#模型来源与接入方式) · [提交案例](CONTRIBUTING.md)**
 
@@ -19,12 +19,12 @@ Jev 是 TypeSafe AI 面向结构化判断推出的 System One 模型，返回选
 
 | 分类 | 项目数 | 可以找到什么 |
 | --- | ---: | --- |
-| [内容审核与安全](#内容审核与安全) | 7 | 内容筛查、风险判断与审核处置 |
+| [内容审核与安全](#内容审核与安全) | 8 | 内容筛查、风险判断与审核处置 |
 | [自动化与开发工具接入](#自动化与开发工具接入) | 15 | 桌面、浏览器、移动端及工作流集成 |
 | [模型成本与代码工作流](#模型成本与代码工作流) | 12 | 模型选择、代码审查与 Agent 任务分配 |
 | [语义搜索与知识导航](#语义搜索与知识导航) | 5 | 图谱导航、语义搜索与结果重排序 |
-| [数据分类与办公效率](#数据分类与办公效率) | 13 | 表格、文档分析与工单分类 |
-| [实验与垂直场景](#实验与垂直场景) | 13 | 游戏、控制系统及垂直领域应用 |
+| [数据分类与办公效率](#数据分类与办公效率) | 15 | 表格、文档分析与工单分类 |
+| [实验与垂直场景](#实验与垂直场景) | 14 | 游戏、控制系统及垂直领域应用 |
 | [评测与行为研究](#评测与行为研究) | 9 | 作者报告的评测与模型行为研究 |
 
 ## 内容审核与安全
@@ -98,11 +98,25 @@ Jev 是 TypeSafe AI 面向结构化判断推出的 System One 模型，返回选
 
 **核查日期：** 2026-09-18。
 
+### 8. BlueNoise — X 评论区噪声过滤
+
+[项目](https://github.com/rokcso/bluenoise) · [发现来源](https://github.com/logicrw/awesome-jev-projects/issues/3)
+
+浏览器扩展先使用本地关键词和账号规则，再通过可选的 Jev 功能，对未匹配规则的 X 回复进行噪声判断，由代码据此过滤回复。
+
+**实现模式：** 本地规则 → 剩余回复文本及上下文 → 噪声概率 → 展示策略。
+
+**边界：** Jev 功能仍属实验选项，默认关闭；启用后会将回复文本发送给 TypeSafe，因此默认模式的纯本地处理说明不适用于该模式。本次未独立测试过滤效果。
+
+**核查日期：** 2026-09-19（作者文档核查，未运行项目）。
+
+**演示素材：** [作者截图与功能介绍](https://x.com/rokcso/status/2100876608340910548)。原作者素材，仅提供外链，不代表 SeeAPI 实测。
+
 ## 自动化与开发工具接入
 
 <a id="5-jev-ultrafast"></a>
 
-### 8. Jev Ultrafast
+### 9. Jev Ultrafast
 
 - **场景**：浏览器中逐步完成查询、点击与表单输入。
 - **做法**：将可见页面控件整理成带索引的候选集合，Jev 选择操作与目标；需要输入文字时再调用文字生成模型。
@@ -118,7 +132,7 @@ Jev 是 TypeSafe AI 面向结构化判断推出的 System One 模型，返回选
 
 <a id="6-agent-desktop-中的-jev-桌面控制"></a>
 
-### 9. agent-desktop 中的 Jev 桌面控制
+### 10. agent-desktop 中的 Jev 桌面控制
 
 - **场景**：通过桌面应用的 Accessibility Tree 选择控件和动作。
 - **做法**：观察当前界面结构，将操作及目标作为受限选项交给 Jev，再由本地执行器执行并重新观察。
@@ -130,7 +144,7 @@ Jev 是 TypeSafe AI 面向结构化判断推出的 System One 模型，返回选
 
 <a id="7-typesafe-mcpitsmostafa"></a>
 
-### 10. Typesafe MCP（itsmostafa）
+### 11. Typesafe MCP（itsmostafa）
 
 - **场景**：让 Claude Code、Claude Desktop、Codex 调用 Jev 进行工单分流等判断。
 - **做法**：通过 `evaluate` 接收状态与问题，支持 Noul、Choice、Score，并返回 TypeSafe 响应。
@@ -140,7 +154,7 @@ Jev 是 TypeSafe AI 面向结构化判断推出的 System One 模型，返回选
 
 <a id="8-semdecide"></a>
 
-### 11. SemDecide
+### 12. SemDecide
 
 - **场景**：在命令行、CI 或数据流水线中做语义判断、路由、评分与过滤。
 - **做法**：提供 `is`、`choose`、`score`、`filter` 和 `guard` 命令，将不确定性、阈值与进程退出码纳入接口。
@@ -150,7 +164,7 @@ Jev 是 TypeSafe AI 面向结构化判断推出的 System One 模型，返回选
 
 <a id="9-typesafe-computer-use"></a>
 
-### 12. typesafe-computer-use
+### 13. typesafe-computer-use
 
 - **场景与做法**：Mac 自动化工具先用 OCR 与确定性处理读取屏幕，再由 Jev 选择动作，需要自由文字时才调用写作模型。
 - **可借鉴点**：屏幕信息解析 → 有限动作选择 → 桌面执行。
@@ -159,7 +173,7 @@ Jev 是 TypeSafe AI 面向结构化判断推出的 System One 模型，返回选
 
 <a id="10-jev-browser"></a>
 
-### 13. Jev Browser
+### 14. Jev Browser
 
 - **场景与做法**：通过已有浏览器工具持续观察、操作和验证；规划 Agent 提供目标与导航方向，Jev 选择实际观察到的页面元素。
 - **可借鉴点**：一次规划，循环执行有限范围内的浏览器判断。
@@ -170,7 +184,7 @@ Jev 是 TypeSafe AI 面向结构化判断推出的 System One 模型，返回选
 
 <a id="11-mobile-jev"></a>
 
-### 14. Mobile Jev
+### 15. Mobile Jev
 
 - **场景与做法**：通过 Mobilerun 在真实 Android 设备上运行，由 Jev 选择操作，提供可视化工作台、CLI 和执行轨迹。
 - **可借鉴点**：目标 → 手机状态 → 动作选择 → 设备执行。
@@ -185,7 +199,7 @@ Jev 是 TypeSafe AI 面向结构化判断推出的 System One 模型，返回选
 
 <a id="12-zod-jev--表单语义校验"></a>
 
-### 15. zod-jev — 表单语义校验
+### 16. zod-jev — 表单语义校验
 
 [项目来源](https://github.com/jomatsu/zod-jev)
 
@@ -195,7 +209,7 @@ Jev 是 TypeSafe AI 面向结构化判断推出的 System One 模型，返回选
 
 <a id="13-ha-jev--家庭状态判断"></a>
 
-### 16. HA-Jev — 家庭状态判断
+### 17. HA-Jev — 家庭状态判断
 
 [项目来源](https://github.com/AboveColin/HA-Jev)
 
@@ -205,7 +219,7 @@ Jev 是 TypeSafe AI 面向结构化判断推出的 System One 模型，返回选
 
 <a id="14-n8n-typesafe-节点--工作流判断"></a>
 
-### 17. n8n TypeSafe 节点 — 工作流判断
+### 18. n8n TypeSafe 节点 — 工作流判断
 
 [项目来源](https://github.com/DomMonte/n8n-nodes-typesafe-ai)
 
@@ -215,7 +229,7 @@ Jev 是 TypeSafe AI 面向结构化判断推出的 System One 模型，返回选
 
 <a id="15-unclutter--网页杂乱元素分类与隐藏"></a>
 
-### 18. Unclutter — 网页杂乱元素分类与隐藏
+### 19. Unclutter — 网页杂乱元素分类与隐藏
 
 [项目来源](https://github.com/kitze/unclutter)
 
@@ -225,7 +239,7 @@ Jev 是 TypeSafe AI 面向结构化判断推出的 System One 模型，返回选
 
 <a id="16-jev-mobile--android设置导航poc"></a>
 
-### 19. jev-mobile — Android设置导航PoC
+### 20. jev-mobile — Android设置导航PoC
 
 [项目来源](https://github.com/Friedjof/jev-mobile)
 
@@ -233,7 +247,7 @@ Jev 是 TypeSafe AI 面向结构化判断推出的 System One 模型，返回选
 
 **边界:** 作者主要验证 Android 设置导航，不是通用手机 Agent；与 droidrun/mobile-jev 是不同项目。
 
-### 20. triage-guard — 支持、告警与部署风险的判断管线
+### 21. triage-guard — 支持、告警与部署风险的判断管线
 
 [原始来源](https://github.com/shivam2003-dev/typesafe-triage-guard) · [实现或文档](https://github.com/shivam2003-dev/typesafe-triage-guard/blob/9dea2e2c82eb0acb8b9bac8e366ad9112fa770fd/src/triage/battery.py)
 
@@ -245,7 +259,7 @@ Python 研究示例在支持工单、运维告警和部署风险中复用判断�
 
 **核查日期：** 2026-09-18。
 
-### 21. typesafe-jev-workflow — LangGraph 邮件意图分流
+### 22. typesafe-jev-workflow — LangGraph 邮件意图分流
 
 [原始来源](https://github.com/GiesN/typesafe-jev-workflow) · [实现或文档](https://github.com/GiesN/typesafe-jev-workflow/blob/251019670ebc3bf95870e924740d5876c1cd56b5/src/typesafe_ai_langgraph/typesafe_ai_langgraph_workflow.py)
 
@@ -257,7 +271,7 @@ Python 研究示例在支持工单、运维告警和部署风险中复用判断�
 
 **核查日期：** 2026-09-18。
 
-### 22. Pi Jev Auto Mode — 工具调用概率门控
+### 23. Pi Jev Auto Mode — 工具调用概率门控
 
 [原始来源](https://github.com/jomatsu/pi-jev-auto-mode) · [实现或文档](https://github.com/jomatsu/pi-jev-auto-mode/blob/main/src/settings.ts)
 
@@ -273,7 +287,7 @@ Pi 扩展在 bash、write、edit 调用前组合确定性规则与 Jev 语义判
 
 <a id="17-jev-codex-router"></a>
 
-### 23. Jev Codex Router
+### 24. Jev Codex Router
 
 - **场景**：按编程任务难度选择模型与推理深度。
 - **做法**：每轮先由 Jev 分类，再按策略路由到不同模型，记录结果并处理低置信度或错误。
@@ -283,7 +297,7 @@ Pi 扩展在 bash、write、edit 调用前组合确定性规则与 Jev 语义判
 
 <a id="18-winnow"></a>
 
-### 24. Winnow
+### 25. Winnow
 
 - **场景**：压缩进入 Claude Code 上下文的长工具输出。
 - **做法**：Jev 判断分块内容是否与当前任务有关；高置信度无关内容替换为摘要或占位说明，原文缓存并支持按需恢复。不确定内容保留。
@@ -293,7 +307,7 @@ Pi 扩展在 bash、write、edit 调用前组合确定性规则与 Jev 语义判
 
 <a id="19-jev-review"></a>
 
-### 25. Jev Review
+### 26. Jev Review
 
 - **场景**：对 Git diff 或代码库进行结构化风险审查。
 - **做法**：依次判断风险、文件特征、证据位置、机制和严重性，并按条件路由后续审查。
@@ -307,7 +321,7 @@ Pi 扩展在 bash、write、edit 调用前组合确定性规则与 Jev 语义判
 
 <a id="20-jev-router--gargpratyush"></a>
 
-### 26. jev-router — gargpratyush
+### 27. jev-router — gargpratyush
 
 - **场景与做法**：启动原生 Claude Code 或 Codex CLI，并在新用户轮次开始时按任务难度选择快速或强能力模型。
 - **可借鉴点**：判断当前轮次的任务，再选择执行模型。
@@ -320,7 +334,7 @@ Pi 扩展在 bash、write、edit 调用前组合确定性规则与 Jev 语义判
 
 <a id="21-eve--typed-evaluation-and-model-selection"></a>
 
-### 27. eve — typed evaluation and model selection
+### 28. eve — typed evaluation and model selection
 
 - **场景与做法**：Agent 框架默认使用 Jev 做自动模型选择和结构化评估，文档还展示了工具执行审批中的判断与人工复核。
 - **可借鉴点**：将结构化评估接入模型路由、工具和审批流程。
@@ -329,7 +343,7 @@ Pi 扩展在 bash、write、edit 调用前组合确定性规则与 Jev 语义判
 
 <a id="22-dspy-typesafeify--混合推理"></a>
 
-### 28. DSPy typesafeify — 混合推理
+### 29. DSPy typesafeify — 混合推理
 
 [项目来源](https://github.com/typesafeainate/dspy-typesafeify)
 
@@ -341,7 +355,7 @@ Pi 扩展在 bash、write、edit 调用前组合确定性规则与 Jev 语义判
 
 <a id="23-jevlogs--运维日志语义分流"></a>
 
-### 29. jevlogs — 运维日志语义分流
+### 30. jevlogs — 运维日志语义分流
 
 [项目来源](https://github.com/reachjalil/jevlogs)
 
@@ -351,7 +365,7 @@ Pi 扩展在 bash、write、edit 调用前组合确定性规则与 Jev 语义判
 
 <a id="24-swarmrouter--任务分配给专长agent"></a>
 
-### 30. SwarmRouter — 任务分配给专长Agent
+### 31. SwarmRouter — 任务分配给专长Agent
 
 [项目来源](https://github.com/ndolinschi/swarmrouter) · [实现代码](https://github.com/ndolinschi/swarmrouter/blob/37a895b82633fc1964577c89dfee8b87f6914cc2/src/lib/product.ts)
 
@@ -361,7 +375,7 @@ Pi 扩展在 bash、write、edit 调用前组合确定性规则与 Jev 语义判
 
 <a id="25-jev-axi--agent判断工具与构建日志分诊"></a>
 
-### 31. jev-axi — Agent判断工具与构建日志分诊
+### 32. jev-axi — Agent判断工具与构建日志分诊
 
 [项目来源](https://github.com/shiftynick/jev-axi)
 
@@ -369,7 +383,7 @@ Pi 扩展在 bash、write、edit 调用前组合确定性规则与 Jev 语义判
 
 **边界:** 作者 Agent 实验减少了文件读取但未降低成本；判断不能替代源码阅读或完整安全边界。
 
-### 32. Pi Warden — 规则检查与代理行为提醒
+### 33. Pi Warden — 规则检查与代理行为提醒
 
 [原始来源](https://github.com/DevMortimer/pi-warden) · [实现或文档](https://github.com/DevMortimer/pi-warden/blob/main/README.md)
 
@@ -381,7 +395,7 @@ Pi 扩展将修改与项目规则对照，把反馈加入 Agent 上下文；其�
 
 **核查日期：** 2026-09-18。
 
-### 33. commit-miner — Git 提交差异分类与安全修复线索
+### 34. commit-miner — Git 提交差异分类与安全修复线索
 
 [原始来源](https://github.com/devanshbatham/commit-miner) · [实现或文档](https://github.com/devanshbatham/commit-miner/blob/977617ebce07c56b965253a68577b1d92b93fdf1/src/miner.rs)
 
@@ -393,7 +407,7 @@ Rust CLI 通过 Noul 判断 Git 变更中的缺陷修复、安全修复、变更
 
 **核查日期：** 2026-09-18。
 
-### 34. Foreman — 编码代理运行时的语义监督与生命周期编排
+### 35. Foreman — 编码代理运行时的语义监督与生命周期编排
 
 [原始来源](https://github.com/thruwire/foreman) · [实现或文档](https://github.com/thruwire/foreman/blob/2c439828b9fe45ee5d40f6f57be81f7ff1f8a140/src/foreman/runtime.py)
 
@@ -409,7 +423,7 @@ Rust CLI 通过 Noul 判断 Git 变更中的缺陷修复、安全修复、变更
 
 <a id="26-blink"></a>
 
-### 35. Blink
+### 36. Blink
 
 - **场景**：根据自然语言问题在代码目录中查找相关文件。
 - **做法**：Jev 对文件和目录名称进行判断，多个 walker 按路径倾向继续探索。
@@ -419,7 +433,7 @@ Rust CLI 通过 Noul 判断 Git 变更中的缺陷修复、安全修复、变更
 
 <a id="27-neo4jev"></a>
 
-### 36. neo4jev
+### 37. neo4jev
 
 - **场景**：在 Neo4j 知识图谱中按目标逐跳选择关系。
 - **做法**：将出边转换为 Choice 选项，同时用 Noul 判断是否到达目标，再用 beam search 探索候选路径。
@@ -429,7 +443,7 @@ Rust CLI 通过 Noul 判断 Git 变更中的缺陷修复、安全修复、变更
 
 <a id="28-sift--搜索结果重排"></a>
 
-### 37. Sift — 搜索结果重排
+### 38. Sift — 搜索结果重排
 
 [项目来源](https://github.com/tylergibbs1/sift)
 
@@ -439,7 +453,7 @@ Chrome 扩展使用 Jev 判断搜索结果的相关性、推广倾向和信息�
 
 <a id="29-every--逐函数语义代码检索"></a>
 
-### 38. Every — 逐函数语义代码检索
+### 39. Every — 逐函数语义代码检索
 
 [项目来源](https://github.com/sufianetaouil/every)
 
@@ -447,7 +461,7 @@ Chrome 扩展使用 Jev 判断搜索结果的相关性、推广倾向和信息�
 
 **边界:** 逐函数判断不等于全程序数据流分析；扫描的源码会发送给 TypeSafe。
 
-### 39. Jev Search — 自然语言搜索意图识别与结果重排
+### 40. Jev Search — 自然语言搜索意图识别与结果重排
 
 [原始来源](https://github.com/superagents-lab/jev-search) · [实现或文档](https://github.com/superagents-lab/jev-search/blob/369b282489f72e58298ba1abc8b0144b1bc15c59/src/lib/typesafe.ts)
 
@@ -463,7 +477,7 @@ TypeScript 应用先让 Jev 选择搜索源、时间范围与检索词候选，�
 
 <a id="30-judge-sheets--predictive-spreadsheets"></a>
 
-### 40. Judge Sheets — predictive spreadsheets
+### 41. Judge Sheets — predictive spreadsheets
 
 - **场景与做法**：输入 Urgency 等列标题后，Jev 推断预测类型；确认后通过 JUDGE、PICK、RATE 函数填充各行，同一文本的问题合并请求，结果流式返回并触发表格重算。
 - **可借鉴点**：表头意图 → 判断类型 → 逐行评估 → 表格重算。
@@ -474,7 +488,7 @@ TypeScript 应用先让 Jev 选择搜索源、时间范围与检索词候选，�
 
 <a id="31-notra--typed-evaluation-in-analytics"></a>
 
-### 41. Notra — typed evaluation in analytics
+### 42. Notra — typed evaluation in analytics
 
 - **场景与做法**：代码提供通过 Vercel AI Gateway 调用 Jev 的评估客户端、NOTRA_JEV_CLASSIFIERS 开关，并在品牌提及分析中接入可选的结构化评估。
 - **可借鉴点**：在已有分析工作流中加入结构化判断，并保留 LLM 回退。
@@ -483,7 +497,7 @@ TypeScript 应用先让 Jev 选择搜索源、时间范围与检索词候选，�
 
 <a id="32-human-compiler--文字质量诊断"></a>
 
-### 42. human-compiler — 文字质量诊断
+### 43. human-compiler — 文字质量诊断
 
 [项目来源](https://github.com/asfarsadewa/human-compiler)
 
@@ -493,7 +507,7 @@ TypeScript 应用先让 Jev 选择搜索源、时间范围与检索词候选，�
 
 <a id="33-kill-my-idea--产品想法多维评分"></a>
 
-### 43. Kill My Idea — 产品想法多维评分
+### 44. Kill My Idea — 产品想法多维评分
 
 [项目来源](https://github.com/monteduro/killmyidea)
 
@@ -503,7 +517,7 @@ Jev 按多个维度为产品想法评分，本地加权规则将结果组合为�
 
 <a id="34-jev-cv-screening--简历证据与本地策略评分"></a>
 
-### 44. Jev CV Screening — 简历证据与本地策略评分
+### 45. Jev CV Screening — 简历证据与本地策略评分
 
 [项目来源](https://github.com/gtaras7/typesafe-jev/tree/main/cv-screen)
 
@@ -513,7 +527,7 @@ Jev 按多个维度为产品想法评分，本地加权规则将结果组合为�
 
 <a id="35-jevibe-check--社交帖子与草稿语气标签"></a>
 
-### 45. Jevibe Check — 社交帖子与草稿语气标签
+### 46. Jevibe Check — 社交帖子与草稿语气标签
 
 [项目来源](https://github.com/sriganesh/jevibe-check)
 
@@ -529,7 +543,7 @@ Jev 按多个维度为产品想法评分，本地加权规则将结果组合为�
 
 <a id="36-jev-resume-analyzer--可追溯简历自查"></a>
 
-### 46. JEV Resume Analyzer — 可追溯简历自查
+### 47. JEV Resume Analyzer — 可追溯简历自查
 
 [项目来源](https://github.com/awun8191/jev-resume-analyzer)
 
@@ -539,7 +553,7 @@ Jev 按多个维度为产品想法评分，本地加权规则将结果组合为�
 
 <a id="37-lanebreak--客服工单分组与优先级"></a>
 
-### 47. LaneBreak — 客服工单分组与优先级
+### 48. LaneBreak — 客服工单分组与优先级
 
 [项目来源](https://github.com/ndolinschi/lanebreak) · [实现代码](https://github.com/ndolinschi/lanebreak/blob/acf11293f36597c8fb706ae492a9468455b69928/src/lib/product.ts)
 
@@ -549,7 +563,7 @@ Jev 按多个维度为产品想法评分，本地加权规则将结果组合为�
 
 <a id="38-jev-column-race--千条用户评论多列标注"></a>
 
-### 48. Jev Column Race — 千条用户评论多列标注
+### 49. Jev Column Race — 千条用户评论多列标注
 
 [项目来源](https://github.com/goodrahstar/jev-column-race)
 
@@ -561,7 +575,7 @@ Jev 按多个维度为产品想法评分，本地加权规则将结果组合为�
 
 原作者素材：作者记录的对照运行；图中数据为作者记录，并非 SeeAPI 实测。 MIT · [来源](https://github.com/goodrahstar/jev-column-race/blob/d9ee360ccd84462f4eab9493a7c2c617d0dab9df/docs/verdict.png) · [许可与署名](THIRD_PARTY_NOTICES.md)
 
-### 49. JevTicketRouter — 带确定性兜底的双语工单分流
+### 50. JevTicketRouter — 带确定性兜底的双语工单分流
 
 [原始来源](https://github.com/GhrezaKh74/JevTicktRouter) · [实现或文档](https://github.com/GhrezaKh74/JevTicktRouter/blob/ee078fcddd85d339b182fb5ba3cce5ae1021d447/backend/JevTicketRouter.Application/Jev/JevTriageQuestions.cs)
 
@@ -573,7 +587,7 @@ Jev 按多个维度为产品想法评分，本地加权规则将结果组合为�
 
 **核查日期：** 2026-09-18。
 
-### 50. Transcript Scorecard — 实时客服通话质检
+### 51. Transcript Scorecard — 实时客服通话质检
 
 [原始来源](https://github.com/brandonbryant12/transcript-scorecard) · [实现或文档](https://github.com/brandonbryant12/transcript-scorecard/blob/c9232fffbf8bf23b7cf5402dd02ebc54b19eb9cf/apps/api/src/classifier.ts)
 
@@ -585,7 +599,7 @@ Jev 按多个维度为产品想法评分，本地加权规则将结果组合为�
 
 **核查日期：** 2026-09-18。
 
-### 51. Paper Trellis Citation Verifier — 论文引文支持度复核
+### 52. Paper Trellis Citation Verifier — 论文引文支持度复核
 
 [原始来源](https://github.com/MarissaFamularo/citation-verifier) · [实现或文档](https://github.com/MarissaFamularo/citation-verifier/blob/f9058642274033e62855d3066988418fefa2e272/src/lib/typesafe.js)
 
@@ -597,7 +611,7 @@ Jev 按多个维度为产品想法评分，本地加权规则将结果组合为�
 
 **核查日期：** 2026-09-18。
 
-### 52. Research Desk — 新闻与公司多阶段判断
+### 53. Research Desk — 新闻与公司多阶段判断
 
 [原始来源](https://github.com/0xnairb/research_desk) · [实现或文档](https://github.com/0xnairb/research_desk/blob/main/app/README.md)
 
@@ -609,11 +623,37 @@ Jev 按多个维度为产品想法评分，本地加权规则将结果组合为�
 
 **核查日期：** 2026-09-18。
 
+### 54. JevFilterForX — 时间线内容价值评分
+
+[项目](https://github.com/grayrepo-byte/jev_filter_for_x) · [发现来源](https://x.com/0xLogicrw/status/2100861912590205411)
+
+X 扩展让 Jev 按信息量、可操作性和原创性评分，再由本地权重计算 0–100 分的内容价值；主题和噪声标签另用于过滤及专注模式。
+
+**实现模式：** 帖子文本 → 多维评分与标签 → 加权分数 → 时间线过滤。
+
+**边界：** 侧重时间线评分，与 BlueNoise 的回复过滤及 Jevibe Check 的 Bluesky 标签不同。没有 API 密钥时使用模拟结果；随帖子折叠图片或视频，不代表 Jev 具有相应视觉理解能力。本次未测试评分质量。
+
+**核查日期：** 2026-09-19（作者文档核查，未运行项目）。
+
+**演示素材：** [作者演示视频](https://github.com/grayrepo-byte/jev_filter_for_x/blob/main/assets/promo/jevfilterforx-promo.mp4) · [封面](https://github.com/grayrepo-byte/jev_filter_for_x/blob/main/assets/promo/jevfilterforx-promo-poster.png)。原作者素材，仅提供外链，不代表 SeeAPI 实测。
+
+### 55. JevScout — 招聘页面导航与岗位匹配
+
+[项目](https://github.com/hqman/JevScout) · [发现来源](https://x.com/0xLogicrw/status/2100861912590205411)
+
+面向编程 Agent 的技能从公司官网出发，通过 CDP 观察并操作 Chrome，让 Jev 判断链接、寻找招聘入口，并按求职者资料对岗位排序。
+
+**实现模式：** 公司官网 → 招聘链接判断 → 岗位发现 → 按求职资料排序。
+
+**边界：** 目前为演示型 MVP，包含 mock 和固定样例流程，不能把这些演示当作真实 Jev 结果。用途是协助求职者寻找岗位，与雇主侧简历筛选不同；本次未测试匹配效果或端到端可靠性。
+
+**核查日期：** 2026-09-19（作者文档核查，未运行项目）。
+
 ## 实验与垂直场景
 
 <a id="39-typesafe-ai-playground"></a>
 
-### 53. TypeSafe AI Playground
+### 56. TypeSafe AI Playground
 
 - **场景**：通过 Rust CLI 探索 PHI（可识别个人的健康信息）检测、代码注释审核等小型判断任务。
 - **做法**：向 Jev 提交明确的分类或评分问题，展示概率或评分结果。
@@ -623,7 +663,7 @@ Jev 按多个维度为产品想法评分，本地加权规则将结果组合为�
 
 <a id="40-prism-的-jev-判断服务"></a>
 
-### 54. Prism 的 Jev 判断服务
+### 57. Prism 的 Jev 判断服务
 
 - **场景**：对流动性策略中的分布方式、有害交易流、恢复持有与市场压力给出辅助判断。
 - **做法**：`engine/jev-service.ts` 将窄问题映射到 Choice 与 Noul，与既有启发式判断对应。
@@ -633,7 +673,7 @@ Jev 按多个维度为产品想法评分，本地加权规则将结果组合为�
 
 <a id="41-1v1-jev--quickscope-arena"></a>
 
-### 55. 1v1 Jev — Quickscope Arena
+### 58. 1v1 Jev — Quickscope Arena
 
 - **场景**：浏览器 FPS 游戏中控制对手移动、瞄准、射击等动作。
 - **做法**：服务端将结构化游戏状态转换为 Choice/Noul 问题；README 描述决策频率约为 9 Hz，并提供模型不可用时的启发式回退。
@@ -643,7 +683,7 @@ Jev 按多个维度为产品想法评分，本地加权规则将结果组合为�
 
 <a id="42-jev-trader"></a>
 
-### 56. jev-trader
+### 59. jev-trader
 
 - **场景与做法**：读取 Monad 上 Kuru MON-USDC 订单簿，用 Jev 判断买卖方向，由程序处理报价、限额与执行。
 - **可借鉴点**：订单簿状态 → 方向判断 → 程序处理订单。
@@ -652,7 +692,9 @@ Jev 按多个维度为产品想法评分，本地加权规则将结果组合为�
 
 <a id="43-typesafe-mario"></a>
 
-### 57. TypeSafe Mario
+**相关实现：** [aowang-ai/jev-trade](https://github.com/aowang-ai/jev-trade) 基于该项目改为 Hyperliquid 多币种独立组合，由 Jev 判断仓位动作。默认使用 mock 判断，无私钥时模拟执行；真实 Jev 调用需要显式配置。作为衍生实现补充，不另计案例；本次未执行交易或验证盈利能力。[作者投稿](https://github.com/logicrw/awesome-jev-projects/issues/1)。核查日期：2026-09-19。
+
+### 60. TypeSafe Mario
 
 - **场景与做法**：将模拟器遥测与内存状态转换为结构化信息，Jev 选择 NES 手柄动作，并给出跳跃和危险程度判断。
 - **可借鉴点**：结构化游戏状态 → Choice/Noul/Score → 手柄输入。
@@ -661,7 +703,7 @@ Jev 按多个维度为产品想法评分，本地加权规则将结果组合为�
 
 <a id="44-jev-drone"></a>
 
-### 58. jev-drone
+### 61. jev-drone
 
 - **场景与做法**：MuJoCo 四旋翼模拟器将相机深度与分割结果转换为场景数据，由 Jev 建议机动动作和风险，普通代码负责飞控与安全。
 - **可借鉴点**：代码感知 → 战术判断 → 受约束的控制。
@@ -674,7 +716,7 @@ Jev 按多个维度为产品想法评分，本地加权规则将结果组合为�
 
 <a id="45-tsai-sc--starcraft-strongarm"></a>
 
-### 59. tsai-sc — StarCraft Strongarm
+### 62. tsai-sc — StarCraft Strongarm
 
 - **场景与做法**：读取星际争霸试玩版 Strongarm 任务的结构化游戏状态，由 Jev 选择指令，再以鼠标键盘执行。
 - **可借鉴点**：结构化策略游戏状态 → 指令选择 → 输入执行。
@@ -685,7 +727,7 @@ Jev 按多个维度为产品想法评分，本地加权规则将结果组合为�
 
 <a id="46-heist-one--潜行游戏守卫判断"></a>
 
-### 60. HEIST ONE — 潜行游戏守卫判断
+### 63. HEIST ONE — 潜行游戏守卫判断
 
 [项目来源](https://github.com/AbdelStark/heist-one)
 
@@ -701,7 +743,7 @@ Jev 为潜行游戏守卫判断威胁、怀疑程度与意图，服务器代码�
 
 <a id="47-typesafe-minecraft--游戏动作实验"></a>
 
-### 61. TypeSafe Minecraft — 游戏动作实验
+### 64. TypeSafe Minecraft — 游戏动作实验
 
 [项目来源](https://github.com/ellistev/typesafe-minecraft-demo)
 
@@ -711,7 +753,7 @@ Jev 根据结构化 Minecraft 状态选择动作，Mineflayer 执行，代码提
 
 <a id="48-jev-for-engineers--工程判断示例集"></a>
 
-### 62. Jev for Engineers — 工程判断示例集
+### 65. Jev for Engineers — 工程判断示例集
 
 [项目来源](https://github.com/Foadsf/jev-for-engineers)
 
@@ -721,7 +763,7 @@ Jev 根据结构化 Minecraft 状态选择动作，Mineflayer 执行，代码提
 
 <a id="49-jev-synergy-screening--文献标题摘要初筛"></a>
 
-### 63. jev-synergy-screening — 文献标题摘要初筛
+### 66. jev-synergy-screening — 文献标题摘要初筛
 
 [项目来源](https://github.com/PistachioAIHQ/jev-synergy-screening)
 
@@ -729,7 +771,7 @@ Jev 根据结构化 Minecraft 状态选择动作，Mineflayer 执行，代码提
 
 **边界:** 当前 README 评测的是 Cohen ADHD 摘要初筛；摘要信息与过滤规则可能漏掉合格文献，属于研究流程案例。
 
-### 64. Jev JFK Simulation — 机场语音调度演示
+### 67. Jev JFK Simulation — 机场语音调度演示
 
 [原始来源](https://www.reddit.com/r/AgentZero/comments/1wj6li0/i_tested_typesafes_jev_model_and_made_it_run_a/)
 
@@ -741,7 +783,7 @@ Jev 根据结构化 Minecraft 状态选择动作，Mineflayer 执行，代码提
 
 **核查日期：** 2026-09-18。
 
-### 65. Jev Canvas — 语音与手势操作画布
+### 68. Jev Canvas — 语音与手势操作画布
 
 [原始来源](https://x.com/jackcheng/status/2100729670991802386)
 
@@ -753,11 +795,25 @@ Jack Cheng 的作者演示结合语音、指向与画布状态，展示 Jev 对�
 
 **核查日期：** 2026-09-18。
 
+### 69. Jev Gomoku — 五子棋候选落点选择
+
+[项目](https://github.com/XieChengYuan/jev-gomoku) · [发现来源](https://x.com/fakeWow_/status/2100889184861110572)
+
+九棋盘五子棋实验将文本棋盘及代码生成的候选落点交给 Jev，每步使用一个 Choice 问题；通过五种输入配置探索战术事实、坐标、方向棋线及短程前瞻的影响。
+
+**实现模式：** 棋盘状态 → 确定性候选生成 → Choice 选择 → 合法落子执行。
+
+**边界：** Jev 从启发式候选中选择，而非考虑全部空位；Choice 概率不等于最终获胜概率。在线演示重放已记录的判断，实时对弈需要 API 接入；小规模实验不能证明普遍棋力或某种输入格式更优。
+
+**核查日期：** 2026-09-19（作者文档核查，未运行项目）。
+
+**演示素材：** [作者已录制对局回放](https://xiechengyuan.github.io/jev-gomoku/)。原作者素材，仅提供外链，不代表 SeeAPI 实测。
+
 ## 评测与行为研究
 
 <a id="50-jev-sec-bench--安全判断评测"></a>
 
-### 66. jev-sec-bench — 安全判断评测
+### 70. jev-sec-bench — 安全判断评测
 
 [项目来源](https://github.com/Gaurav-Gosain/jev-sec-bench)
 
@@ -771,7 +827,7 @@ Jack Cheng 的作者演示结合语音、指向与画布状态，展示 Jev 对�
 
 <a id="51-jev-behavior-study--能力与失败边界"></a>
 
-### 67. Jev Behavior Study — 能力与失败边界
+### 71. Jev Behavior Study — 能力与失败边界
 
 [项目来源](https://github.com/RINNECODER/jev-behavior-study)
 
@@ -787,7 +843,7 @@ Jack Cheng 的作者演示结合语音、指向与画布状态，展示 Jev 对�
 
 <a id="52-jev-rerank-bench--检索重排对照评测"></a>
 
-### 68. jev-rerank-bench — 检索重排对照评测
+### 72. jev-rerank-bench — 检索重排对照评测
 
 [项目来源](https://github.com/anessbelbati/jev-rerank-bench)
 
@@ -801,7 +857,7 @@ Jack Cheng 的作者演示结合语音、指向与画布状态，展示 Jev 对�
 
 <a id="53-jev-phishing-bench--钓鱼邮件与原子信号"></a>
 
-### 69. jev-phishing-bench — 钓鱼邮件与原子信号
+### 73. jev-phishing-bench — 钓鱼邮件与原子信号
 
 [项目来源](https://github.com/anisselbd/jev-phishing-bench)
 
@@ -813,7 +869,7 @@ Jack Cheng 的作者演示结合语音、指向与画布状态，展示 Jev 对�
 
 <a id="54-jev-headline-bench--标题ab胜负预测"></a>
 
-### 70. jev-headline-bench — 标题A/B胜负预测
+### 74. jev-headline-bench — 标题A/B胜负预测
 
 [项目来源](https://github.com/Gaurav-Gosain/jev-headline-bench)
 
@@ -823,7 +879,7 @@ Jack Cheng 的作者演示结合语音、指向与画布状态，展示 Jev 对�
 
 <a id="55-jev司法文本标注--葡语文档多字段研究"></a>
 
-### 71. Jev司法文本标注 — 葡语文档多字段研究
+### 75. Jev司法文本标注 — 葡语文档多字段研究
 
 [项目来源](https://github.com/lab-dados/jev-anotacao-sentencas)
 
@@ -833,7 +889,7 @@ Jack Cheng 的作者演示结合语音、指向与画布状态，展示 Jev 对�
 
 **演示素材**: [作者分字段评测图表](https://github.com/lab-dados/jev-anotacao-sentencas/blob/fe10f3347ed7220d11321aab94f9206fdc21eddf/docs/relatorio_files/figure-typst/fig-campos-output-1.png)
 
-### 72. LLM Chess Jev Player — 合法棋步选择评测
+### 76. LLM Chess Jev Player — 合法棋步选择评测
 
 [原始来源](https://github.com/maxim-saplin/llm_chess) · [实现或文档](https://github.com/maxim-saplin/llm_chess/blob/29b5bdaf9dd844134f2c89588642bb4d61703e73/README.md#typesafe-jev-request--response)
 
@@ -845,7 +901,7 @@ Jack Cheng 的作者演示结合语音、指向与画布状态，展示 Jev 对�
 
 **核查日期：** 2026-09-18。
 
-### 73. Every Judgment Lab — 写作与知识工作检查
+### 77. Every Judgment Lab — 写作与知识工作检查
 
 [原始来源](https://every.to/also-true-for-humans/mini-vibe-check-typesafe-s-jev-judged-everything-i-ve-written-in-0-7-seconds)
 
@@ -857,7 +913,7 @@ Mike Taylor 的实验集将写作检查、上下文检索与业务分诊拆成�
 
 **核查日期：** 2026-09-18。
 
-### 74. Jev Maze Lookahead — 并行多步规划负向实验
+### 78. Jev Maze Lookahead — 并行多步规划负向实验
 
 [原始来源](https://github.com/Bud-ro/jev-demos) · [实现或文档](https://github.com/Bud-ro/jev-demos/blob/main/packages/maze_lookahead/README.md)
 
@@ -972,6 +1028,10 @@ print(response.choices["category"].choice)
 本轮新增线索来自 [StudioYebisu 的项目合集](https://x.com/studio_yebisu/status/2100686990090047569)、[yibie 的案例介绍](https://x.com/yibie/status/2100619188062523695)及 [Nader Dabit 的预测式表格演示](https://x.com/dabit3/status/2100780008193020049)。同一项目只计一次；社区仿制模型不作为官方 Jev 的应用案例收录。
 
 案例线索来自[思维怪怪的原帖](https://x.com/0xLogicrw/status/2100478725393686556)，并参考社区目录 [yibie/awesome-jev](https://github.com/yibie/awesome-jev)、[hellogumbo/awesome-jev](https://github.com/hellogumbo/awesome-jev) 和 [rhc98/awesome-jev](https://github.com/rhc98/awesome-jev)。条目描述以项目自己的 README 或实现代码为核查依据，使用独立撰写的中文摘要。
+
+- [logicrw/awesome-jev-projects](https://github.com/logicrw/awesome-jev-projects)
+
+本次从 [0xLogicrw 导航站介绍帖及可见评论](https://x.com/0xLogicrw/status/2100861912590205411)发现的补充内容，详见 [9 月 19 日核查记录](docs/reviews/2026-09-19-x-roundup.md)。导航站本身作为发现来源，不计入应用案例。
 
 后续条目至少保留：项目、场景、Jev 的具体职责、可借鉴点、边界、公开来源及核查日期。作者报告的数据注明来源和样本条件；没有运行验证的项目不标记为“SeeAPI 实测”。
 

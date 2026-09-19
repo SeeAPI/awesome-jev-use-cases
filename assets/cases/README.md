@@ -41,3 +41,13 @@ Judge Sheets media are linked only: no repository license was identified during 
 - [typesafeainate/dspy-typesafeify: Author three-example comparison chart / 作者三个示例对照图](https://github.com/typesafeainate/dspy-typesafeify/blob/708f1d109fc9316bdbb5674bdb10cf18b55be137/examples/typesafe_dspy_ticket_triage/benchmark.svg)
 
 [Earlier 55-case media audit / 此前 55 条案例素材核查](AUDIT.md)
+
+## September 19 linked additions / 9 月 19 日新增外链
+
+- BlueNoise — [author screenshots and feature description / 作者截图与功能说明](https://x.com/rokcso/status/2100876608340910548).
+- JevFilterForX — [author video / 作者视频](https://github.com/grayrepo-byte/jev_filter_for_x/blob/main/assets/promo/jevfilterforx-promo.mp4), [poster / 封面](https://github.com/grayrepo-byte/jev_filter_for_x/blob/main/assets/promo/jevfilterforx-promo-poster.png).
+- Jev Gomoku — [recorded-game replay / 已录制对局回放](https://xiechengyuan.github.io/jev-gomoku/). Replay is not a live model call / 回放并非实时模型调用。
+
+Linked only; no new media files copied or relicensed. No separate JevScout media item was identified in the reviewed README; this is not a claim that none exists elsewhere. Reviewed 2026-09-19.
+
+仅提供外链，未复制新增素材或更改其许可。已核查的 JevScout README 中未发现单独素材条目，不代表其他来源不存在素材。核查日期：2026-09-19。
