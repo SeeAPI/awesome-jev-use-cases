@@ -2,6 +2,9 @@
 
 ## 2026-09-19
 
+- Added five community contributions from [PR #2](https://github.com/SeeAPI/awesome-jev-use-cases/pull/2): jev-skip, jev-belay, jev-commit, jev.nvim, and jev-plays-pokemon-red (83 projects total), with corrected evidence limits in both languages.
+- 收录 PR #2 的 5 个社区项目，中英文共 83 条；补充字幕依赖、模拟演示、钩子策略及尚未公布校准结果等边界。
+
 - Added BlueNoise, JevFilterForX, JevScout, and Jev Gomoku (78 projects total), with bilingual descriptions and demo links. Added a related trading implementation and a discovery directory.
 - 新增 BlueNoise、JevFilterForX、JevScout 和 Jev Gomoku，中英文案例共 78 个；补充演示链接、交易相关实现及发现目录。
 

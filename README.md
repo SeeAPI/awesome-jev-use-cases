@@ -307,17 +307,17 @@ A Pi extension combines deterministic command rules with Jev judgments before ba
 
 **Reviewed:** 2026-09-18.
 
-### 24. jev-skip
+### 24. jev-skip — caption-based sponsor detection
 
 [Repository](https://github.com/valentynkit/jev-skip)
 
-A browser extension that reads a video's caption track and paints a per-segment sponsor probability on the YouTube seek bar before the intro ends, with no crowd-sourced timestamp database.
+A browser extension sends YouTube captions to Jev for sponsor-probability judgments on time segments. Local code displays a seek-bar heatmap and can skip selected segments without relying on a crowdsourced timestamp database.
 
-**Pattern:** caption track → per-segment Jev judgment → seek-bar overlay, no server-side lookup.
+**Pattern:** Caption text → segment judgments → seek-bar overlay and optional skipping.
 
-**Scope:** the author reports catching 77% of SponsorBlock's sponsor seconds across 23 videos at $0.0008 per video, measured against SponsorBlock's own community timestamps. This is the author's measurement, not an independent benchmark.
+**Scope:** No captions means no analysis; this is text classification, not audio or video understanding. The author reports 77% coverage of SponsorBlock-labeled sponsor seconds across 23 videos, with 34 seconds of false skips per hour and $0.0008 per video. These gateway-based measurements were not independently reproduced. The demo replays recorded answers; Jev API calls are still required for new judgments.
 
-**Reviewed:** 2026-09-19.
+**Reviewed:** 2026-09-19 (author documentation; no execution).
 
 ## Model routing & code workflows
 
@@ -467,29 +467,29 @@ An experimental runtime sends bounded task, worker-output, diff, and verificatio
 
 **Reviewed:** 2026-09-18.
 
-### 37. jev-belay
+### 37. jev-belay — completion checks for Claude Code
 
 [Repository](https://github.com/valentynkit/jev-belay)
 
-A Claude Code Stop hook that reads the session transcript for evidence before an agent's "done" is accepted. It only spends a Jev call, a four-question judgment, when files changed since the last passing check; every error path fails open so a Jev outage never blocks the agent.
+A Claude Code Stop hook inspects the current turn’s transcript for file changes and verification evidence. When changes lack a subsequent passing check, it asks Jev four questions about the closing message; local thresholds and repetition limits determine whether to allow the stop or return feedback.
 
-**Pattern:** transcript evidence check → conditional Jev judgment → block or allow the stop.
+**Pattern:** Local transcript evidence → conditional Jev judgment → allow stop or request follow-up.
 
-**Scope:** author's own hook; block/allow accuracy has not been independently measured here.
+**Scope:** Errors fail open. Turns without detected edits, subagent work in separate transcripts, and unrecognized verification commands can escape the gate. Detection accuracy has not been established by this collection; the published demo uses fake model answers. It is a completion-feedback tool, not proof that work is correct.
 
-**Reviewed:** 2026-09-19.
+**Reviewed:** 2026-09-19 (author documentation; no execution).
 
-### 38. jev-commit
+### 38. jev-commit — commit-message and diff checks
 
 [Repository](https://github.com/valentynkit/jev-commit)
 
-A pre-commit hook that sends the staged diff and commit message to one Jev call, judging whether the message matches the change and flagging debug leftovers or unmentioned work. A separate credential check runs alongside it and blocks the commit outright on a likely secret; everything else warns.
+A commit-msg hook, installable through the pre-commit framework, sends the staged diff and commit message to Jev for judgments about message quality, consistency, debug leftovers, unmentioned work, and credential-like content. Code applies thresholds and a separate credential check.
 
-**Pattern:** staged diff and message → Jev judgment → warn, with a hard block on detected secrets.
+**Pattern:** Staged diff and message → typed judgments and credential checks → local warning or blocking policy.
 
-**Scope:** author's own hook; judgment accuracy has not been independently measured here.
+**Scope:** By default, non-secret findings warn while likely credentials can block; strict mode also blocks other findings. Large diffs may require multiple requests. Staged source and messages are submitted to the configured API endpoint; this is not a complete secret-detection boundary. Detection accuracy was not independently validated.
 
-**Reviewed:** 2026-09-19.
+**Reviewed:** 2026-09-19 (author documentation; no execution).
 
 ## Semantic search & graph navigation
 
@@ -549,17 +549,17 @@ A TypeScript application asks Jev to select search sources, time ranges, and que
 
 **Reviewed:** 2026-09-18.
 
-### 44. jev.nvim
+### 44. jev.nvim — semantic function search in Neovim
 
 [Repository](https://github.com/valentynkit/jev.nvim)
 
-A Neovim plugin that takes a plain-language question about the current buffer, uses Treesitter to split it into functions, and asks Jev to score each function against the question. Matches land in the quickfix list ranked by probability.
+A Neovim plugin uses Treesitter to split buffer code into functions and asks Jev whether each function matches a natural-language question. Results appear as probabilities in virtual text and a ranked quickfix list, integrating semantic search into the editor.
 
-**Pattern:** buffer → Treesitter function split → per-function Jev scoring → ranked quickfix results.
+**Pattern:** Buffer or selected files → function extraction → per-function judgments → ranked editor results.
 
-**Scope:** author's own plugin; ranking quality has not been independently measured here.
+**Scope:** Functions are judged separately, without cross-function context; matches are search leads rather than confirmed defects. Source snippets are sent to the configured API endpoint. The published demo uses fixture probabilities, not measured model results. Ranking quality was not independently evaluated.
 
-**Reviewed:** 2026-09-19.
+**Reviewed:** 2026-09-19 (author documentation; no execution).
 
 ## Data classification & productivity
 
@@ -921,17 +921,17 @@ A nine-board Gomoku experiment supplies textual board state and code-generated c
 
 **Demo material:** [Author recorded-game replay](https://xiechengyuan.github.io/jev-gomoku/). Original author material, linked only; not SeeAPI test results.
 
-### 74. jev-plays-pokemon-red
+### 74. jev-plays-pokemon-red — bounded game decisions on PyBoy
 
 [Repository](https://github.com/valentynkit/jev-plays-pokemon-red)
 
-Deterministic code drives the PyBoy emulator through the route and the battle arithmetic; Jev is called only to pick at branch points. Every battle turn logs a faint-probability prediction, scored with the Brier score against what the emulator's RAM actually shows.
+A Pokémon Red experiment reads emulator RAM into structured state. Deterministic Python handles routes, battle arithmetic, and legal actions; Jev selects among candidates at branch points. The harness records turn-level faint predictions and outcomes for later Brier-score evaluation.
 
-**Pattern:** code-driven route and arithmetic → Jev decision at branches only → per-turn Brier-scored faint prediction checked against RAM.
+**Pattern:** RAM-derived state and legal candidates → branch-point judgment → emulator action and outcome recording.
 
-**Scope:** author's own project; Brier scores are self-reported against the author's own harness, not independently reproduced here.
+**Scope:** This is a code-guided experiment, not autonomous long-horizon planning or screenshot-based play. The author explicitly withholds calibration results because the labeled sample is too small; an evaluation mechanism does not establish calibrated probabilities. No gameplay or measurements were reproduced here.
 
-**Reviewed:** 2026-09-19.
+**Reviewed:** 2026-09-19 (author documentation; no execution).
 
 ## Benchmarks & behavior studies
 
