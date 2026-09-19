@@ -1105,7 +1105,6 @@ Additional discovery directories:
 
 - [logicrw/awesome-jev-projects](https://github.com/logicrw/awesome-jev-projects)
 
-The [September 19 review](docs/reviews/2026-09-19-x-roundup.md) records additions discovered through [0xLogicrw’s directory announcement and visible replies](https://x.com/0xLogicrw/status/2100861912590205411). The directory itself is a discovery source, not an application case.
 
 Entries are independently summarized from their linked project sources. Screenshots and demo links show the original authors’ work, not SeeAPI test results. Selected screenshots are reproduced with upstream license and attribution notices; other media remain hosted at their source. Third-party materials retain their own licenses and are not relicensed under our documentation license. See the [media source register](assets/cases/README.md).
 

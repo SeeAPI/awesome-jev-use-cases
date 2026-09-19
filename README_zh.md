@@ -1031,7 +1031,6 @@ print(response.choices["category"].choice)
 
 - [logicrw/awesome-jev-projects](https://github.com/logicrw/awesome-jev-projects)
 
-本次从 [0xLogicrw 导航站介绍帖及可见评论](https://x.com/0xLogicrw/status/2100861912590205411)发现的补充内容，详见 [9 月 19 日核查记录](docs/reviews/2026-09-19-x-roundup.md)。导航站本身作为发现来源，不计入应用案例。
 
 后续条目至少保留：项目、场景、Jev 的具体职责、可借鉴点、边界、公开来源及核查日期。作者报告的数据注明来源和样本条件；没有运行验证的项目不标记为“SeeAPI 实测”。
 

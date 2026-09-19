@@ -2,8 +2,8 @@
 
 ## 2026-09-19
 
-- Added BlueNoise, JevFilterForX, JevScout, and Jev Gomoku after deduplicating the X announcement and visible replies against 74 existing cases (78 total). Updated both languages and category counts; linked author media without copying files. Added aowang-ai/jev-trade under the existing trading case and logicrw/awesome-jev-projects as a discovery directory; neither increases the case count. See the [review record](docs/reviews/2026-09-19-x-roundup.md).
-- 根据 X 帖子及可见评论核查，新增评论过滤、时间线评分、岗位搜索和五子棋 4 个案例，中英文同步至 78 个。补充原作者素材外链、交易衍生实现及发现目录，保留实验与模拟模式说明；未运行项目或调用付费 API。
+- Added BlueNoise, JevFilterForX, JevScout, and Jev Gomoku (78 projects total), with bilingual descriptions and demo links. Added a related trading implementation and a discovery directory.
+- 新增 BlueNoise、JevFilterForX、JevScout 和 Jev Gomoku，中英文案例共 78 个；补充演示链接、交易相关实现及发现目录。
 
 ## 2026-09-18
 
