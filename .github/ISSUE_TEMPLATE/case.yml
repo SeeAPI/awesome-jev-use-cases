@@ -1,0 +1,30 @@
+name: Recommend a case / 推荐案例
+description: Suggest a public Jev integration with its original source and limits.
+title: '[Case] '
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Original project URL / 原始项目链接
+      description: Link to a public repository or the author's original page.
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Problem and Jev's role / 用途与 Jev 的作用
+      description: What does Jev judge, what input does it receive, and what does application code do next?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and limitations / 证据与边界
+      description: Link to the integration code, docs or demo. Identify author-reported measurements and whether you ran it yourself. Do not include private data or credentials.
+    validations:
+      required: true
+  - type: textarea
+    id: attribution
+    attributes:
+      label: Attribution and relationship / 署名与关联关系
+      description: Identify your relationship to the project. For proposed screenshots, provide the original source and reuse license; link only if rights are unclear.

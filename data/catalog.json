@@ -1,0 +1,2243 @@
+[
+  {
+    "id": "safer-with-jev",
+    "category": "moderation",
+    "source_url": "https://github.com/andrelandgraf/typesafe-on-neon",
+    "title": {
+      "en": "Safer with Jev — typesafe-on-neon",
+      "zh": "Safer with Jev（原 TypeSafe on Neon）"
+    },
+    "number": 1,
+    "summary": {
+      "en": "An HTTP gate that checks prompt injections, unsafe images, and unsafe replies before optionally forwarding a request. Its image pipeline first uses `gemini-3-flash` to describe the image, then asks Jev to judge risks in that description.",
+      "zh": "在内容转发或上传前检查提示词注入、图片风险及模型回复风险。 HTTP 网关接收内容，输出放行、复核或拦截结果；通过后可转发到指定上游。 当前实现用 `gemini-3-flash` 生成结构化图片描述，再由 Jev 对描述中的性内容、血腥暴力等风险进行判断。Jev 在这里承担描述审核与决策环节。"
+    },
+    "takeaway": {
+      "en": "detection and interpretation → typed risk judgments → allow, review, or block.",
+      "zh": "将检测结果连接到上传拦截、人工复核与下游调用流程。"
+    },
+    "scope": {
+      "en": "this is a vision-model-plus-Jev pipeline, not evidence of native image classification by Jev.",
+      "zh": "不是 Jev 原生视觉 NSFW 检测的证据，也没有在本次核查中验证识别效果。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-safer-with-jev",
+      "zh": "docs/casebook.zh-CN.md#case-safer-with-jev"
+    },
+    "source_path": "content/cases/safer-with-jev.md"
+  },
+  {
+    "id": "jev-moderation-bot",
+    "category": "moderation",
+    "source_url": "https://github.com/brainstormity/Jev-Moderation-Bot",
+    "title": {
+      "en": "Jev Moderation Bot",
+      "zh": "Jev Moderation Bot"
+    },
+    "number": 2,
+    "summary": {
+      "en": "A Discord moderation bot that evaluates messages and context for phishing, spam, and social engineering. Code applies escalating actions, and moderator corrections become safe precedents in later judgment context.",
+      "zh": "Discord 社区中的钓鱼、垃圾信息及社交工程消息审核。 结合消息正文、账号与频道等上下文判断风险，由程序执行分级处置；管理员纠正的误报作为后续判断的上下文。"
+    },
+    "takeaway": {
+      "en": "contextual message classification → moderation action → feedback.",
+      "zh": "检测、处置、申诉、反馈样本形成完整流程。"
+    },
+    "scope": {
+      "en": "a text-message moderation project, not an image or video NSFW benchmark.",
+      "zh": "这里核实的是文字消息审核方案，不是图片或视频 NSFW 模型；未独立测量误报率。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-jev-moderation-bot",
+      "zh": "docs/casebook.zh-CN.md#case-jev-moderation-bot"
+    },
+    "source_path": "content/cases/jev-moderation-bot.md"
+  },
+  {
+    "id": "jev-spam-eval",
+    "category": "moderation",
+    "source_url": "https://github.com/bitnovus/jev-spam-eval",
+    "title": {
+      "en": "jev-spam-eval",
+      "zh": "jev-spam-eval"
+    },
+    "number": 3,
+    "summary": {
+      "en": "Email classification experiments comparing natural-language Jev decision criteria with TF-IDF classifiers and combined scores, including tests across different mail sources and time periods.",
+      "zh": "垃圾邮件及钓鱼邮件分类评估。 用自然语言定义分类标准，取得 Jev 概率，与 TF-IDF 分类器及组合方案比较；同时考察不同年代、来源数据的分布变化。"
+    },
+    "takeaway": {
+      "en": "written classification criteria → probability → threshold or ensemble.",
+      "zh": "分类标准、误报和漏报、跨数据集表现，比单独展示准确率更有参考价值。"
+    },
+    "scope": {
+      "en": "exploratory author-reported experiments.",
+      "zh": "作者明确标注为探索性实验；分类标准在查看部分标注样本错误后调整，不能描述为完全没有人工监督。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-jev-spam-eval",
+      "zh": "docs/casebook.zh-CN.md#case-jev-spam-eval"
+    },
+    "source_path": "content/cases/jev-spam-eval.md"
+  },
+  {
+    "id": "jkudish-jev-mcp",
+    "category": "moderation",
+    "source_url": "https://github.com/jkudish/jev-mcp",
+    "title": {
+      "en": "Jev MCP — jkudish",
+      "zh": "Jev MCP（jkudish）"
+    },
+    "number": 4,
+    "summary": {
+      "en": "Exposes `jev_verify`, `jev_screen`, and `jev_find` to agents for evidence-based claim checking, input screening, and semantic candidate ranking.",
+      "zh": "Agent 读取外部资料时核验事实、筛查输入、排列候选项。 提供 `jev_verify`、`jev_screen`、`jev_find` 三类 MCP 工具，返回结构化判断及概率信息。"
+    },
+    "takeaway": {
+      "en": "package narrow judgments as reusable agent tools.",
+      "zh": "把重复的小判断封装成其他 Agent 可复用的工具。"
+    },
+    "scope": {
+      "en": "verification depends on the supplied evidence; individual successful examples do not establish general accuracy.",
+      "zh": "事实核验依赖传入证据；作者给出的个别成功案例不能证明整体准确率。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-jkudish-jev-mcp",
+      "zh": "docs/casebook.zh-CN.md#case-jkudish-jev-mcp"
+    },
+    "source_path": "content/cases/jkudish-jev-mcp.md"
+  },
+  {
+    "id": "suryanshu-singh-capbroker",
+    "category": "moderation",
+    "source_url": "https://github.com/suryanshu-singh/capbroker",
+    "title": {
+      "en": "Capbroker — advisory screening around capability controls",
+      "zh": "Capbroker — 权限边界之外的Jev风险提示"
+    },
+    "number": 5,
+    "summary": {
+      "en": "A capability broker optionally uses Jev to flag suspicious MCP tool output and show risk advice at a human-approval prompt. Deterministic capability checks and the human approval decision remain separate from the model advice.",
+      "zh": "能力权限代理可选用 Jev 标注可疑 MCP 工具输出，并在人工审批提示中展示风险建议。确定性权限校验与人工审批独立于模型建议。"
+    },
+    "takeaway": {
+      "en": "Capability enforcement → optional content warning or risk advice → human decision where required.",
+      "zh": "能力权限校验 → 可选内容警告或风险建议 → 必要时人工裁决。"
+    },
+    "scope": {
+      "en": "The Jev layer is advisory and does not make the broker’s permission decision.",
+      "zh": "Jev 只提供建议，不决定代理的权限放行。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-suryanshu-singh-capbroker",
+      "zh": "docs/casebook.zh-CN.md#case-suryanshu-singh-capbroker"
+    },
+    "source_path": "content/cases/suryanshu-singh-capbroker.md"
+  },
+  {
+    "id": "openroom",
+    "category": "moderation",
+    "source_url": "https://openroom-ivory.vercel.app",
+    "title": {
+      "en": "Openroom — editable chat-moderation rules",
+      "zh": "Openroom — 可改规则的实时聊天审核"
+    },
+    "number": 6,
+    "summary": {
+      "en": "The author describes a chat application using Jev, Convex, and Vercel to review messages before display. Natural-language room rules can be edited to trigger re-evaluation, with uncertain messages held for human review.",
+      "zh": "作者介绍的聊天应用使用 Jev、Convex 与 Vercel，在消息展示前审核；自然语言房间规则修改后可重新判断，不确定消息转交人工。"
+    },
+    "takeaway": {
+      "en": "Message and room rules → moderation judgment → display or human-review queue.",
+      "zh": "消息与房间规则 → 审核判断 → 展示或人工复核队列。"
+    },
+    "scope": {
+      "en": "This entry is based on the author’s public description, not a verified backend implementation.",
+      "zh": "依据作者公开说明收录，未验证后端实现；本轮未发送消息或保存规则，阈值与审核准确率未经验证。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-openroom",
+      "zh": "docs/casebook.zh-CN.md#case-openroom"
+    },
+    "source_path": "content/cases/openroom.md"
+  },
+  {
+    "id": "jevscan",
+    "category": "moderation",
+    "source_url": "https://x.com/theRaz0r/status/2100898307186864593",
+    "title": {
+      "en": "JEVScan — Etherscan risk indicators",
+      "zh": "JEVScan — Etherscan地址与交易风险提示"
+    },
+    "number": 7,
+    "summary": {
+      "en": "The author presents a Chrome extension that uses Jev to flag potentially malicious addresses and transactions on Etherscan. The collection records it as an author-demonstrated risk-indicator interface.",
+      "zh": "作者展示的 Chrome 扩展称使用 Jev 为 Etherscan 地址与交易提示潜在风险；本仓库将其作为作者演示的风险提示界面收录。"
+    },
+    "takeaway": {
+      "en": "Blockchain-explorer context → risk judgment → on-page indicator for human inspection.",
+      "zh": "区块链浏览器上下文 → 风险判断 → 页面内提示供人工检查。"
+    },
+    "scope": {
+      "en": "The author’s post establishes the claimed integration, not its accuracy.",
+      "zh": "原帖支持作者的集成声明，不证明准确率。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-jevscan",
+      "zh": "docs/casebook.zh-CN.md#case-jevscan"
+    },
+    "source_path": "content/cases/jevscan.md"
+  },
+  {
+    "id": "rokcso-bluenoise",
+    "category": "moderation",
+    "source_url": "https://github.com/rokcso/bluenoise",
+    "title": {
+      "en": "BlueNoise — X reply noise filtering",
+      "zh": "BlueNoise — X 评论区噪声过滤"
+    },
+    "number": 8,
+    "summary": {
+      "en": "A browser extension combines local keyword and account rules with an optional Jev noise assessment for replies that local rules do not match. Code uses the judgment to filter replies on X.",
+      "zh": "浏览器扩展先使用本地关键词和账号规则，再通过可选的 Jev 功能，对未匹配规则的 X 回复进行噪声判断，由代码据此过滤回复。"
+    },
+    "takeaway": {
+      "en": "Local rules → remaining reply text and context → noise probability → display policy.",
+      "zh": "本地规则 → 剩余回复文本及上下文 → 噪声概率 → 展示策略。"
+    },
+    "scope": {
+      "en": "The Jev option is experimental and disabled by default.",
+      "zh": "Jev 功能仍属实验选项，默认关闭；启用后会将回复文本发送给 TypeSafe，因此默认模式的纯本地处理说明不适用于该模式。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-rokcso-bluenoise",
+      "zh": "docs/casebook.zh-CN.md#case-rokcso-bluenoise"
+    },
+    "source_path": "content/cases/rokcso-bluenoise.md"
+  },
+  {
+    "id": "jev-ultrafast",
+    "category": "automation",
+    "source_url": "https://github.com/browser-use/jev-ultrafast",
+    "title": {
+      "en": "Jev Ultrafast",
+      "zh": "Jev Ultrafast"
+    },
+    "number": 9,
+    "summary": {
+      "en": "A browser agent that turns visible controls into indexed candidates. Jev chooses an operation and target; a separate language model writes text when needed.",
+      "zh": "浏览器中逐步完成查询、点击与表单输入。 将可见页面控件整理成带索引的候选集合，Jev 选择操作与目标；需要输入文字时再调用文字生成模型。"
+    },
+    "takeaway": {
+      "en": "observed state → bounded action selection → execution → observation.",
+      "zh": "把“选择动作”和“生成文字”拆开，缩小每次决策范围。"
+    },
+    "scope": {
+      "en": "the reported roughly 7.1-second flight search is a specific author-measured run, timed after the initial page observation.",
+      "zh": "作者报告的约 7.1 秒航班搜索是特定任务演示，计时从首次页面观察之后开始，不是任意网页任务的速度保证。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-jev-ultrafast",
+      "zh": "docs/casebook.zh-CN.md#case-jev-ultrafast"
+    },
+    "source_path": "content/cases/jev-ultrafast.md"
+  },
+  {
+    "id": "lahfir-agent-desktop",
+    "category": "automation",
+    "source_url": "https://github.com/lahfir/agent-desktop",
+    "title": {
+      "en": "Jev desktop control in agent-desktop",
+      "zh": "agent-desktop 中的 Jev 桌面控制"
+    },
+    "number": 10,
+    "summary": {
+      "en": "A Jev integration reads an operating-system accessibility tree, selects an operation and target, and hands the result to a local desktop executor.",
+      "zh": "通过桌面应用的 Accessibility Tree 选择控件和动作。 观察当前界面结构，将操作及目标作为受限选项交给 Jev，再由本地执行器执行并重新观察。"
+    },
+    "takeaway": {
+      "en": "separate interface observation, model decisions, and execution.",
+      "zh": "界面状态、模型决策、本地执行各自承担明确职责。"
+    },
+    "scope": {
+      "en": "agent-desktop is a broader desktop tool with a specific Jev integration, not an exclusively Jev-based project.",
+      "zh": "`agent-desktop` 是通用桌面工具，Jev 是其中的具体集成；不能把整个仓库都称为 Jev 专属项目。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-lahfir-agent-desktop",
+      "zh": "docs/casebook.zh-CN.md#case-lahfir-agent-desktop"
+    },
+    "source_path": "content/cases/lahfir-agent-desktop.md"
+  },
+  {
+    "id": "itsmostafa-typesafe-mcp",
+    "category": "automation",
+    "source_url": "https://github.com/itsmostafa/typesafe-mcp",
+    "title": {
+      "en": "Typesafe MCP — itsmostafa",
+      "zh": "Typesafe MCP（itsmostafa）"
+    },
+    "number": 11,
+    "summary": {
+      "en": "An MCP server connecting Claude Code, Claude Desktop, and Codex to Jev. Its `evaluate` tool accepts state and Noul, Choice, or Score questions for tasks such as ticket triage.",
+      "zh": "让 Claude Code、Claude Desktop、Codex 调用 Jev 进行工单分流等判断。 通过 `evaluate` 接收状态与问题，支持 Noul、Choice、Score，并返回 TypeSafe 响应。"
+    },
+    "takeaway": {
+      "en": "ask several independent typed questions about the same state.",
+      "zh": "一次调用可以对同一状态提出多个独立问题。"
+    },
+    "scope": {
+      "en": "an integration tool; configurable examples should not all be counted as deployed customer use cases.",
+      "zh": "它是接入工具，不应把可配置的示例场景全部写成已上线客户案例。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-itsmostafa-typesafe-mcp",
+      "zh": "docs/casebook.zh-CN.md#case-itsmostafa-typesafe-mcp"
+    },
+    "source_path": "content/cases/itsmostafa-typesafe-mcp.md"
+  },
+  {
+    "id": "sharziki-semdecide",
+    "category": "automation",
+    "source_url": "https://github.com/sharziki/semdecide",
+    "title": {
+      "en": "SemDecide",
+      "zh": "SemDecide"
+    },
+    "number": 12,
+    "summary": {
+      "en": "Brings semantic predicates, routing, scoring, filtering, and guard decisions into Unix pipelines and CI through `is`, `choose`, `score`, `filter`, and `guard` commands.",
+      "zh": "在命令行、CI 或数据流水线中做语义判断、路由、评分与过滤。 提供 `is`、`choose`、`score`、`filter` 和 `guard` 命令，将不确定性、阈值与进程退出码纳入接口。"
+    },
+    "takeaway": {
+      "en": "typed judgments with explicit thresholds, uncertainty, and process exit codes.",
+      "zh": "既输出判断结果，也明确表示“不确定”和“调用失败”。"
+    },
+    "scope": {
+      "en": "semantic judgments do not replace authorization or execution controls.",
+      "zh": "模型判断不是权限系统；自动执行仍由调用方流程决定。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-sharziki-semdecide",
+      "zh": "docs/casebook.zh-CN.md#case-sharziki-semdecide"
+    },
+    "source_path": "content/cases/sharziki-semdecide.md"
+  },
+  {
+    "id": "awlevin-typesafe-computer-use",
+    "category": "automation",
+    "source_url": "https://github.com/awlevin/typesafe-computer-use",
+    "title": {
+      "en": "typesafe-computer-use",
+      "zh": "typesafe-computer-use"
+    },
+    "number": 13,
+    "summary": {
+      "en": "A Mac automation loop converts screen information through OCR and deterministic processing, asks Jev to choose an action, and uses a writing model only when free text is needed.",
+      "zh": "Mac 自动化工具先用 OCR 与确定性处理读取屏幕，再由 Jev 选择动作，需要自由文字时才调用写作模型。"
+    },
+    "takeaway": {
+      "en": "Screen interpretation → bounded action selection → desktop execution.",
+      "zh": "屏幕信息解析 → 有限动作选择 → 桌面执行。"
+    },
+    "scope": {
+      "en": "OCR and local processing provide perception; Jev does not directly inspect screenshots.",
+      "zh": "感知由 OCR 和本地代码完成，不是 Jev 直接看截图；作者的性能比较涉及特定预处理，本次未复现。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-awlevin-typesafe-computer-use",
+      "zh": "docs/casebook.zh-CN.md#case-awlevin-typesafe-computer-use"
+    },
+    "source_path": "content/cases/awlevin-typesafe-computer-use.md"
+  },
+  {
+    "id": "vlad-terin-jev-browser",
+    "category": "automation",
+    "source_url": "https://github.com/vlad-terin/jev-browser",
+    "title": {
+      "en": "Jev Browser",
+      "zh": "Jev Browser"
+    },
+    "number": 14,
+    "summary": {
+      "en": "An agent skill and runtime that uses existing browser tools in a continuous observation, action, and verification loop. The planning agent supplies the goal and navigation guidance; Jev selects observed elements.",
+      "zh": "通过已有浏览器工具持续观察、操作和验证；规划 Agent 提供目标与导航方向，Jev 选择实际观察到的页面元素。"
+    },
+    "takeaway": {
+      "en": "Plan once, then execute repeated bounded browser decisions.",
+      "zh": "一次规划，循环执行有限范围内的浏览器判断。"
+    },
+    "scope": {
+      "en": "An unofficial integration requiring compatible browser tools; it is distinct from browser-use/jev-ultrafast and is not a browser service by itself.",
+      "zh": "非官方集成，需要兼容的浏览器工具；与 browser-use/jev-ultrafast 是不同项目，并非独立浏览器服务。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-vlad-terin-jev-browser",
+      "zh": "docs/casebook.zh-CN.md#case-vlad-terin-jev-browser"
+    },
+    "source_path": "content/cases/vlad-terin-jev-browser.md"
+  },
+  {
+    "id": "droidrun-mobile-jev",
+    "category": "automation",
+    "source_url": "https://github.com/droidrun/mobile-jev",
+    "title": {
+      "en": "Mobile Jev",
+      "zh": "Mobile Jev"
+    },
+    "number": 15,
+    "summary": {
+      "en": "A mobile agent uses Jev to select actions on a real Android device through Mobilerun, with a studio, CLI, and execution traces.",
+      "zh": "通过 Mobilerun 在真实 Android 设备上运行，由 Jev 选择操作，提供可视化工作台、CLI 和执行轨迹。"
+    },
+    "takeaway": {
+      "en": "Goal → mobile state → action selection → device execution.",
+      "zh": "目标 → 手机状态 → 动作选择 → 设备执行。"
+    },
+    "scope": {
+      "en": "The documented Uber demo reaches payment selection, not a completed booking.",
+      "zh": "README 中的 Uber 演示到达支付方式选择，未展示完成叫车；约 21 秒、9 个动作是单次演示数据。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-droidrun-mobile-jev",
+      "zh": "docs/casebook.zh-CN.md#case-droidrun-mobile-jev"
+    },
+    "source_path": "content/cases/droidrun-mobile-jev.md"
+  },
+  {
+    "id": "zod-jev",
+    "category": "automation",
+    "source_url": "https://github.com/jomatsu/zod-jev",
+    "title": {
+      "en": "zod-jev — semantic validation",
+      "zh": "zod-jev — 表单语义校验"
+    },
+    "number": 16,
+    "summary": {
+      "en": "Adds Jev semantic checks to Zod schemas, turning probabilities into validation issues alongside ordinary shape checks.",
+      "zh": "在 Zod 格式校验之上加入 Jev 语义判断，将概率转为校验结果，适合检查内容含义、分类与描述是否匹配。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "Uncertain and unavailable judgments need explicit handling; a passing check does not establish factual correctness.",
+      "zh": "需要处理不确定和服务不可用的结果；通过校验不代表事实一定正确。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-zod-jev",
+      "zh": "docs/casebook.zh-CN.md#case-zod-jev"
+    },
+    "source_path": "content/cases/zod-jev.md"
+  },
+  {
+    "id": "abovecolin-ha-jev",
+    "category": "automation",
+    "source_url": "https://github.com/AboveColin/HA-Jev",
+    "title": {
+      "en": "HA-Jev — Home Assistant decisions",
+      "zh": "HA-Jev — 家庭状态判断"
+    },
+    "number": 17,
+    "summary": {
+      "en": "Turns home entity states into Jev probabilities, choices and scores exposed as sensors or automation responses.",
+      "zh": "把 Home Assistant 设备状态交给 Jev 判断，将概率、选项和评分转为传感器或自动化动作返回值。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "Device-state quality and automation policies determine whether a judgment is useful; integration was not run here.",
+      "zh": "效果依赖设备状态质量和自动化规则；本仓库未安装联调。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-abovecolin-ha-jev",
+      "zh": "docs/casebook.zh-CN.md#case-abovecolin-ha-jev"
+    },
+    "source_path": "content/cases/abovecolin-ha-jev.md"
+  },
+  {
+    "id": "dommonte-n8n-nodes-typesafe-ai",
+    "category": "automation",
+    "source_url": "https://github.com/DomMonte/n8n-nodes-typesafe-ai",
+    "title": {
+      "en": "n8n TypeSafe community node",
+      "zh": "n8n TypeSafe 节点 — 工作流判断"
+    },
+    "number": 18,
+    "summary": {
+      "en": "Exposes typed TypeSafe questions inside n8n so downstream workflow nodes can branch on answers.",
+      "zh": "通过 n8n 社区节点调用 TypeSafe 的结构化判断，让后续工作流按结果分支处理。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "A community integration; installation eligibility and retry handling depend on the n8n environment and workflow.",
+      "zh": "属于社区集成；安装条件与重试处理取决于 n8n 环境和工作流配置。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-dommonte-n8n-nodes-typesafe-ai",
+      "zh": "docs/casebook.zh-CN.md#case-dommonte-n8n-nodes-typesafe-ai"
+    },
+    "source_path": "content/cases/dommonte-n8n-nodes-typesafe-ai.md"
+  },
+  {
+    "id": "kitze-unclutter",
+    "category": "automation",
+    "source_url": "https://github.com/kitze/unclutter",
+    "title": {
+      "en": "Unclutter — page clutter filtering",
+      "zh": "Unclutter — 网页杂乱元素分类与隐藏"
+    },
+    "number": 19,
+    "summary": {
+      "en": "A browser extension classifies page elements with Jev and hides selected clutter using reusable rules.",
+      "zh": "浏览器扩展用 Jev 对网页元素分类，再按可复用规则隐藏选定的杂乱内容。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "Uncertain elements should remain; hiding a consent dialog does not make a consent choice for the user.",
+      "zh": "需保留不确定元素；隐藏同意弹窗不等于替用户作出同意或拒绝选择。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-kitze-unclutter",
+      "zh": "docs/casebook.zh-CN.md#case-kitze-unclutter"
+    },
+    "source_path": "content/cases/kitze-unclutter.md"
+  },
+  {
+    "id": "friedjof-jev-mobile",
+    "category": "automation",
+    "source_url": "https://github.com/Friedjof/jev-mobile",
+    "title": {
+      "en": "jev-mobile — Android Settings PoC",
+      "zh": "jev-mobile — Android设置导航PoC"
+    },
+    "number": 20,
+    "summary": {
+      "en": "Uses semantic UI state, stability checks and bounded action choices for an Android observe–decide–act loop.",
+      "zh": "基于语义 UI 状态、稳定性检查及有限动作选项，构建 Android 观察、决策与执行循环。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "The author exercised Android Settings; this is distinct from droidrun/mobile-jev and is not a general mobile agent.",
+      "zh": "作者主要验证 Android 设置导航，不是通用手机 Agent；与 droidrun/mobile-jev 是不同项目。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-friedjof-jev-mobile",
+      "zh": "docs/casebook.zh-CN.md#case-friedjof-jev-mobile"
+    },
+    "source_path": "content/cases/friedjof-jev-mobile.md"
+  },
+  {
+    "id": "shivam2003-dev-typesafe-triage-guard",
+    "category": "automation",
+    "source_url": "https://github.com/shivam2003-dev/typesafe-triage-guard",
+    "title": {
+      "en": "triage-guard — support, alert, and deployment judgments",
+      "zh": "triage-guard — 支持、告警与部署风险的判断管线"
+    },
+    "number": 21,
+    "summary": {
+      "en": "A Python worked example shares a judgment engine across support tickets, operational alerts, and deployment risk. Batched Noul risk signals and a severity Score feed code-owned policy tables; the ticket flow adds department and urgency judgments.",
+      "zh": "Python 研究示例在支持工单、运维告警和部署风险中复用判断引擎。批量 Noul 风险信号与严重度 Score 交给代码策略表；工单流程另加入部门及紧急度判断。"
+    },
+    "takeaway": {
+      "en": "Input → risk battery → policy thresholds → pass, review, block, or support route.",
+      "zh": "输入 → 风险问题组 → 策略阈值 → 放行、复核、阻断或支持分流。"
+    },
+    "scope": {
+      "en": "The author labels it R&D.",
+      "zh": "作者定位为研发示例；离线关键词 Mock 用于验证组合逻辑，不能作为 Jev 效果。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-shivam2003-dev-typesafe-triage-guard",
+      "zh": "docs/casebook.zh-CN.md#case-shivam2003-dev-typesafe-triage-guard"
+    },
+    "source_path": "content/cases/shivam2003-dev-typesafe-triage-guard.md"
+  },
+  {
+    "id": "giesn-typesafe-jev-workflow",
+    "category": "automation",
+    "source_url": "https://github.com/GiesN/typesafe-jev-workflow",
+    "title": {
+      "en": "typesafe-jev-workflow — LangGraph email routing",
+      "zh": "typesafe-jev-workflow — LangGraph 邮件意图分流"
+    },
+    "number": 22,
+    "summary": {
+      "en": "An asynchronous LangGraph example sends email sender, subject, and body to a Choice question for invoice or general intent. Handlers set accounts_payable or general_inbox in graph state.",
+      "zh": "异步 LangGraph 示例将邮件发件人、主题与正文交给 Choice，区分 invoice 和 general，再由处理节点设置 accounts_payable 或 general_inbox。"
+    },
+    "takeaway": {
+      "en": "Mock email → Jev intent classification → graph branch and destination label.",
+      "zh": "模拟邮件 → Jev 意图分类 → 图分支与目标队列标签。"
+    },
+    "scope": {
+      "en": "Handlers do not send email or make payments.",
+      "zh": "处理节点不发送邮件或付款。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-giesn-typesafe-jev-workflow",
+      "zh": "docs/casebook.zh-CN.md#case-giesn-typesafe-jev-workflow"
+    },
+    "source_path": "content/cases/giesn-typesafe-jev-workflow.md"
+  },
+  {
+    "id": "jomatsu-pi-jev-auto-mode",
+    "category": "automation",
+    "source_url": "https://github.com/jomatsu/pi-jev-auto-mode",
+    "title": {
+      "en": "Pi Jev Auto Mode — tool-call probability gate",
+      "zh": "Pi Jev Auto Mode — 工具调用概率门控"
+    },
+    "number": 23,
+    "summary": {
+      "en": "A Pi extension combines deterministic command rules with Jev judgments before bash, write, and edit calls. Code compares condition probabilities with thresholds to produce allow, deny, or uncertain decisions.",
+      "zh": "Pi 扩展在 bash、write、edit 调用前组合确定性规则与 Jev 语义判断，由代码将条件概率与阈值比较，得到允许、拒绝或不确定的决策。"
+    },
+    "takeaway": {
+      "en": "Tool call → deterministic checks → semantic conditions → local execution gate.",
+      "zh": "工具调用 → 确定性检查 → 语义条件判断 → 本地执行门控。"
+    },
+    "scope": {
+      "en": "At review, README describes blocking uncertain results, while src/settings.ts sets uncertain to allow; src/jev/decide.ts treats an uncertain hazard-mode condition as satisfied.",
+      "zh": "核查时 README 称不确定结果会被阻止，但 src/settings.ts 默认 uncertain 为 allow，src/jev/decide.ts 将 hazard 模式的不确定条件按满足处理。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-jomatsu-pi-jev-auto-mode",
+      "zh": "docs/casebook.zh-CN.md#case-jomatsu-pi-jev-auto-mode"
+    },
+    "source_path": "content/cases/jomatsu-pi-jev-auto-mode.md"
+  },
+  {
+    "id": "valentynkit-jev-skip",
+    "category": "automation",
+    "source_url": "https://github.com/valentynkit/jev-skip",
+    "title": {
+      "en": "jev-skip — caption-based sponsor detection",
+      "zh": "jev-skip — 基于字幕的赞助片段识别"
+    },
+    "number": 24,
+    "summary": {
+      "en": "A browser extension sends YouTube captions to Jev for sponsor-probability judgments on time segments. Local code displays a seek-bar heatmap and can skip selected segments without relying on a crowdsourced timestamp database.",
+      "zh": "浏览器扩展将 YouTube 字幕发送给 Jev，判断各时间片段的赞助概率，再由本地代码显示进度条热力图并按设置跳过片段，不依赖众包时间戳数据库。"
+    },
+    "takeaway": {
+      "en": "Caption text → segment judgments → seek-bar overlay and optional skipping.",
+      "zh": "字幕文本 → 片段判断 → 进度条标记与可选跳过。"
+    },
+    "scope": {
+      "en": "No captions means no analysis; this is text classification, not audio or video understanding.",
+      "zh": "没有字幕就不分析；这是文本分类，不是音视频理解。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-valentynkit-jev-skip",
+      "zh": "docs/casebook.zh-CN.md#case-valentynkit-jev-skip"
+    },
+    "source_path": "content/cases/valentynkit-jev-skip.md"
+  },
+  {
+    "id": "jev-codex-router",
+    "category": "routing",
+    "source_url": "https://github.com/0xNatoshi/jev-codex-router",
+    "title": {
+      "en": "Jev Codex Router",
+      "zh": "Jev Codex Router"
+    },
+    "number": 25,
+    "summary": {
+      "en": "Classifies coding turns with Jev and applies a policy to select a model and reasoning depth, with logging and fallback behavior.",
+      "zh": "按编程任务难度选择模型与推理深度。 每轮先由 Jev 分类，再按策略路由到不同模型，记录结果并处理低置信度或错误。"
+    },
+    "takeaway": {
+      "en": "task classification → model selection → quality and cost evaluation.",
+      "zh": "在质量、延迟和费用之间建立可观察的路由策略。"
+    },
+    "scope": {
+      "en": "the reported roughly 60% savings comes from the author's replay of 237 real turns.",
+      "zh": "约 60% 成本下降来自作者对 237 个真实 turn 的回放自测，不是 SeeAPI 实测或普遍承诺。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-jev-codex-router",
+      "zh": "docs/casebook.zh-CN.md#case-jev-codex-router"
+    },
+    "source_path": "content/cases/jev-codex-router.md"
+  },
+  {
+    "id": "ghalebdweikat-winnow",
+    "category": "routing",
+    "source_url": "https://github.com/GhalebDweikat/winnow",
+    "title": {
+      "en": "Winnow",
+      "zh": "Winnow"
+    },
+    "number": 26,
+    "summary": {
+      "en": "Judges blocks of long Claude Code tool outputs for task relevance. Confidently irrelevant blocks become summaries or stubs, while full text remains recoverable; uncertain blocks are retained.",
+      "zh": "压缩进入 Claude Code 上下文的长工具输出。 Jev 判断分块内容是否与当前任务有关；高置信度无关内容替换为摘要或占位说明，原文缓存并支持按需恢复。不确定内容保留。"
+    },
+    "takeaway": {
+      "en": "reversible relevance filtering before context ingestion.",
+      "zh": "保留召回机制的上下文筛选，而非直接删除信息。"
+    },
+    "scope": {
+      "en": "judgment and summary generation are separate stages.",
+      "zh": "筛选判断与摘要生成是不同步骤；配置其他判断适配器时不能把结果一概归为 Jev 效果。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-ghalebdweikat-winnow",
+      "zh": "docs/casebook.zh-CN.md#case-ghalebdweikat-winnow"
+    },
+    "source_path": "content/cases/ghalebdweikat-winnow.md"
+  },
+  {
+    "id": "jev-review",
+    "category": "routing",
+    "source_url": "https://github.com/devagrawal09/jev-review",
+    "title": {
+      "en": "Jev Review",
+      "zh": "Jev Review"
+    },
+    "number": 27,
+    "summary": {
+      "en": "Reviews diffs or codebases through staged judgments about risk, file profiles, evidence, mechanisms, severity, and conditional reviewer routing.",
+      "zh": "对 Git diff 或代码库进行结构化风险审查。 依次判断风险、文件特征、证据位置、机制和严重性，并按条件路由后续审查。"
+    },
+    "takeaway": {
+      "en": "compose small judgments to focus deeper review on concrete regions.",
+      "zh": "用一系列小判断定位值得深入检查的代码片段。"
+    },
+    "scope": {
+      "en": "an experiment that currently does not integrate compiler diagnostics or static analyzers.",
+      "zh": "作者将其定位为实验；当前不集成编译器诊断或静态分析，结果是审查线索而非缺陷证明。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-jev-review",
+      "zh": "docs/casebook.zh-CN.md#case-jev-review"
+    },
+    "source_path": "content/cases/jev-review.md"
+  },
+  {
+    "id": "gargpratyush-jev-router",
+    "category": "routing",
+    "source_url": "https://github.com/gargpratyush/jev-router",
+    "title": {
+      "en": "jev-router — gargpratyush",
+      "zh": "jev-router — gargpratyush"
+    },
+    "number": 28,
+    "summary": {
+      "en": "Routes fresh user turns in Claude Code and Codex to fast or strong model tiers while launching the original CLIs.",
+      "zh": "启动原生 Claude Code 或 Codex CLI，并在新用户轮次开始时按任务难度选择快速或强能力模型。"
+    },
+    "takeaway": {
+      "en": "Classify a turn and select a model without replacing the CLI.",
+      "zh": "判断当前轮次的任务，再选择执行模型。"
+    },
+    "scope": {
+      "en": "A separate project from Jev Codex Router by 0xNatoshi.",
+      "zh": "与 0xNatoshi 的 Jev Codex Router 是不同项目；README 描述的是按新用户轮次路由，不是每个内部工具步骤重新选择。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-gargpratyush-jev-router",
+      "zh": "docs/casebook.zh-CN.md#case-gargpratyush-jev-router"
+    },
+    "source_path": "content/cases/gargpratyush-jev-router.md"
+  },
+  {
+    "id": "vercel-eve",
+    "category": "routing",
+    "source_url": "https://github.com/vercel/eve",
+    "title": {
+      "en": "eve — typed evaluation and model selection",
+      "zh": "eve — typed evaluation and model selection"
+    },
+    "number": 29,
+    "summary": {
+      "en": "The agent framework uses Jev by default for automatic model selection and typed evaluations; its documented tool-approval integration can escalate uncertain or failed reviews to a human.",
+      "zh": "Agent 框架默认使用 Jev 做自动模型选择和结构化评估，文档还展示了工具执行审批中的判断与人工复核。"
+    },
+    "takeaway": {
+      "en": "Embed typed evaluation in model routing, tools, and approval decisions.",
+      "zh": "将结构化评估接入模型路由、工具和审批流程。"
+    },
+    "scope": {
+      "en": "Jev is the evaluator, not the sole model powering eve.",
+      "zh": "Jev 是评估器，不是 eve 的唯一运行模型；底层 AI SDK evaluation 规范仍为实验性。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-vercel-eve",
+      "zh": "docs/casebook.zh-CN.md#case-vercel-eve"
+    },
+    "source_path": "content/cases/vercel-eve.md"
+  },
+  {
+    "id": "typesafeainate-dspy-typesafeify",
+    "category": "routing",
+    "source_url": "https://github.com/typesafeainate/dspy-typesafeify",
+    "title": {
+      "en": "DSPy typesafeify — hybrid inference",
+      "zh": "DSPy typesafeify — 混合推理"
+    },
+    "number": 30,
+    "summary": {
+      "en": "A proof-of-concept decorator routes boolean, enum and configured score fields to Jev while a generative model handles free text.",
+      "zh": "概念验证装饰器将 DSPy 中的布尔、枚举及指定评分字段交给 Jev，自由文本仍交给生成模型。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "The author's comparison uses three examples; it does not establish general cost or speed improvements.",
+      "zh": "作者对照仅使用三个示例，不能推导普遍的成本或速度提升。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-typesafeainate-dspy-typesafeify",
+      "zh": "docs/casebook.zh-CN.md#case-typesafeainate-dspy-typesafeify"
+    },
+    "source_path": "content/cases/typesafeainate-dspy-typesafeify.md"
+  },
+  {
+    "id": "reachjalil-jevlogs",
+    "category": "routing",
+    "source_url": "https://github.com/reachjalil/jevlogs",
+    "title": {
+      "en": "jevlogs — log triage",
+      "zh": "jevlogs — 运维日志语义分流"
+    },
+    "number": 31,
+    "summary": {
+      "en": "Scores diagnostic value and priority of OpenTelemetry logs before expensive analysis, while retaining an archive.",
+      "zh": "在高成本分析前，用 Jev 判断 OpenTelemetry 日志的诊断价值和优先级，同时保留日志归档。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "Annotation alone does not skip downstream analysis; savings depend on forwarding mode and policy.",
+      "zh": "仅标注不会跳过后续分析；是否节省开销取决于转发模式与策略。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-reachjalil-jevlogs",
+      "zh": "docs/casebook.zh-CN.md#case-reachjalil-jevlogs"
+    },
+    "source_path": "content/cases/reachjalil-jevlogs.md"
+  },
+  {
+    "id": "ndolinschi-swarmrouter",
+    "category": "routing",
+    "source_url": "https://github.com/ndolinschi/swarmrouter",
+    "title": {
+      "en": "SwarmRouter — agent assignment",
+      "zh": "SwarmRouter — 任务分配给专长Agent"
+    },
+    "number": 32,
+    "summary": {
+      "en": "Selects a specialist agent and judges ambiguity or the need for collaboration using typed questions.",
+      "zh": "通过结构化问题选择专长 Agent，并判断任务歧义和协作需求。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "Routing recommendations do not demonstrate an executed multi-agent workflow; keyless demo responses are local heuristics.",
+      "zh": "路由建议不等于已执行的多 Agent 工作流；无 key 演示使用本地规则。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-ndolinschi-swarmrouter",
+      "zh": "docs/casebook.zh-CN.md#case-ndolinschi-swarmrouter"
+    },
+    "source_path": "content/cases/ndolinschi-swarmrouter.md"
+  },
+  {
+    "id": "shiftynick-jev-axi",
+    "category": "routing",
+    "source_url": "https://github.com/shiftynick/jev-axi",
+    "title": {
+      "en": "jev-axi — judgment CLI for agents",
+      "zh": "jev-axi — Agent判断工具与构建日志分诊"
+    },
+    "number": 33,
+    "summary": {
+      "en": "Provides typed commands for guard checks, build-log triage, diff review and bulk filtering, with reusable question recipes.",
+      "zh": "为 Agent 提供防护判断、构建日志分诊、差异审查及批量过滤命令，复用固定问题方案。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "The author's agent experiment reduced file reads without reducing cost; judgments do not replace source inspection or a complete safety boundary.",
+      "zh": "作者 Agent 实验减少了文件读取但未降低成本；判断不能替代源码阅读或完整安全边界。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-shiftynick-jev-axi",
+      "zh": "docs/casebook.zh-CN.md#case-shiftynick-jev-axi"
+    },
+    "source_path": "content/cases/shiftynick-jev-axi.md"
+  },
+  {
+    "id": "devmortimer-pi-warden",
+    "category": "routing",
+    "source_url": "https://github.com/DevMortimer/pi-warden",
+    "title": {
+      "en": "Pi Warden — coding-agent rule feedback",
+      "zh": "Pi Warden — 规则检查与代理行为提醒"
+    },
+    "number": 34,
+    "summary": {
+      "en": "A Pi extension checks edits against project rules and places feedback in the agent’s context. Other guards assess task drift, unsupported completion claims, and risky actions; deterministic patterns and model judgments feed code-owned responses.",
+      "zh": "Pi 扩展将修改与项目规则对照，把反馈加入 Agent 上下文；其他检查覆盖任务偏离、缺少证据的完成声明及风险动作，由确定性模式和模型判断共同触发代码策略。"
+    },
+    "takeaway": {
+      "en": "Agent context and proposed changes → rule/risk checks → feedback or selected holds.",
+      "zh": "Agent 上下文与拟议修改 → 规则及风险检查 → 反馈或特定拦截。"
+    },
+    "scope": {
+      "en": "Many findings steer or warn rather than block.",
+      "zh": "很多问题只提醒或引导，不会阻断。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-devmortimer-pi-warden",
+      "zh": "docs/casebook.zh-CN.md#case-devmortimer-pi-warden"
+    },
+    "source_path": "content/cases/devmortimer-pi-warden.md"
+  },
+  {
+    "id": "devanshbatham-commit-miner",
+    "category": "routing",
+    "source_url": "https://github.com/devanshbatham/commit-miner",
+    "title": {
+      "en": "commit-miner — commit classification and security-fix signals",
+      "zh": "commit-miner — Git 提交差异分类与安全修复线索"
+    },
+    "number": 35,
+    "summary": {
+      "en": "A Rust CLI asks Noul questions about Git changes to identify bug-fix, security-fix, change-type, and CWE signals. Large inputs are reviewed in sections before selected evidence is used for a final judgment; local thresholds assign labels.",
+      "zh": "Rust CLI 通过 Noul 判断 Git 变更中的缺陷修复、安全修复、变更类型和 CWE 线索；长输入先分段审阅，再选择证据完成最终判断，由本地阈值贴标签。"
+    },
+    "takeaway": {
+      "en": "Commit diff → section judgments → selected evidence review → thresholded labels.",
+      "zh": "提交差异 → 分段判断 → 选中证据复核 → 阈值标签。"
+    },
+    "scope": {
+      "en": "Labels are model signals, not confirmed vulnerabilities.",
+      "zh": "标签是模型信号，不是漏洞证明。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-devanshbatham-commit-miner",
+      "zh": "docs/casebook.zh-CN.md#case-devanshbatham-commit-miner"
+    },
+    "source_path": "content/cases/devanshbatham-commit-miner.md"
+  },
+  {
+    "id": "thruwire-foreman",
+    "category": "routing",
+    "source_url": "https://github.com/thruwire/foreman",
+    "title": {
+      "en": "Foreman — semantic supervision of coding processes",
+      "zh": "Foreman — 编码代理运行时的语义监督与生命周期编排"
+    },
+    "number": 36,
+    "summary": {
+      "en": "An experimental runtime sends bounded task, worker-output, diff, and verification observations to nine Noul questions in one request. A deterministic policy uses those assessments to continue, start, stop, retry, verify, finish, or escalate managed work; assessments are printed for the CLI user.",
+      "zh": "实验运行时将有界的任务、Worker 输出、差异与验证状态交给一次请求中的九个 Noul 问题。确定性策略据此继续、启动、停止、重试、验证、结束或升级受管工作，并向 CLI 用户打印评估。"
+    },
+    "takeaway": {
+      "en": "Bounded worker observations → semantic assessment → local policy → process lifecycle action.",
+      "zh": "有界 Worker 观测 → 语义评估 → 本地策略 → 进程生命周期动作。"
+    },
+    "scope": {
+      "en": "At the linked commit, the worker interface exposes run and terminate, not a text-steering channel into a running agent.",
+      "zh": "所链接版本的 Worker 接口只有 run 与 terminate，没有向运行中的 Agent 回传文字 steering 的通道。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-thruwire-foreman",
+      "zh": "docs/casebook.zh-CN.md#case-thruwire-foreman"
+    },
+    "source_path": "content/cases/thruwire-foreman.md"
+  },
+  {
+    "id": "valentynkit-jev-belay",
+    "category": "routing",
+    "source_url": "https://github.com/valentynkit/jev-belay",
+    "title": {
+      "en": "jev-belay — completion checks for Claude Code",
+      "zh": "jev-belay — Claude Code 完成声明核查"
+    },
+    "number": 37,
+    "summary": {
+      "en": "A Claude Code Stop hook inspects the current turn’s transcript for file changes and verification evidence. When changes lack a subsequent passing check, it asks Jev four questions about the closing message; local thresholds and repetition limits determine whether to allow the stop or return feedback.",
+      "zh": "Claude Code 的 Stop 钩子先从当前轮次会话记录中识别文件改动与验证证据；有改动且之后没有通过的检查时，再向 Jev 提出四个关于结束消息的问题，由本地阈值及重复阻断限制决定放行或返回反馈。"
+    },
+    "takeaway": {
+      "en": "Local transcript evidence → conditional Jev judgment → allow stop or request follow-up.",
+      "zh": "本地会话证据 → 有条件的 Jev 判断 → 允许结束或要求后续检查。"
+    },
+    "scope": {
+      "en": "Errors fail open.",
+      "zh": "出错时放行。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-valentynkit-jev-belay",
+      "zh": "docs/casebook.zh-CN.md#case-valentynkit-jev-belay"
+    },
+    "source_path": "content/cases/valentynkit-jev-belay.md"
+  },
+  {
+    "id": "valentynkit-jev-commit",
+    "category": "routing",
+    "source_url": "https://github.com/valentynkit/jev-commit",
+    "title": {
+      "en": "jev-commit — commit-message and diff checks",
+      "zh": "jev-commit — 提交信息与差异核查"
+    },
+    "number": 38,
+    "summary": {
+      "en": "A commit-msg hook, installable through the pre-commit framework, sends the staged diff and commit message to Jev for judgments about message quality, consistency, debug leftovers, unmentioned work, and credential-like content. Code applies thresholds and a separate credential check.",
+      "zh": "通过 pre-commit 框架安装的 commit-msg 钩子，将暂存区差异和提交信息发送给 Jev，判断信息质量、描述一致性、调试残留、未提及的改动及疑似凭证内容；代码结合阈值与独立凭证检查作出处理。"
+    },
+    "takeaway": {
+      "en": "Staged diff and message → typed judgments and credential checks → local warning or blocking policy.",
+      "zh": "暂存差异与提交信息 → 结构化判断及凭证检查 → 本地警告或阻断策略。"
+    },
+    "scope": {
+      "en": "By default, non-secret findings warn while likely credentials can block; strict mode also blocks other findings.",
+      "zh": "默认对非密钥问题仅警告，疑似凭证可阻止提交；strict 模式也会阻断其他发现。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-valentynkit-jev-commit",
+      "zh": "docs/casebook.zh-CN.md#case-valentynkit-jev-commit"
+    },
+    "source_path": "content/cases/valentynkit-jev-commit.md"
+  },
+  {
+    "id": "ellipsis-dev-blink",
+    "category": "search",
+    "source_url": "https://github.com/ellipsis-dev/blink",
+    "title": {
+      "en": "Blink",
+      "zh": "Blink"
+    },
+    "number": 39,
+    "summary": {
+      "en": "Finds files from natural-language queries by having Jev score file and folder names, allocating walkers along likely paths.",
+      "zh": "根据自然语言问题在代码目录中查找相关文件。 Jev 对文件和目录名称进行判断，多个 walker 按路径倾向继续探索。"
+    },
+    "takeaway": {
+      "en": "narrow a search space through repeated semantic choices.",
+      "zh": "将语义判断用于逐层缩小搜索空间。"
+    },
+    "scope": {
+      "en": "result percentages represent the share of walkers reaching a file, not file correctness probabilities.",
+      "zh": "结果百分比是到达该文件的 walker 占比，不能直接当成文件正确率；这也不是完整源码语义索引。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-ellipsis-dev-blink",
+      "zh": "docs/casebook.zh-CN.md#case-ellipsis-dev-blink"
+    },
+    "source_path": "content/cases/ellipsis-dev-blink.md"
+  },
+  {
+    "id": "jexp-neo4jev",
+    "category": "search",
+    "source_url": "https://github.com/jexp/neo4jev",
+    "title": {
+      "en": "neo4jev",
+      "zh": "neo4jev"
+    },
+    "number": 40,
+    "summary": {
+      "en": "Navigates a Neo4j graph by presenting outgoing relationships as Choice options, asking a Noul goal-completion question, and exploring candidate paths with beam search.",
+      "zh": "在 Neo4j 知识图谱中按目标逐跳选择关系。 将出边转换为 Choice 选项，同时用 Noul 判断是否到达目标，再用 beam search 探索候选路径。"
+    },
+    "takeaway": {
+      "en": "model-guided edge selection inside a deterministic search algorithm.",
+      "zh": "模型选择候选关系，搜索算法负责路径扩展和排序。"
+    },
+    "scope": {
+      "en": "a demo with explicitly labeled stand-in answers when real TypeSafe calls fail.",
+      "zh": "演示项目；缺少有效 API 调用时存在明确标注的替代答案路径，演示运行不等于每一步都来自 Jev。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-jexp-neo4jev",
+      "zh": "docs/casebook.zh-CN.md#case-jexp-neo4jev"
+    },
+    "source_path": "content/cases/jexp-neo4jev.md"
+  },
+  {
+    "id": "sift",
+    "category": "search",
+    "source_url": "https://github.com/tylergibbs1/sift",
+    "title": {
+      "en": "Sift — search result reranking",
+      "zh": "Sift — 搜索结果重排"
+    },
+    "number": 41,
+    "summary": {
+      "en": "A Chrome extension asks Jev about relevance, promotional content and depth, then reranks Google results in code.",
+      "zh": "Chrome 扩展使用 Jev 判断搜索结果的相关性、推广倾向和信息深度，再由代码重排 Google 搜索结果。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "Judgments use result snippets rather than full pages; search intent affects filtering.",
+      "zh": "依据搜索摘要而非网页全文；过滤策略会考虑搜索意图。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-sift",
+      "zh": "docs/casebook.zh-CN.md#case-sift"
+    },
+    "source_path": "content/cases/sift.md"
+  },
+  {
+    "id": "sufianetaouil-every",
+    "category": "search",
+    "source_url": "https://github.com/sufianetaouil/every",
+    "title": {
+      "en": "Every — function-level semantic search",
+      "zh": "Every — 逐函数语义代码检索"
+    },
+    "number": 42,
+    "summary": {
+      "en": "Parses source into functions and asks Jev a yes/no question for each, returning ranked matches with cached scores.",
+      "zh": "把源码拆成函数，对每个函数提出是非问题，返回按概率排序的匹配结果并缓存评分。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "Function-local judgments do not establish whole-program dataflow; scanned source is sent to TypeSafe.",
+      "zh": "逐函数判断不等于全程序数据流分析；扫描的源码会发送给 TypeSafe。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-sufianetaouil-every",
+      "zh": "docs/casebook.zh-CN.md#case-sufianetaouil-every"
+    },
+    "source_path": "content/cases/sufianetaouil-every.md"
+  },
+  {
+    "id": "jev-search",
+    "category": "search",
+    "source_url": "https://github.com/superagents-lab/jev-search",
+    "title": {
+      "en": "Jev Search — intent selection and result reranking",
+      "zh": "Jev Search — 自然语言搜索意图识别与结果重排"
+    },
+    "number": 43,
+    "summary": {
+      "en": "A TypeScript application asks Jev to select search sources, time ranges, and query candidates, fetches results through Search1API, then judges title/snippet relevance in batches. Code merges URLs and ranks results by relevance, engine agreement, and original position.",
+      "zh": "TypeScript 应用先让 Jev 选择搜索源、时间范围与检索词候选，经 Search1API 获取结果后，批量判断标题及摘要相关性；代码合并 URL，按相关性、引擎一致性与原始名次排序。"
+    },
+    "takeaway": {
+      "en": "Search intent → external retrieval → per-result judgments → merged, streamed rankings.",
+      "zh": "搜索意图 → 外部检索 → 逐结果判断 → 合并并流式返回排名。"
+    },
+    "scope": {
+      "en": "Relevance scores do not verify page facts; snippets can be incomplete or stale.",
+      "zh": "相关性分数不验证网页事实，摘要可能不完整或过时；一次搜索可能触发多次供应商调用。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-jev-search",
+      "zh": "docs/casebook.zh-CN.md#case-jev-search"
+    },
+    "source_path": "content/cases/jev-search.md"
+  },
+  {
+    "id": "valentynkit-jev-nvim",
+    "category": "search",
+    "source_url": "https://github.com/valentynkit/jev.nvim",
+    "title": {
+      "en": "jev.nvim — semantic function search in Neovim",
+      "zh": "jev.nvim — Neovim 函数级语义检索"
+    },
+    "number": 44,
+    "summary": {
+      "en": "A Neovim plugin uses Treesitter to split buffer code into functions and asks Jev whether each function matches a natural-language question. Results appear as probabilities in virtual text and a ranked quickfix list, integrating semantic search into the editor.",
+      "zh": "Neovim 插件通过 Treesitter 将缓冲区代码拆成函数，让 Jev 判断各函数是否符合自然语言问题，并将概率显示为虚拟文本、将匹配项排序放入 quickfix 列表，把语义搜索接入编辑器操作流程。"
+    },
+    "takeaway": {
+      "en": "Buffer or selected files → function extraction → per-function judgments → ranked editor results.",
+      "zh": "缓冲区或选定文件 → 函数提取 → 逐函数判断 → 编辑器内排序结果。"
+    },
+    "scope": {
+      "en": "Functions are judged separately, without cross-function context; matches are search leads rather than confirmed defects.",
+      "zh": "各函数独立判断，不包含跨函数上下文；匹配项是检索线索，不是已确认缺陷。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-valentynkit-jev-nvim",
+      "zh": "docs/casebook.zh-CN.md#case-valentynkit-jev-nvim"
+    },
+    "source_path": "content/cases/valentynkit-jev-nvim.md"
+  },
+  {
+    "id": "dabit3-jev-experiments-tree-main-judge-sheets",
+    "category": "productivity",
+    "source_url": "https://github.com/dabit3/jev-experiments/tree/main/judge-sheets",
+    "title": {
+      "en": "Judge Sheets — predictive spreadsheets",
+      "zh": "Judge Sheets — predictive spreadsheets"
+    },
+    "number": 45,
+    "summary": {
+      "en": "Typing a column header such as Urgency lets Jev infer a prediction schema; confirming it fills rows through JUDGE, PICK, and RATE functions, with grouped requests and streamed updates.",
+      "zh": "输入 Urgency 等列标题后，Jev 推断预测类型；确认后通过 JUDGE、PICK、RATE 函数填充各行，同一文本的问题合并请求，结果流式返回并触发表格重算。"
+    },
+    "takeaway": {
+      "en": "Header intent → typed schema → row judgments → spreadsheet recalculation.",
+      "zh": "表头意图 → 判断类型 → 逐行评估 → 表格重算。"
+    },
+    "scope": {
+      "en": "A standalone spreadsheet demo, not a Google Sheets integration.",
+      "zh": "独立表格演示，并非 Google Sheets 插件；约 100 毫秒指单次判断或表头解析，不是整列处理时间。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-dabit3-jev-experiments-tree-main-judge-sheets",
+      "zh": "docs/casebook.zh-CN.md#case-dabit3-jev-experiments-tree-main-judge-sheets"
+    },
+    "source_path": "content/cases/dabit3-jev-experiments-tree-main-judge-sheets.md"
+  },
+  {
+    "id": "usenotra-notra",
+    "category": "productivity",
+    "source_url": "https://github.com/usenotra/notra",
+    "title": {
+      "en": "Notra — typed evaluation in analytics",
+      "zh": "Notra — typed evaluation in analytics"
+    },
+    "number": 46,
+    "summary": {
+      "en": "The codebase includes a Jev evaluation client through Vercel AI Gateway, a NOTRA_JEV_CLASSIFIERS flag, and optional typed evaluation alongside brand-mention analysis.",
+      "zh": "代码提供通过 Vercel AI Gateway 调用 Jev 的评估客户端、NOTRA_JEV_CLASSIFIERS 开关，并在品牌提及分析中接入可选的结构化评估。"
+    },
+    "takeaway": {
+      "en": "Introduce typed judgments into an existing analytics workflow with an LLM fallback.",
+      "zh": "在已有分析工作流中加入结构化判断，并保留 LLM 回退。"
+    },
+    "scope": {
+      "en": "Source inspection establishes an integration path, not independently verified production deployment or latency.",
+      "zh": "代码能证明接入路径，不能独立证明线上启用状态或延迟；所查流程仍由 LLM 提供竞争对手信息与引用片段。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-usenotra-notra",
+      "zh": "docs/casebook.zh-CN.md#case-usenotra-notra"
+    },
+    "source_path": "content/cases/usenotra-notra.md"
+  },
+  {
+    "id": "asfarsadewa-human-compiler",
+    "category": "productivity",
+    "source_url": "https://github.com/asfarsadewa/human-compiler",
+    "title": {
+      "en": "human-compiler — writing diagnostics",
+      "zh": "human-compiler — 文字质量诊断"
+    },
+    "number": 47,
+    "summary": {
+      "en": "Combines local text analysis with Jev questions about clarity, intent and tone; deterministic rules render diagnostics.",
+      "zh": "本地代码分句与查词，Jev 判断清晰度、意图和语气，再由固定规则生成文字诊断报告。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "Diagnostics reflect chosen rubrics and thresholds, not objective writing quality or generated explanations.",
+      "zh": "结果依赖评分标准与阈值，不是客观写作质量，也不是模型自由生成的解释。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-asfarsadewa-human-compiler",
+      "zh": "docs/casebook.zh-CN.md#case-asfarsadewa-human-compiler"
+    },
+    "source_path": "content/cases/asfarsadewa-human-compiler.md"
+  },
+  {
+    "id": "monteduro-killmyidea",
+    "category": "productivity",
+    "source_url": "https://github.com/monteduro/killmyidea",
+    "title": {
+      "en": "Kill My Idea — idea scoring",
+      "zh": "Kill My Idea — 产品想法多维评分"
+    },
+    "number": 48,
+    "summary": {
+      "en": "Jev scores a product idea against several criteria; local weighting maps the results to a product verdict.",
+      "zh": "Jev 按多个维度为产品想法评分，本地加权规则将结果组合为建议。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "Heuristic feedback, not validated prediction of business success; the project also supports mock data.",
+      "zh": "属于启发式反馈，未经商业成功预测验证；项目也支持模拟数据。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-monteduro-killmyidea",
+      "zh": "docs/casebook.zh-CN.md#case-monteduro-killmyidea"
+    },
+    "source_path": "content/cases/monteduro-killmyidea.md"
+  },
+  {
+    "id": "gtaras7-typesafe-jev-tree-main-cv-screen",
+    "category": "productivity",
+    "source_url": "https://github.com/gtaras7/typesafe-jev/tree/main/cv-screen",
+    "title": {
+      "en": "Jev CV Screening",
+      "zh": "Jev CV Screening — 简历证据与本地策略评分"
+    },
+    "number": 49,
+    "summary": {
+      "en": "Stores typed CV judgments separately from local scoring rules, allowing supported policy changes to reuse existing answers.",
+      "zh": "把简历结构化判断与本地评分规则分开存储，已有回答支持的策略调整可直接重算。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "New questions require new judgments.",
+      "zh": "新增问题仍需重新判断。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-gtaras7-typesafe-jev-tree-main-cv-screen",
+      "zh": "docs/casebook.zh-CN.md#case-gtaras7-typesafe-jev-tree-main-cv-screen"
+    },
+    "source_path": "content/cases/gtaras7-typesafe-jev-tree-main-cv-screen.md"
+  },
+  {
+    "id": "sriganesh-jevibe-check",
+    "category": "productivity",
+    "source_url": "https://github.com/sriganesh/jevibe-check",
+    "title": {
+      "en": "Jevibe Check — social tone labels",
+      "zh": "Jevibe Check — 社交帖子与草稿语气标签"
+    },
+    "number": 50,
+    "summary": {
+      "en": "Labels Bluesky posts and drafts using Jev choices, with custom classifiers and filtering controls.",
+      "zh": "用 Jev 为 Bluesky 帖子和草稿标注语气，支持自定义分类与过滤。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "Text-only analysis excludes images, videos and wider conversation context; sarcasm can be misclassified.",
+      "zh": "仅分析文本，不含图片、视频和完整对话语境，可能误判讽刺表达。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-sriganesh-jevibe-check",
+      "zh": "docs/casebook.zh-CN.md#case-sriganesh-jevibe-check"
+    },
+    "source_path": "content/cases/sriganesh-jevibe-check.md"
+  },
+  {
+    "id": "awun8191-jev-resume-analyzer",
+    "category": "productivity",
+    "source_url": "https://github.com/awun8191/jev-resume-analyzer",
+    "title": {
+      "en": "JEV Resume Analyzer",
+      "zh": "JEV Resume Analyzer — 可追溯简历自查"
+    },
+    "number": 51,
+    "summary": {
+      "en": "Reviews extracted CV text against explicit rubrics and optional job requirements, showing questions and answer distributions.",
+      "zh": "按明确标准与可选职位要求检查简历文本，展示每项问题和答案分布。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "Missing, inapplicable and unassessable evidence remain distinct; it does not provide a validated hiring prediction or ATS score.",
+      "zh": "区分缺失、不适用和无法判断；不提供经过验证的录用预测或 ATS 分数。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-awun8191-jev-resume-analyzer",
+      "zh": "docs/casebook.zh-CN.md#case-awun8191-jev-resume-analyzer"
+    },
+    "source_path": "content/cases/awun8191-jev-resume-analyzer.md"
+  },
+  {
+    "id": "ndolinschi-lanebreak",
+    "category": "productivity",
+    "source_url": "https://github.com/ndolinschi/lanebreak",
+    "title": {
+      "en": "LaneBreak — support ticket routing",
+      "zh": "LaneBreak — 客服工单分组与优先级"
+    },
+    "number": 52,
+    "summary": {
+      "en": "Uses Choice for team assignment, Score for priority, and Noul for refund intent, churn signals and human escalation.",
+      "zh": "用 Choice 分配客服团队、Score 判断优先级、Noul 识别退款意图、流失信号与转人工需求。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "Without an API key the implementation uses local heuristic demo responses; those are not Jev results.",
+      "zh": "未配置 API key 时使用本地规则模拟，模拟结果不属于 Jev 实测。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-ndolinschi-lanebreak",
+      "zh": "docs/casebook.zh-CN.md#case-ndolinschi-lanebreak"
+    },
+    "source_path": "content/cases/ndolinschi-lanebreak.md"
+  },
+  {
+    "id": "goodrahstar-jev-column-race",
+    "category": "productivity",
+    "source_url": "https://github.com/goodrahstar/jev-column-race",
+    "title": {
+      "en": "Jev Column Race — review annotation",
+      "zh": "Jev Column Race — 千条用户评论多列标注"
+    },
+    "number": 53,
+    "summary": {
+      "en": "Batches sentiment, topic, bug and churn judgments over app reviews, then allows local reranking; includes a comparison with Gemini.",
+      "zh": "批量标注应用评论的情绪、主题、缺陷与流失信号，再支持本地重排，并与 Gemini 对照。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "The published timing is from a recorded run pair.",
+      "zh": "发布耗时来自一组记录运行；模型间一致率或与星级的一致性不等于真实准确率。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-goodrahstar-jev-column-race",
+      "zh": "docs/casebook.zh-CN.md#case-goodrahstar-jev-column-race"
+    },
+    "source_path": "content/cases/goodrahstar-jev-column-race.md"
+  },
+  {
+    "id": "ghrezakh74-jevticktrouter",
+    "category": "productivity",
+    "source_url": "https://github.com/GhrezaKh74/JevTicktRouter",
+    "title": {
+      "en": "JevTicketRouter — bilingual support triage",
+      "zh": "JevTicketRouter — 带确定性兜底的双语工单分流"
+    },
+    "number": 54,
+    "summary": {
+      "en": "A .NET and React application classifies Persian or English support tickets. One request asks Choice questions for category and team, a Score for priority, and Noul questions for sensitive data and human review; local rules handle escalation and redaction.",
+      "zh": ".NET 与 React 应用对波斯语或英语工单进行分流：一次请求询问类别、团队、优先级、敏感信息和人工复核需求，再由本地规则处理升级与脱敏。"
+    },
+    "takeaway": {
+      "en": "Ticket → five typed judgments → local review and redaction rules.",
+      "zh": "工单 → 五项结构化判断 → 本地复核与脱敏规则。"
+    },
+    "scope": {
+      "en": "The no-key demo can use deterministic mock answers.",
+      "zh": "无密钥演示可使用确定性 Mock。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-ghrezakh74-jevticktrouter",
+      "zh": "docs/casebook.zh-CN.md#case-ghrezakh74-jevticktrouter"
+    },
+    "source_path": "content/cases/ghrezakh74-jevticktrouter.md"
+  },
+  {
+    "id": "transcript-scorecard",
+    "category": "productivity",
+    "source_url": "https://github.com/brandonbryant12/transcript-scorecard",
+    "title": {
+      "en": "Transcript Scorecard — incremental call evaluation",
+      "zh": "Transcript Scorecard — 实时客服通话质检"
+    },
+    "number": 55,
+    "summary": {
+      "en": "A proof of concept replays fictional support-call transcripts incrementally. Each enabled criterion contributes a Score and a Choice selecting an evidence sentence; code normalizes and weights the results, then stores the final evaluation in SQLite.",
+      "zh": "概念验证项目逐句重放虚构客服通话文本。每个启用维度对应一个 Score 和一个选择证据句的 Choice，由代码归一化、加权，并将最终评估存入 SQLite。"
+    },
+    "takeaway": {
+      "en": "Growing transcript → criterion scores and evidence selection → weighted score history.",
+      "zh": "逐步增长的转写文本 → 维度评分与证据句 → 加权评分历史。"
+    },
+    "scope": {
+      "en": "This is transcript replay, not verified live audio recognition.",
+      "zh": "展示的是文本重放，不能视为已验证的实时语音识别。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-transcript-scorecard",
+      "zh": "docs/casebook.zh-CN.md#case-transcript-scorecard"
+    },
+    "source_path": "content/cases/transcript-scorecard.md"
+  },
+  {
+    "id": "marissafamularo-citation-verifier",
+    "category": "productivity",
+    "source_url": "https://github.com/MarissaFamularo/citation-verifier",
+    "title": {
+      "en": "Paper Trellis Citation Verifier — citation support review",
+      "zh": "Paper Trellis Citation Verifier — 论文引文支持度复核"
+    },
+    "number": 56,
+    "summary": {
+      "en": "A manuscript-review tool pairs citing sentences with source passages. Claude can locate quotations, code checks quotation presence, and Jev chooses supports, contradicts, or says_nothing for the sentence and selected passage; the reviewer retains the final decision.",
+      "zh": "稿件复核工具将引文句与源论文段落配对。Claude 可定位引用片段，代码核对引文是否存在，Jev 判断该段落支持、反驳还是未涉及该主张，最终由人工裁决。"
+    },
+    "takeaway": {
+      "en": "Citation matching → passage selection → three-way support judgment → human review.",
+      "zh": "引文匹配 → 片段选择 → 三类支持度判断 → 人工复核。"
+    },
+    "scope": {
+      "en": "Jev reads a bounded passage around a quotation, or the source opening, rather than the entire paper.",
+      "zh": "Jev 读取引用附近的有限窗口或源文开头，并非整篇论文；片段选错或只能取得摘要会限制证据。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-marissafamularo-citation-verifier",
+      "zh": "docs/casebook.zh-CN.md#case-marissafamularo-citation-verifier"
+    },
+    "source_path": "content/cases/marissafamularo-citation-verifier.md"
+  },
+  {
+    "id": "0xnairb-research-desk",
+    "category": "productivity",
+    "source_url": "https://github.com/0xnairb/research_desk",
+    "title": {
+      "en": "Research Desk — staged news and company judgments",
+      "zh": "Research Desk — 新闻与公司多阶段判断"
+    },
+    "number": 57,
+    "summary": {
+      "en": "A demonstration uses company profiles and headlines from yfinance in a staged Jev pipeline for relevance filtering, ranking, and mechanism matching. A request view exposes the state and typed questions behind the displayed judgments.",
+      "zh": "演示项目将 yfinance 公司资料与新闻送入分阶段 Jev 管线，完成相关性筛选、排序及机制匹配；请求视图展示各项判断对应的 state 与结构化问题。"
+    },
+    "takeaway": {
+      "en": "Company/news inputs → staged judgments → code-based filtering and traceable results.",
+      "zh": "公司与新闻输入 → 分阶段判断 → 代码筛选与可追溯结果。"
+    },
+    "scope": {
+      "en": "The author describes thresholds as initial guesses rather than values fitted to outcomes.",
+      "zh": "作者明确阈值是初始猜测，并非根据实际结果拟合；可查看请求不代表预测准确或投资有效。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-0xnairb-research-desk",
+      "zh": "docs/casebook.zh-CN.md#case-0xnairb-research-desk"
+    },
+    "source_path": "content/cases/0xnairb-research-desk.md"
+  },
+  {
+    "id": "grayrepo-byte-jev-filter-for-x",
+    "category": "productivity",
+    "source_url": "https://github.com/grayrepo-byte/jev_filter_for_x",
+    "title": {
+      "en": "JevFilterForX — timeline value scoring",
+      "zh": "JevFilterForX — 时间线内容价值评分"
+    },
+    "number": 58,
+    "summary": {
+      "en": "An X extension asks Jev to score signal, actionability, and originality. Local weighting produces a 0–100 value score, while topic and noise labels support filtering and focus modes.",
+      "zh": "X 扩展让 Jev 按信息量、可操作性和原创性评分，再由本地权重计算 0–100 分的内容价值；主题和噪声标签另用于过滤及专注模式。"
+    },
+    "takeaway": {
+      "en": "Post text → rubric scores and labels → weighted score → timeline filtering.",
+      "zh": "帖子文本 → 多维评分与标签 → 加权分数 → 时间线过滤。"
+    },
+    "scope": {
+      "en": "This is timeline scoring, distinct from BlueNoise’s reply filtering and Jevibe Check’s Bluesky labels.",
+      "zh": "侧重时间线评分，与 BlueNoise 的回复过滤及 Jevibe Check 的 Bluesky 标签不同。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-grayrepo-byte-jev-filter-for-x",
+      "zh": "docs/casebook.zh-CN.md#case-grayrepo-byte-jev-filter-for-x"
+    },
+    "source_path": "content/cases/grayrepo-byte-jev-filter-for-x.md"
+  },
+  {
+    "id": "hqman-jevscout",
+    "category": "productivity",
+    "source_url": "https://github.com/hqman/JevScout",
+    "title": {
+      "en": "JevScout — career-page navigation and job matching",
+      "zh": "JevScout — 招聘页面导航与岗位匹配"
+    },
+    "number": 59,
+    "summary": {
+      "en": "A coding-agent skill starts from a company website, uses Chrome through CDP to observe and navigate pages, and asks Jev to judge links and rank jobs against a job-seeker profile.",
+      "zh": "面向编程 Agent 的技能从公司官网出发，通过 CDP 观察并操作 Chrome，让 Jev 判断链接、寻找招聘入口，并按求职者资料对岗位排序。"
+    },
+    "takeaway": {
+      "en": "Company website → career-link judgments → job discovery → profile-based ranking.",
+      "zh": "公司官网 → 招聘链接判断 → 岗位发现 → 按求职资料排序。"
+    },
+    "scope": {
+      "en": "A demo MVP with mock and fixture-based workflows.",
+      "zh": "目前为演示型 MVP，包含 mock 和固定样例流程，不能把这些演示当作真实 Jev 结果。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-hqman-jevscout",
+      "zh": "docs/casebook.zh-CN.md#case-hqman-jevscout"
+    },
+    "source_path": "content/cases/hqman-jevscout.md"
+  },
+  {
+    "id": "markjaquith-typesafe-ai-playground",
+    "category": "experiments",
+    "source_url": "https://github.com/markjaquith/typesafe-ai-playground",
+    "title": {
+      "en": "TypeSafe AI Playground",
+      "zh": "TypeSafe AI Playground"
+    },
+    "number": 60,
+    "summary": {
+      "en": "A Rust CLI exploring tasks such as protected health information detection and code-comment review through typed questions and scores.",
+      "zh": "通过 Rust CLI 探索 PHI（可识别个人的健康信息）检测、代码注释审核等小型判断任务。 向 Jev 提交明确的分类或评分问题，展示概率或评分结果。"
+    },
+    "takeaway": {
+      "en": "reuse decision primitives across clearly defined application criteria.",
+      "zh": "一个模型接口可以针对不同业务标准构建小工具。"
+    },
+    "scope": {
+      "en": "experimental tooling, not a privacy-compliance certification.",
+      "zh": "实验工具不构成医疗隐私合规认证；评分与置信概率也不能混用。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-markjaquith-typesafe-ai-playground",
+      "zh": "docs/casebook.zh-CN.md#case-markjaquith-typesafe-ai-playground"
+    },
+    "source_path": "content/cases/markjaquith-typesafe-ai-playground.md"
+  },
+  {
+    "id": "irfndi-prism-liquidity-agent",
+    "category": "experiments",
+    "source_url": "https://github.com/irfndi/prism-liquidity-agent",
+    "title": {
+      "en": "Prism's Jev judgment service",
+      "zh": "Prism 的 Jev 判断服务"
+    },
+    "number": 61,
+    "summary": {
+      "en": "Maps liquidity-strategy questions about distribution choice, toxic flow, recovery holding, and market stress to Choice and Noul judgments alongside existing heuristics.",
+      "zh": "对流动性策略中的分布方式、有害交易流、恢复持有与市场压力给出辅助判断。 `engine/jev-service.ts` 将窄问题映射到 Choice 与 Noul，与既有启发式判断对应。"
+    },
+    "takeaway": {
+      "en": "compare model advice with existing rules in shadow or advisory mode.",
+      "zh": "先以 shadow/advisory 方式记录与对照模型意见，再评估是否适合进入执行流程。"
+    },
+    "scope": {
+      "en": "the inspected Jev module explicitly states shadow/advisory use.",
+      "zh": "所核查 Jev 模块明确为 shadow/advisory，不能宣传为 Jev 自动交易或盈利案例。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-irfndi-prism-liquidity-agent",
+      "zh": "docs/casebook.zh-CN.md#case-irfndi-prism-liquidity-agent"
+    },
+    "source_path": "content/cases/irfndi-prism-liquidity-agent.md"
+  },
+  {
+    "id": "emrickgarrett-onevonejev",
+    "category": "experiments",
+    "source_url": "https://github.com/emrickgarrett/OneVOneJev",
+    "title": {
+      "en": "1v1 Jev — Quickscope Arena",
+      "zh": "1v1 Jev — Quickscope Arena"
+    },
+    "number": 62,
+    "summary": {
+      "en": "A browser FPS opponent controlled through Choice/Noul questions about movement, aim, ADS, firing, and jumping. The server supplies structured game state and includes a heuristic fallback.",
+      "zh": "浏览器 FPS 游戏中控制对手移动、瞄准、射击等动作。 服务端将结构化游戏状态转换为 Choice/Noul 问题；README 描述决策频率约为 9 Hz，并提供模型不可用时的启发式回退。"
+    },
+    "takeaway": {
+      "en": "repeated bounded decisions drive a real-time interactive agent.",
+      "zh": "展示连续小决策组成实时交互的方式。"
+    },
+    "scope": {
+      "en": "the README's approximately 9 Hz loop describes this project, not a universal Jev performance figure.",
+      "zh": "9 Hz 是该项目的决策循环描述，不是所有 Jev 请求的通用性能指标；不是纯视觉游戏控制证据。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-emrickgarrett-onevonejev",
+      "zh": "docs/casebook.zh-CN.md#case-emrickgarrett-onevonejev"
+    },
+    "source_path": "content/cases/emrickgarrett-onevonejev.md"
+  },
+  {
+    "id": "jarrodwatts-jev-trader",
+    "category": "experiments",
+    "source_url": "https://github.com/jarrodwatts/jev-trader",
+    "title": {
+      "en": "jev-trader",
+      "zh": "jev-trader"
+    },
+    "number": 63,
+    "summary": {
+      "en": "A trading experiment asks Jev for buy/sell judgments from the Kuru MON-USDC order book on Monad, with code handling quotes, limits, and execution.",
+      "zh": "读取 Monad 上 Kuru MON-USDC 订单簿，用 Jev 判断买卖方向，由程序处理报价、限额与执行。"
+    },
+    "takeaway": {
+      "en": "Order-book state → directional judgment → program-controlled order handling.",
+      "zh": "订单簿状态 → 方向判断 → 程序处理订单。"
+    },
+    "scope": {
+      "en": "The default model is a mock momentum heuristic; Jev requires explicit configuration.",
+      "zh": "默认模型为 mock 动量启发式，需显式配置才能调用 Jev；无私钥时模拟执行，README 中的部署也标注为 dry-run/mock。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-jarrodwatts-jev-trader",
+      "zh": "docs/casebook.zh-CN.md#case-jarrodwatts-jev-trader"
+    },
+    "source_path": "content/cases/jarrodwatts-jev-trader.md"
+  },
+  {
+    "id": "fhshaik-typesafe-mario",
+    "category": "experiments",
+    "source_url": "https://github.com/fhshaik/typesafe-mario",
+    "title": {
+      "en": "TypeSafe Mario",
+      "zh": "TypeSafe Mario"
+    },
+    "number": 64,
+    "summary": {
+      "en": "An emulator harness converts telemetry and RAM into structured state; Jev selects NES controller actions and provides jump and danger judgments.",
+      "zh": "将模拟器遥测与内存状态转换为结构化信息，Jev 选择 NES 手柄动作，并给出跳跃和危险程度判断。"
+    },
+    "takeaway": {
+      "en": "Structured game state → Choice/Noul/Score → controller input.",
+      "zh": "结构化游戏状态 → Choice/Noul/Score → 手柄输入。"
+    },
+    "scope": {
+      "en": "The model does not receive screenshots.",
+      "zh": "模型不接收截图；这是实验性控制器，不能作为通用视觉游戏能力的证据。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-fhshaik-typesafe-mario",
+      "zh": "docs/casebook.zh-CN.md#case-fhshaik-typesafe-mario"
+    },
+    "source_path": "content/cases/fhshaik-typesafe-mario.md"
+  },
+  {
+    "id": "romanslack-jev-drone",
+    "category": "experiments",
+    "source_url": "https://github.com/RomanSlack/jev-drone",
+    "title": {
+      "en": "jev-drone",
+      "zh": "jev-drone"
+    },
+    "number": 65,
+    "summary": {
+      "en": "A MuJoCo quadrotor simulation converts camera depth and segmentation into symbolic scene data; Jev advises maneuvers and risk while conventional code handles flight control and safety.",
+      "zh": "MuJoCo 四旋翼模拟器将相机深度与分割结果转换为场景数据，由 Jev 建议机动动作和风险，普通代码负责飞控与安全。"
+    },
+    "takeaway": {
+      "en": "Perception in code → tactical judgment → guarded control.",
+      "zh": "代码感知 → 战术判断 → 受约束的控制。"
+    },
+    "scope": {
+      "en": "Simulation rather than real-world flight; Jev receives JSON rather than images and is advisory.",
+      "zh": "模拟飞行而非真实无人机飞行；Jev 接收 JSON 而非图像，仅提供建议。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-romanslack-jev-drone",
+      "zh": "docs/casebook.zh-CN.md#case-romanslack-jev-drone"
+    },
+    "source_path": "content/cases/romanslack-jev-drone.md"
+  },
+  {
+    "id": "phyous-tsai-sc",
+    "category": "experiments",
+    "source_url": "https://github.com/phyous/tsai-sc",
+    "title": {
+      "en": "tsai-sc — StarCraft Strongarm",
+      "zh": "tsai-sc — StarCraft Strongarm"
+    },
+    "number": 66,
+    "summary": {
+      "en": "A harness reads structured game state, asks Jev to choose commands, and executes mouse and keyboard actions in the original StarCraft shareware mission Strongarm.",
+      "zh": "读取星际争霸试玩版 Strongarm 任务的结构化游戏状态，由 Jev 选择指令，再以鼠标键盘执行。"
+    },
+    "takeaway": {
+      "en": "Structured strategy-game state → command selection → input execution.",
+      "zh": "结构化策略游戏状态 → 指令选择 → 输入执行。"
+    },
+    "scope": {
+      "en": "The game pauses during state reads and inference.",
+      "zh": "读取状态和推理时游戏会暂停；作者提供了限定任务的完成证据，并非实时竞技评测，也不是纯像素输入 Agent。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-phyous-tsai-sc",
+      "zh": "docs/casebook.zh-CN.md#case-phyous-tsai-sc"
+    },
+    "source_path": "content/cases/phyous-tsai-sc.md"
+  },
+  {
+    "id": "abdelstark-heist-one",
+    "category": "experiments",
+    "source_url": "https://github.com/AbdelStark/heist-one",
+    "title": {
+      "en": "HEIST ONE — stealth-game guards",
+      "zh": "HEIST ONE — 潜行游戏守卫判断"
+    },
+    "number": 67,
+    "summary": {
+      "en": "Jev judges threats, suspicion and intentions for guards; server code controls legal actions, physics and fallbacks.",
+      "zh": "Jev 为潜行游戏守卫判断威胁、怀疑程度与意图，服务器代码负责合法动作、物理规则和回退。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "Scripted mode is available; a recorded live run does not establish repeated success.",
+      "zh": "项目也有脚本模式；作者记录的一次真实运行不能证明重复成功率。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-abdelstark-heist-one",
+      "zh": "docs/casebook.zh-CN.md#case-abdelstark-heist-one"
+    },
+    "source_path": "content/cases/abdelstark-heist-one.md"
+  },
+  {
+    "id": "ellistev-typesafe-minecraft-demo",
+    "category": "experiments",
+    "source_url": "https://github.com/ellistev/typesafe-minecraft-demo",
+    "title": {
+      "en": "TypeSafe Minecraft — structured action control",
+      "zh": "TypeSafe Minecraft — 游戏动作实验"
+    },
+    "number": 68,
+    "summary": {
+      "en": "Jev selects Minecraft actions from structured observations; Mineflayer executes them with code-supplied candidates and checks.",
+      "zh": "Jev 根据结构化 Minecraft 状态选择动作，Mineflayer 执行，代码提供候选位置和动作检查。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "The earlier video used high-level control; the newer direct-action controller is a separate experiment, not screenshot-based vision.",
+      "zh": "早期视频采用高层控制，新版直接动作控制是独立实验，不能混用效果证据；不是截图视觉控制。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-ellistev-typesafe-minecraft-demo",
+      "zh": "docs/casebook.zh-CN.md#case-ellistev-typesafe-minecraft-demo"
+    },
+    "source_path": "content/cases/ellistev-typesafe-minecraft-demo.md"
+  },
+  {
+    "id": "foadsf-jev-for-engineers",
+    "category": "experiments",
+    "source_url": "https://github.com/Foadsf/jev-for-engineers",
+    "title": {
+      "en": "Jev for Engineers",
+      "zh": "Jev for Engineers — 工程判断示例集"
+    },
+    "number": 69,
+    "summary": {
+      "en": "Eight Python examples apply typed judgments to engineering workflows such as CAD, BOMs and change control, with decisions made in code.",
+      "zh": "八个 Python 示例将结构化判断用于 CAD、物料清单和变更管理等工程流程，由代码完成后续决策。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "Small synthetic examples and uncalibrated thresholds do not establish suitability for real engineering decisions.",
+      "zh": "小规模合成示例与未充分校准的阈值不能证明适用于实际工程决策。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-foadsf-jev-for-engineers",
+      "zh": "docs/casebook.zh-CN.md#case-foadsf-jev-for-engineers"
+    },
+    "source_path": "content/cases/foadsf-jev-for-engineers.md"
+  },
+  {
+    "id": "pistachioaihq-jev-synergy-screening",
+    "category": "experiments",
+    "source_url": "https://github.com/PistachioAIHQ/jev-synergy-screening",
+    "title": {
+      "en": "Jev literature screening",
+      "zh": "jev-synergy-screening — 文献标题摘要初筛"
+    },
+    "number": 70,
+    "summary": {
+      "en": "Combines inclusion choices and atomic eligibility judgments for title-and-abstract screening against an author's documented review protocol.",
+      "zh": "把纳入选项与原子资格判断组合，用于文献标题和摘要初筛，并对照作者说明的综述标准。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "The current README evaluates Cohen ADHD abstract triage; limited abstracts and filtering rules can miss eligible papers.",
+      "zh": "当前 README 评测的是 Cohen ADHD 摘要初筛；摘要信息与过滤规则可能漏掉合格文献，属于研究流程案例。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-pistachioaihq-jev-synergy-screening",
+      "zh": "docs/casebook.zh-CN.md#case-pistachioaihq-jev-synergy-screening"
+    },
+    "source_path": "content/cases/pistachioaihq-jev-synergy-screening.md"
+  },
+  {
+    "id": "jev-jfk-simulation",
+    "category": "experiments",
+    "source_url": "https://www.reddit.com/r/AgentZero/comments/1wj6li0/i_tested_typesafes_jev_model_and_made_it_run_a/",
+    "title": {
+      "en": "Jev JFK Simulation — voice-driven airport demo",
+      "zh": "Jev JFK Simulation — 机场语音调度演示"
+    },
+    "number": 71,
+    "summary": {
+      "en": "An author demonstration combines a simulated JFK airport with real-time voice models for radio interaction and Jev for operational judgments. It illustrates separating voice interaction from a bounded decision loop.",
+      "zh": "作者演示将 JFK 机场仿真、负责无线电交互的实时语音模型，以及负责运行判断的 Jev 组合起来，展示语音交互与有限决策循环的分工。"
+    },
+    "takeaway": {
+      "en": "Simulated airport state and radio interaction → Jev judgment → simulated response.",
+      "zh": "仿真机场状态与无线电交互 → Jev 判断 → 仿真响应。"
+    },
+    "scope": {
+      "en": "Evidence is the author’s public post and demonstration; no public implementation or complete request trace was verified.",
+      "zh": "证据为作者公开帖与演示，未核实公开实现或完整请求记录；仅为仿真，不能作为真实空管能力证据。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-jev-jfk-simulation",
+      "zh": "docs/casebook.zh-CN.md#case-jev-jfk-simulation"
+    },
+    "source_path": "content/cases/jev-jfk-simulation.md"
+  },
+  {
+    "id": "jev-canvas",
+    "category": "experiments",
+    "source_url": "https://x.com/jackcheng/status/2100729670991802386",
+    "title": {
+      "en": "Jev Canvas — voice and gesture canvas demo",
+      "zh": "Jev Canvas — 语音与手势操作画布"
+    },
+    "number": 72,
+    "summary": {
+      "en": "Jack Cheng’s author demo combines voice, pointing, and canvas state to present Jev action and target judgments for manipulating shapes. It is a creative-tool interaction example rather than a general image-generation model.",
+      "zh": "Jack Cheng 的作者演示结合语音、指向与画布状态，展示 Jev 对图形操作动作和目标的判断，属于创作工具交互案例。"
+    },
+    "takeaway": {
+      "en": "Voice/pointing inputs and canvas objects → action and target judgment → canvas operation.",
+      "zh": "语音及指向输入与画布对象 → 动作及目标判断 → 画布操作。"
+    },
+    "scope": {
+      "en": "Evidence is the author demo recorded in the collection; the original post was re-opened, but this pass did not independently replay the full video.",
+      "zh": "依据收集库留存的作者演示信息；本轮重新打开原帖，但未独立完整重放视频。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-jev-canvas",
+      "zh": "docs/casebook.zh-CN.md#case-jev-canvas"
+    },
+    "source_path": "content/cases/jev-canvas.md"
+  },
+  {
+    "id": "xiechengyuan-jev-gomoku",
+    "category": "experiments",
+    "source_url": "https://github.com/XieChengYuan/jev-gomoku",
+    "title": {
+      "en": "Jev Gomoku — candidate-move selection",
+      "zh": "Jev Gomoku — 五子棋候选落点选择"
+    },
+    "number": 73,
+    "summary": {
+      "en": "A nine-board Gomoku experiment supplies textual board state and code-generated candidate moves to Jev. Each move uses a Choice question; five input configurations explore the effect of tactical facts, coordinates, directional lines, and short lookahead.",
+      "zh": "九棋盘五子棋实验将文本棋盘及代码生成的候选落点交给 Jev，每步使用一个 Choice 问题；通过五种输入配置探索战术事实、坐标、方向棋线及短程前瞻的影响。"
+    },
+    "takeaway": {
+      "en": "Board state → deterministic candidate generation → Choice → legal move execution.",
+      "zh": "棋盘状态 → 确定性候选生成 → Choice 选择 → 合法落子执行。"
+    },
+    "scope": {
+      "en": "Jev selects from heuristic candidates rather than all empty squares.",
+      "zh": "Jev 从启发式候选中选择，而非考虑全部空位；Choice 概率不等于最终获胜概率。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-xiechengyuan-jev-gomoku",
+      "zh": "docs/casebook.zh-CN.md#case-xiechengyuan-jev-gomoku"
+    },
+    "source_path": "content/cases/xiechengyuan-jev-gomoku.md"
+  },
+  {
+    "id": "valentynkit-jev-plays-pokemon-red",
+    "category": "experiments",
+    "source_url": "https://github.com/valentynkit/jev-plays-pokemon-red",
+    "title": {
+      "en": "jev-plays-pokemon-red — bounded game decisions on PyBoy",
+      "zh": "jev-plays-pokemon-red — PyBoy 上的受限游戏决策"
+    },
+    "number": 74,
+    "summary": {
+      "en": "A Pokémon Red experiment reads emulator RAM into structured state. Deterministic Python handles routes, battle arithmetic, and legal actions; Jev selects among candidates at branch points. The harness records turn-level faint predictions and outcomes for later Brier-score evaluation.",
+      "zh": "宝可梦红实验从模拟器 RAM 提取结构化状态，确定性 Python 代码负责路线、战斗运算及合法动作，Jev 仅在分支点从候选中选择。框架记录逐回合倒下概率预测及实际结果，以供后续计算 Brier 分数。"
+    },
+    "takeaway": {
+      "en": "RAM-derived state and legal candidates → branch-point judgment → emulator action and outcome recording.",
+      "zh": "RAM 状态与合法候选 → 分支点判断 → 模拟器动作与结果记录。"
+    },
+    "scope": {
+      "en": "This is a code-guided experiment, not autonomous long-horizon planning or screenshot-based play.",
+      "zh": "这是代码引导的实验，不是自主长程规划或基于截图的游戏操作。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-valentynkit-jev-plays-pokemon-red",
+      "zh": "docs/casebook.zh-CN.md#case-valentynkit-jev-plays-pokemon-red"
+    },
+    "source_path": "content/cases/valentynkit-jev-plays-pokemon-red.md"
+  },
+  {
+    "id": "jev-sec-bench",
+    "category": "benchmarks",
+    "source_url": "https://github.com/Gaurav-Gosain/jev-sec-bench",
+    "title": {
+      "en": "jev-sec-bench — security judgments",
+      "zh": "jev-sec-bench — 安全判断评测"
+    },
+    "number": 75,
+    "summary": {
+      "en": "Evaluates prompt-injection detection and vulnerable-code judgments with published datasets and per-sample results.",
+      "zh": "用公开数据与逐条结果评测提示注入检测和代码漏洞判断。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "Reported results depend on context and thresholds; this is not an NSFW benchmark or a complete security boundary.",
+      "zh": "作者报告的结果受上下文与阈值影响；不是 NSFW 评测，也不构成完整安全边界。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-jev-sec-bench",
+      "zh": "docs/casebook.zh-CN.md#case-jev-sec-bench"
+    },
+    "source_path": "content/cases/jev-sec-bench.md"
+  },
+  {
+    "id": "rinnecoder-jev-behavior-study",
+    "category": "benchmarks",
+    "source_url": "https://github.com/RINNECODER/jev-behavior-study",
+    "title": {
+      "en": "Jev Behavior Study",
+      "zh": "Jev Behavior Study — 能力与失败边界"
+    },
+    "number": 76,
+    "summary": {
+      "en": "Studies question framing and failure modes through text tasks, Snake and a 3D city, with reports and recorded traces.",
+      "zh": "通过文本任务、贪吃蛇和 3D 城市实验研究问题表述及失败边界，提供报告与运行记录。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "Synthetic task-specific observations; repeated calls are not independent problems, and assisted control differs from direct control.",
+      "zh": "属于合成、特定任务观察；重复调用不等于独立问题，代码辅助控制与直接控制需区分。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-rinnecoder-jev-behavior-study",
+      "zh": "docs/casebook.zh-CN.md#case-rinnecoder-jev-behavior-study"
+    },
+    "source_path": "content/cases/rinnecoder-jev-behavior-study.md"
+  },
+  {
+    "id": "jev-rerank-bench",
+    "category": "benchmarks",
+    "source_url": "https://github.com/anessbelbati/jev-rerank-bench",
+    "title": {
+      "en": "jev-rerank-bench — retrieval evaluation",
+      "zh": "jev-rerank-bench — 检索重排对照评测"
+    },
+    "number": 77,
+    "summary": {
+      "en": "Compares Jev relevance rubrics with other rerankers on shared BM25 candidates and publishes saved responses and scoring code.",
+      "zh": "基于相同 BM25 候选，对比 Jev 相关性评分与其他重排模型，公开保存的响应和评分代码。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "The headline averages do not establish a winner; weighting datasets versus queries changes the comparison.",
+      "zh": "汇总均值不足以确定胜者；按数据集或按查询加权会改变比较结果。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-jev-rerank-bench",
+      "zh": "docs/casebook.zh-CN.md#case-jev-rerank-bench"
+    },
+    "source_path": "content/cases/jev-rerank-bench.md"
+  },
+  {
+    "id": "anisselbd-jev-phishing-bench",
+    "category": "benchmarks",
+    "source_url": "https://github.com/anisselbd/jev-phishing-bench",
+    "title": {
+      "en": "jev-phishing-bench — email signals",
+      "zh": "jev-phishing-bench — 钓鱼邮件与原子信号"
+    },
+    "number": 78,
+    "summary": {
+      "en": "Compares direct phishing judgments with atomic Jev signals combined by a local classifier.",
+      "zh": "比较直接钓鱼邮件判断与原子信号方案，后者由 Jev 提供信号、本地分类器组合。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "Synthetic emails contain potential shortcuts; direct and held-out experiments have different test sets and must not be conflated.",
+      "zh": "合成邮件可能存在模板捷径；直接判断与留出实验测试集不同，不能直接相减作为提升幅度。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-anisselbd-jev-phishing-bench",
+      "zh": "docs/casebook.zh-CN.md#case-anisselbd-jev-phishing-bench"
+    },
+    "source_path": "content/cases/anisselbd-jev-phishing-bench.md"
+  },
+  {
+    "id": "gaurav-gosain-jev-headline-bench",
+    "category": "benchmarks",
+    "source_url": "https://github.com/Gaurav-Gosain/jev-headline-bench",
+    "title": {
+      "en": "jev-headline-bench — headline selection",
+      "zh": "jev-headline-bench — 标题A/B胜负预测"
+    },
+    "number": 79,
+    "summary": {
+      "en": "Asks Jev to choose between historical Upworthy headlines and compares choices with recorded click outcomes.",
+      "zh": "让 Jev 在历史 Upworthy 标题之间选择，再与记录的点击结果比较。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "Historical within-article pairs do not replace a randomized A/B test on a new site's audience.",
+      "zh": "历史同篇文章标题配对不能替代面向新网站用户的随机 A/B 测试。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-gaurav-gosain-jev-headline-bench",
+      "zh": "docs/casebook.zh-CN.md#case-gaurav-gosain-jev-headline-bench"
+    },
+    "source_path": "content/cases/gaurav-gosain-jev-headline-bench.md"
+  },
+  {
+    "id": "lab-dados-jev-anotacao-sentencas",
+    "category": "benchmarks",
+    "source_url": "https://github.com/lab-dados/jev-anotacao-sentencas",
+    "title": {
+      "en": "Jev judicial-text annotation",
+      "zh": "Jev司法文本标注 — 葡语文档多字段研究"
+    },
+    "number": 80,
+    "summary": {
+      "en": "Compares typed annotation of 12 variables in 120 Portuguese judicial documents with generative-model structured outputs.",
+      "zh": "将 120 份葡语司法文书的 12 个变量交给 Jev 标注，与生成模型的结构化输出比较。"
+    },
+    "takeaway": {
+      "en": "",
+      "zh": ""
+    },
+    "scope": {
+      "en": "The reference process includes model-generated labels and adjudication; reported accuracy is not based entirely on human gold labels.",
+      "zh": "参考标签流程含模型标注与仲裁，报告准确率并非完全基于人工金标准；不是法律意见工具。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-lab-dados-jev-anotacao-sentencas",
+      "zh": "docs/casebook.zh-CN.md#case-lab-dados-jev-anotacao-sentencas"
+    },
+    "source_path": "content/cases/lab-dados-jev-anotacao-sentencas.md"
+  },
+  {
+    "id": "maxim-saplin-llm-chess",
+    "category": "benchmarks",
+    "source_url": "https://github.com/maxim-saplin/llm_chess",
+    "title": {
+      "en": "LLM Chess Jev Player — constrained chess evaluation",
+      "zh": "LLM Chess Jev Player — 合法棋步选择评测"
+    },
+    "number": 81,
+    "summary": {
+      "en": "An adapter adds Jev to an existing chess evaluation framework. For each move, application code provides the FEN position, side to move, and legal UCI candidates; a Choice answer is converted into a make_move action.",
+      "zh": "适配器将 Jev 接入既有国际象棋评测框架。每一步由代码提供 FEN 棋局、行棋方和合法 UCI 候选，Choice 的答案转为 make_move 动作。"
+    },
+    "takeaway": {
+      "en": "Board state and legal moves → Choice → move execution and game records.",
+      "zh": "棋局与合法候选 → Choice → 执行棋步并记录对局。"
+    },
+    "scope": {
+      "en": "Legal candidates are supplied by code, so protocol success does not establish chess strength.",
+      "zh": "合法候选由代码提供，协议成功不等于棋力。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-maxim-saplin-llm-chess",
+      "zh": "docs/casebook.zh-CN.md#case-maxim-saplin-llm-chess"
+    },
+    "source_path": "content/cases/maxim-saplin-llm-chess.md"
+  },
+  {
+    "id": "every-judgment-lab",
+    "category": "benchmarks",
+    "source_url": "https://every.to/also-true-for-humans/mini-vibe-check-typesafe-s-jev-judged-everything-i-ve-written-in-0-7-seconds",
+    "title": {
+      "en": "Every Judgment Lab — writing and knowledge-work checks",
+      "zh": "Every Judgment Lab — 写作与知识工作检查"
+    },
+    "number": 82,
+    "summary": {
+      "en": "Mike Taylor’s experiment suite breaks writing review, context retrieval, and business triage into bounded judgments. Its writing experiment evaluates 37 documents against 21 criteria; the collection counts the suite once rather than treating its 11 experiments as separate projects.",
+      "zh": "Mike Taylor 的实验集将写作检查、上下文检索与业务分诊拆成有限判断。写作实验用 21 项标准检查 37 份文本；本仓库将整套实验计为一个案例，不把其中 11 个实验拆开计数。"
+    },
+    "takeaway": {
+      "en": "Documents or task state → parallel rubric judgments → flags for further review.",
+      "zh": "文本或任务状态 → 并行量表判断 → 提示进一步复核。"
+    },
+    "scope": {
+      "en": "The reported 777 judgments in under 0.7 seconds are author measurements, not our benchmark.",
+      "zh": "777 项判断少于 0.7 秒是作者报告，非本仓库基准。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-every-judgment-lab",
+      "zh": "docs/casebook.zh-CN.md#case-every-judgment-lab"
+    },
+    "source_path": "content/cases/every-judgment-lab.md"
+  },
+  {
+    "id": "bud-ro-jev-demos",
+    "category": "benchmarks",
+    "source_url": "https://github.com/Bud-ro/jev-demos",
+    "title": {
+      "en": "Jev Maze Lookahead — a negative planning experiment",
+      "zh": "Jev Maze Lookahead — 并行多步规划负向实验"
+    },
+    "number": 83,
+    "summary": {
+      "en": "A maze experiment compares parallel future-step questions with single-step decisions and explicit adjacent-tile hints. The project separates a deterministic BFS mock from real-API runs.",
+      "zh": "迷宫实验对比并行询问未来多步与单步决策，并测试相邻格提示；项目明确区分确定性 BFS Mock 与真实 API 运行。"
+    },
+    "takeaway": {
+      "en": "Maze state → proposed moves → environment checks → recorded successes and failures.",
+      "zh": "迷宫状态 → 候选动作判断 → 环境检查 → 记录成功与失败。"
+    },
+    "scope": {
+      "en": "The author reports zero solved mazes in the quick multi-step setting; with adjacency hints and one next-move question, 6 of 10 small 5×5 mazes were solved.",
+      "zh": "作者报告 quick 多步配置未解出迷宫；加入邻格提示且只问下一步后，十个 5×5 迷宫解出六个。"
+    },
+    "details": {
+      "en": "docs/casebook.md#case-bud-ro-jev-demos",
+      "zh": "docs/casebook.zh-CN.md#case-bud-ro-jev-demos"
+    },
+    "source_path": "content/cases/bud-ro-jev-demos.md"
+  }
+]

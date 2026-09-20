@@ -1,0 +1,11 @@
+# Awesome Jev Use Cases
+
+> Case discovery and workflow design; no implied runtime validation.
+
+- [Full catalog](data/catalog.json): 83 stable IDs, bilingual purpose summaries, sources and detail links.
+- [Structured cases](data/cases.json): 12 curated bilingual records with evidence and limitations.
+- [Agent skill](SKILL.md): find, compare and design with citations.
+- [Recipes](recipes/README.md): model routing; offline checks only.
+- [Evidence](docs/evidence.md): distinguish review, demo, live test and benchmark.
+- [Casebook](docs/casebook.md): complete narratives.
+- [中文案例集](docs/casebook.zh-CN.md): full Chinese narratives.

@@ -1,0 +1,46 @@
+{
+  "id": "jev-spam-eval",
+  "title": {
+    "en": "jev-spam-eval",
+    "zh": "jev-spam-eval"
+  },
+  "summary": {
+    "en": "Email classification experiments comparing natural-language Jev decision criteria with TF-IDF classifiers and combined scores, including tests across different mail sources and time periods.",
+    "zh": "垃圾邮件及钓鱼邮件分类评估。"
+  },
+  "category": "moderation",
+  "task": "decision",
+  "input_type": [
+    "text"
+  ],
+  "jev_primitive": [
+    "noul"
+  ],
+  "software_action": [
+    "classify"
+  ],
+  "source_url": "https://github.com/bitnovus/jev-spam-eval",
+  "evidence": {
+    "level": "docs-reviewed",
+    "verified_by_seeapi": false,
+    "reviewed_at": "2026-09-18",
+    "sources": [
+      "https://github.com/bitnovus/jev-spam-eval"
+    ],
+    "basis": "Existing repository review and linked documentation; metadata migration on 2026-09-20, no new runtime validation."
+  },
+  "limitations": {
+    "en": [
+      "exploratory author-reported experiments. The criteria were refined after inspecting labeled errors, so “no task-specific training” should not be confused with “no supervision.” We have not reproduced the results."
+    ],
+    "zh": [
+      "作者明确标注为探索性实验；分类标准在查看部分标注样本错误后调整，不能描述为完全没有人工监督。未复现实验。"
+    ]
+  },
+  "tags": [
+    "spam",
+    "email",
+    "垃圾邮件"
+  ],
+  "recipe_ids": []
+}

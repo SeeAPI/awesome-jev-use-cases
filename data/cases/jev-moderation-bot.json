@@ -1,0 +1,48 @@
+{
+  "id": "jev-moderation-bot",
+  "title": {
+    "en": "Jev Moderation Bot",
+    "zh": "Jev Moderation Bot"
+  },
+  "summary": {
+    "en": "A Discord moderation bot that evaluates messages and context for phishing, spam, and social engineering. Code applies escalating actions, and moderator corrections become safe precedents in later judgment context.",
+    "zh": "Discord 社区中的钓鱼、垃圾信息及社交工程消息审核。"
+  },
+  "category": "moderation",
+  "task": "decision",
+  "input_type": [
+    "text"
+  ],
+  "jev_primitive": [
+    "noul"
+  ],
+  "software_action": [
+    "moderate",
+    "review"
+  ],
+  "source_url": "https://github.com/brainstormity/Jev-Moderation-Bot",
+  "evidence": {
+    "level": "docs-reviewed",
+    "verified_by_seeapi": false,
+    "reviewed_at": "2026-09-18",
+    "sources": [
+      "https://github.com/brainstormity/Jev-Moderation-Bot"
+    ],
+    "basis": "Existing repository review and linked documentation; metadata migration on 2026-09-20, no new runtime validation."
+  },
+  "limitations": {
+    "en": [
+      "a text-message moderation project, not an image or video NSFW benchmark. False-positive performance has not been independently verified here."
+    ],
+    "zh": [
+      "这里核实的是文字消息审核方案，不是图片或视频 NSFW 模型；未独立测量误报率。"
+    ]
+  },
+  "tags": [
+    "moderation",
+    "discord",
+    "spam",
+    "审核"
+  ],
+  "recipe_ids": []
+}

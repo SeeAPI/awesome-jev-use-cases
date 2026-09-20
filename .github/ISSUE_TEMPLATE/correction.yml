@@ -1,0 +1,23 @@
+name: Correct a case / 纠正案例
+description: Report an outdated claim, broken link, attribution issue or missing limitation.
+title: '[Correction] '
+body:
+  - type: input
+    id: case
+    attributes:
+      label: Case name or link / 案例名称或链接
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Current claim and proposed correction / 当前问题与建议修正
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Supporting public evidence / 支持修正的公开证据
+      description: Include source URLs and relevant dates; do not paste confidential information.
+    validations:
+      required: true

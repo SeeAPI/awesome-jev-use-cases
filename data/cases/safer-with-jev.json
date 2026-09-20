@@ -1,0 +1,53 @@
+{
+  "id": "safer-with-jev",
+  "title": {
+    "en": "Safer with Jev — typesafe-on-neon",
+    "zh": "Safer with Jev（原 TypeSafe on Neon）"
+  },
+  "summary": {
+    "en": "An HTTP gate that checks prompt injections, unsafe images, and unsafe replies before optionally forwarding a request. Its image pipeline first uses `gemini-3-flash` to describe the image, then asks Jev to judge risks in that description.",
+    "zh": "在内容转发或上传前检查提示词注入、图片风险及模型回复风险。"
+  },
+  "category": "moderation",
+  "task": "decision",
+  "input_type": [
+    "text",
+    "image-descriptions"
+  ],
+  "jev_primitive": [
+    "noul"
+  ],
+  "software_action": [
+    "allow",
+    "review",
+    "block"
+  ],
+  "source_url": "https://github.com/andrelandgraf/typesafe-on-neon",
+  "evidence": {
+    "level": "docs-reviewed",
+    "verified_by_seeapi": false,
+    "reviewed_at": "2026-09-18",
+    "sources": [
+      "https://github.com/andrelandgraf/typesafe-on-neon",
+      "https://github.com/andrelandgraf/typesafe-on-neon/blob/main/src/lib/vision.ts",
+      "https://github.com/andrelandgraf/typesafe-on-neon/blob/main/src/lib/judge.ts"
+    ],
+    "basis": "Existing repository review and linked documentation; metadata migration on 2026-09-20, no new runtime validation."
+  },
+  "limitations": {
+    "en": [
+      "this is a vision-model-plus-Jev pipeline, not evidence of native image classification by Jev. The current project is a safety gate; earlier descriptions of it as a model router are outdated. We have not measured its detection accuracy."
+    ],
+    "zh": [
+      "不是 Jev 原生视觉 NSFW 检测的证据，也没有在本次核查中验证识别效果。原帖的“模型 Router”介绍已不符合当前 README。"
+    ]
+  },
+  "tags": [
+    "moderation",
+    "nsfw",
+    "prompt-injection",
+    "审核",
+    "图像描述"
+  ],
+  "recipe_ids": []
+}

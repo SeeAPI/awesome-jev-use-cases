@@ -368,3 +368,14 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+## GhrezaKh74/JevTicktRouter — externally referenced author screenshot
+
+- Original image: https://github.com/GhrezaKh74/JevTicktRouter/blob/ee078fcddd85d339b182fb5ba3cce5ae1021d447/docs/screenshots/03-security-redacted.png
+- Author gallery: https://github.com/GhrezaKh74/JevTicktRouter/blob/ee078fcddd85d339b182fb5ba3cce5ae1021d447/README.md#screenshots
+- License declaration: the pinned README's “Licence” section states “MIT.” No standalone LICENSE file or separate screenshot-specific notice was present at this revision; no additional copyright holder/year is inferred here.
+- Usage: unchanged image embedded from the author's pinned raw GitHub URL, not copied into this repository's assets. This collection does not relicense it under CC BY 4.0.
+- Evidence: the screenshot visibly says **Mock mode**. It illustrates the application UI and deterministic sample flow, not live Jev performance. The author's README says the demo tickets are fictional.
+- Checked: 2026-09-20.
+
+原作者截图通过固定版本外链展示，保留作者署名与 MIT 声明来源；图中概率和处置均为 Mock 模式演示，不标记为 Jev 实测或 SeeAPI 实测。

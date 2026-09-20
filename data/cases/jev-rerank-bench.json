@@ -1,0 +1,49 @@
+{
+  "id": "jev-rerank-bench",
+  "title": {
+    "en": "jev-rerank-bench — retrieval evaluation",
+    "zh": "jev-rerank-bench — 检索重排对照评测"
+  },
+  "summary": {
+    "en": "Compares Jev relevance rubrics with other rerankers on shared BM25 candidates and publishes saved responses and scoring code.",
+    "zh": "基于相同 BM25 候选，对比 Jev 相关性评分与其他重排模型，公开保存的响应和评分代码。"
+  },
+  "category": "benchmarks",
+  "task": "ranking",
+  "input_type": [
+    "text"
+  ],
+  "jev_primitive": [
+    "noul"
+  ],
+  "software_action": [
+    "rank",
+    "evaluate"
+  ],
+  "source_url": "https://github.com/anessbelbati/jev-rerank-bench",
+  "evidence": {
+    "level": "docs-reviewed",
+    "verified_by_seeapi": false,
+    "reviewed_at": "2026-09-18",
+    "sources": [
+      "https://github.com/anessbelbati/jev-rerank-bench",
+      "https://github.com/anessbelbati/jev-rerank-bench/blob/cd9a35b22aeb4187334f7018a0ee1960a7470586/results/quality.png"
+    ],
+    "basis": "Existing repository review and linked documentation; metadata migration on 2026-09-20, no new runtime validation."
+  },
+  "limitations": {
+    "en": [
+      "The headline averages do not establish a winner; weighting datasets versus queries changes the comparison."
+    ],
+    "zh": [
+      "汇总均值不足以确定胜者；按数据集或按查询加权会改变比较结果。"
+    ]
+  },
+  "tags": [
+    "rag",
+    "reranking",
+    "benchmark",
+    "重排"
+  ],
+  "recipe_ids": []
+}

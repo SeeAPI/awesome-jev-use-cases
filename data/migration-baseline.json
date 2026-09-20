@@ -1,0 +1,1005 @@
+{
+  "commit": "b0d6658394adc81873f28b43a37047f80274c91b",
+  "languages": {
+    "en": [
+      {
+        "number": 1,
+        "title": "Safer with Jev — typesafe-on-neon",
+        "source_url": "https://github.com/andrelandgraf/typesafe-on-neon",
+        "body_sha256": "97b83384ebe4210fca1580a0d7470582a38281c6035a80e05ae073cdcad1c70d"
+      },
+      {
+        "number": 2,
+        "title": "Jev Moderation Bot",
+        "source_url": "https://github.com/brainstormity/Jev-Moderation-Bot",
+        "body_sha256": "b193999bf696862390892229e913454428d5acb745b108bd16404e59b5d6b0eb"
+      },
+      {
+        "number": 3,
+        "title": "jev-spam-eval",
+        "source_url": "https://github.com/bitnovus/jev-spam-eval",
+        "body_sha256": "5242dac57003c4abb57bcb4e76f01e6b432f10f6b4b7a5a139ac17901d5c3453"
+      },
+      {
+        "number": 4,
+        "title": "Jev MCP — jkudish",
+        "source_url": "https://github.com/jkudish/jev-mcp",
+        "body_sha256": "b52d29371f3ddab38a0b2a27b070863dbce1421d8192cae9c19cd7383528944a"
+      },
+      {
+        "number": 5,
+        "title": "Capbroker — advisory screening around capability controls",
+        "source_url": "https://github.com/suryanshu-singh/capbroker",
+        "body_sha256": "04fc5e46d33a8b6e823de6a6ff2cb2e287d23265ff5faba5dd4d8fc623428d68"
+      },
+      {
+        "number": 6,
+        "title": "Openroom — editable chat-moderation rules",
+        "source_url": "https://openroom-ivory.vercel.app",
+        "body_sha256": "72eb175a8d4e1d7a2a6ae3cb64b19f496a4f28d730b321561aeddd87ba84ac02"
+      },
+      {
+        "number": 7,
+        "title": "JEVScan — Etherscan risk indicators",
+        "source_url": "https://x.com/theRaz0r/status/2100898307186864593",
+        "body_sha256": "03f24dd7971f217f0c4ec178048f77daa7603dc68d2f5a5e9eadfee8de6a505f"
+      },
+      {
+        "number": 8,
+        "title": "BlueNoise — X reply noise filtering",
+        "source_url": "https://github.com/rokcso/bluenoise",
+        "body_sha256": "45ead09fc7748921bc1c61ad0d8ce18dce1a9bb6c548e0c3e78fff5a51e40152"
+      },
+      {
+        "number": 9,
+        "title": "Jev Ultrafast",
+        "source_url": "https://github.com/browser-use/jev-ultrafast",
+        "body_sha256": "bd1596f011670920ddaab38ec4109dad3121aabe3d31b3b51702d19f81af95e5"
+      },
+      {
+        "number": 10,
+        "title": "Jev desktop control in agent-desktop",
+        "source_url": "https://github.com/lahfir/agent-desktop",
+        "body_sha256": "edec55fca8782895da2273001125490cb6b04664d4d6726c6455fa4303a1f06d"
+      },
+      {
+        "number": 11,
+        "title": "Typesafe MCP — itsmostafa",
+        "source_url": "https://github.com/itsmostafa/typesafe-mcp",
+        "body_sha256": "7281b95e3caf5bf2947aa3fb0698f3e0d89ca33112269259b66abc9dc42f25ee"
+      },
+      {
+        "number": 12,
+        "title": "SemDecide",
+        "source_url": "https://github.com/sharziki/semdecide",
+        "body_sha256": "d524151386607b7c084bf9af5175d42008a19b0cae626924169d7bc30144d4ad"
+      },
+      {
+        "number": 13,
+        "title": "typesafe-computer-use",
+        "source_url": "https://github.com/awlevin/typesafe-computer-use",
+        "body_sha256": "b0bb3c73b1065451a5fc9e50c409521d10fc39ef47898674bcdc644f7b815902"
+      },
+      {
+        "number": 14,
+        "title": "Jev Browser",
+        "source_url": "https://github.com/vlad-terin/jev-browser",
+        "body_sha256": "452407edebf83b9cb91211bb361d6f4091a5fd179c36b0c144745cca6a27df14"
+      },
+      {
+        "number": 15,
+        "title": "Mobile Jev",
+        "source_url": "https://github.com/droidrun/mobile-jev",
+        "body_sha256": "ee742343220f0451cf6aaa32e6fbbc8eb40a7f8494ba2d80e378bde94d9aaa00"
+      },
+      {
+        "number": 16,
+        "title": "zod-jev — semantic validation",
+        "source_url": "https://github.com/jomatsu/zod-jev",
+        "body_sha256": "af426c9e99771692dc3038c778ad06113755341819595c507cf0f4b93e65e148"
+      },
+      {
+        "number": 17,
+        "title": "HA-Jev — Home Assistant decisions",
+        "source_url": "https://github.com/AboveColin/HA-Jev",
+        "body_sha256": "ea6c8c9d9ad74f62f756a1c7017b65b191468d99bf2998e8c25a4c76642f6c9b"
+      },
+      {
+        "number": 18,
+        "title": "n8n TypeSafe community node",
+        "source_url": "https://github.com/DomMonte/n8n-nodes-typesafe-ai",
+        "body_sha256": "2054f64e1139bb83f7e68a61cff192dc77da28c0dc56b4652b939eed919b640f"
+      },
+      {
+        "number": 19,
+        "title": "Unclutter — page clutter filtering",
+        "source_url": "https://github.com/kitze/unclutter",
+        "body_sha256": "fee19e71b9b7babd7cd706cd8d2326bbf37dd5bd0ee62dbd2d6c572ffaaa4f70"
+      },
+      {
+        "number": 20,
+        "title": "jev-mobile — Android Settings PoC",
+        "source_url": "https://github.com/Friedjof/jev-mobile",
+        "body_sha256": "90afc865fb8093cf8473e888cd4565e2643738421cbced2284e8dc26d506a07d"
+      },
+      {
+        "number": 21,
+        "title": "triage-guard — support, alert, and deployment judgments",
+        "source_url": "https://github.com/shivam2003-dev/typesafe-triage-guard",
+        "body_sha256": "36be4d34a26f0c5e346a4a53977567b924288b7321647b75d99c32e44414d68e"
+      },
+      {
+        "number": 22,
+        "title": "typesafe-jev-workflow — LangGraph email routing",
+        "source_url": "https://github.com/GiesN/typesafe-jev-workflow",
+        "body_sha256": "49f913994df79dd2460661799576e3de9ece1d136a6141c95f9fc676119bc724"
+      },
+      {
+        "number": 23,
+        "title": "Pi Jev Auto Mode — tool-call probability gate",
+        "source_url": "https://github.com/jomatsu/pi-jev-auto-mode",
+        "body_sha256": "565349ca80fdb75b621ae9c7d18b2a58c3e453f48ffd10d4ee1e35940936ea86"
+      },
+      {
+        "number": 24,
+        "title": "jev-skip — caption-based sponsor detection",
+        "source_url": "https://github.com/valentynkit/jev-skip",
+        "body_sha256": "a6e6f855087cef042d8cc390e363693e2a431e47d1dca39cf6b32b70439757a0"
+      },
+      {
+        "number": 25,
+        "title": "Jev Codex Router",
+        "source_url": "https://github.com/0xNatoshi/jev-codex-router",
+        "body_sha256": "0253b36f573ae627999eb69f7b622bf85148d4bd502535ea1af5d959775ecb07"
+      },
+      {
+        "number": 26,
+        "title": "Winnow",
+        "source_url": "https://github.com/GhalebDweikat/winnow",
+        "body_sha256": "24ea4721360cf208fa2f336c6c0dbac5581d3b70f5f73bde7db860e24f681c61"
+      },
+      {
+        "number": 27,
+        "title": "Jev Review",
+        "source_url": "https://github.com/devagrawal09/jev-review",
+        "body_sha256": "0a0fe583107e790cb185dfd6ab529d869312d5550b85e4806b86d2eed1955b09"
+      },
+      {
+        "number": 28,
+        "title": "jev-router — gargpratyush",
+        "source_url": "https://github.com/gargpratyush/jev-router",
+        "body_sha256": "54cf50d6a27fbd06b531c5262732ef99c8ddb4296ae468d6ab6bed02d8f6f929"
+      },
+      {
+        "number": 29,
+        "title": "eve — typed evaluation and model selection",
+        "source_url": "https://github.com/vercel/eve",
+        "body_sha256": "b7e0a273beeb17f9dc859ddfaa924386eac114dfafb5165eb0cd54791ec6b341"
+      },
+      {
+        "number": 30,
+        "title": "DSPy typesafeify — hybrid inference",
+        "source_url": "https://github.com/typesafeainate/dspy-typesafeify",
+        "body_sha256": "31cebd0d7eb88db055807399f6a2ca4b93561f40bfd0444fbdf2e4cb5e06c83d"
+      },
+      {
+        "number": 31,
+        "title": "jevlogs — log triage",
+        "source_url": "https://github.com/reachjalil/jevlogs",
+        "body_sha256": "97ccb641902deb7fb45be2344fb79b03555c51a5da06cc2bc4cd9c5a7140695b"
+      },
+      {
+        "number": 32,
+        "title": "SwarmRouter — agent assignment",
+        "source_url": "https://github.com/ndolinschi/swarmrouter",
+        "body_sha256": "dda7111af27fa88d0130bb9d0aac5b62ef7269d7655dd840d8594614602a805f"
+      },
+      {
+        "number": 33,
+        "title": "jev-axi — judgment CLI for agents",
+        "source_url": "https://github.com/shiftynick/jev-axi",
+        "body_sha256": "9e7ec7a1a5667db71b5924e3c0ef98eada69cde8855b369fe9fc3693621857b0"
+      },
+      {
+        "number": 34,
+        "title": "Pi Warden — coding-agent rule feedback",
+        "source_url": "https://github.com/DevMortimer/pi-warden",
+        "body_sha256": "b8ab876f09e48d87ee3d2e97d0879064b9fcd1ee30534c8cf67699eb8ced5105"
+      },
+      {
+        "number": 35,
+        "title": "commit-miner — commit classification and security-fix signals",
+        "source_url": "https://github.com/devanshbatham/commit-miner",
+        "body_sha256": "f39c20c0e8150b0d48f3085f1f08db13c500304e24eba712cc0b16107dd2703b"
+      },
+      {
+        "number": 36,
+        "title": "Foreman — semantic supervision of coding processes",
+        "source_url": "https://github.com/thruwire/foreman",
+        "body_sha256": "c3c2e296cdb47f01aeb2278ea7dc54b4f694af27c1609166703dfc5f114dcc86"
+      },
+      {
+        "number": 37,
+        "title": "jev-belay — completion checks for Claude Code",
+        "source_url": "https://github.com/valentynkit/jev-belay",
+        "body_sha256": "2ce373fc527ba371c9173f2c866e4b55463d55347f2bb256168edaecfca60e33"
+      },
+      {
+        "number": 38,
+        "title": "jev-commit — commit-message and diff checks",
+        "source_url": "https://github.com/valentynkit/jev-commit",
+        "body_sha256": "6f7899599620736fdbadbeb233edbf773c5909471d80c7d8916591dfa65bf3b3"
+      },
+      {
+        "number": 39,
+        "title": "Blink",
+        "source_url": "https://github.com/ellipsis-dev/blink",
+        "body_sha256": "68333e17ba2d91cc0d10538784ca1c70849800dd6ce9b69f1af53e64ef4f14eb"
+      },
+      {
+        "number": 40,
+        "title": "neo4jev",
+        "source_url": "https://github.com/jexp/neo4jev",
+        "body_sha256": "b0679ee279a44e117aabd6c6cc2c32efe39496d990b6ee4c524e0dc220760364"
+      },
+      {
+        "number": 41,
+        "title": "Sift — search result reranking",
+        "source_url": "https://github.com/tylergibbs1/sift",
+        "body_sha256": "6467d2211dcdc76670789f5b24f0c30d78a73a71f3bb8cd64d9d03276872d546"
+      },
+      {
+        "number": 42,
+        "title": "Every — function-level semantic search",
+        "source_url": "https://github.com/sufianetaouil/every",
+        "body_sha256": "bf03c09272426fd6944f6ad359d96aea113067270f77e905832fa4a596764ad4"
+      },
+      {
+        "number": 43,
+        "title": "Jev Search — intent selection and result reranking",
+        "source_url": "https://github.com/superagents-lab/jev-search",
+        "body_sha256": "92d8946cdd9b61225958840cae6ac9cca57928c438ce55e601310c969663b5fb"
+      },
+      {
+        "number": 44,
+        "title": "jev.nvim — semantic function search in Neovim",
+        "source_url": "https://github.com/valentynkit/jev.nvim",
+        "body_sha256": "bb3cbfd35a0d7f5de4d970b5aaa62905d3a4bf4fe5a074ad2275283242795c9f"
+      },
+      {
+        "number": 45,
+        "title": "Judge Sheets — predictive spreadsheets",
+        "source_url": "https://github.com/dabit3/jev-experiments/tree/main/judge-sheets",
+        "body_sha256": "18910e8bae10fb20edc5101c8b5046a6c5b3bcb5b9583ee92a6d72e430a6597e"
+      },
+      {
+        "number": 46,
+        "title": "Notra — typed evaluation in analytics",
+        "source_url": "https://github.com/usenotra/notra",
+        "body_sha256": "c9b933b401e14c91cbe373b8e4587cde1b6a0b0cb9cb086f64ca7ebe8c210faf"
+      },
+      {
+        "number": 47,
+        "title": "human-compiler — writing diagnostics",
+        "source_url": "https://github.com/asfarsadewa/human-compiler",
+        "body_sha256": "e76182a4605214aba877e8a9458e1db6f5e8a44b5e6c37158dceb3ea68b05771"
+      },
+      {
+        "number": 48,
+        "title": "Kill My Idea — idea scoring",
+        "source_url": "https://github.com/monteduro/killmyidea",
+        "body_sha256": "91edabaedf15caaa65b1bc28dd60a8da7a9d2ddcc00e8bbecdf8438f3d66a4a4"
+      },
+      {
+        "number": 49,
+        "title": "Jev CV Screening",
+        "source_url": "https://github.com/gtaras7/typesafe-jev/tree/main/cv-screen",
+        "body_sha256": "81264d614cb576236228fc71a161f28f92f9d119c3c23a48c02104c76c818a2b"
+      },
+      {
+        "number": 50,
+        "title": "Jevibe Check — social tone labels",
+        "source_url": "https://github.com/sriganesh/jevibe-check",
+        "body_sha256": "2c982012063d8d2ef2d4a08051fd180873c763b8ab8a8a8fecd39626f72e0351"
+      },
+      {
+        "number": 51,
+        "title": "JEV Resume Analyzer",
+        "source_url": "https://github.com/awun8191/jev-resume-analyzer",
+        "body_sha256": "239b3977f5afd051c30555a5f24493aaa804df66a21559ec6fb93611fb822615"
+      },
+      {
+        "number": 52,
+        "title": "LaneBreak — support ticket routing",
+        "source_url": "https://github.com/ndolinschi/lanebreak",
+        "body_sha256": "2d4aa105919abef343ce780196ad358ddfa91e6f8c944afe6b66d1fd2579a626"
+      },
+      {
+        "number": 53,
+        "title": "Jev Column Race — review annotation",
+        "source_url": "https://github.com/goodrahstar/jev-column-race",
+        "body_sha256": "388482d52933d1c018096ffb98d2f9c688c508243a91fbbf149a78ea71049a6d"
+      },
+      {
+        "number": 54,
+        "title": "JevTicketRouter — bilingual support triage",
+        "source_url": "https://github.com/GhrezaKh74/JevTicktRouter",
+        "body_sha256": "e4d2c5c3519d4ba311eb8c9f66a734496a559c73b785773c1361865219b7320b"
+      },
+      {
+        "number": 55,
+        "title": "Transcript Scorecard — incremental call evaluation",
+        "source_url": "https://github.com/brandonbryant12/transcript-scorecard",
+        "body_sha256": "6a9e7982300644d2ee0e9a2403bd4735103b4c8ab16a762d3ee0c62c931ff0be"
+      },
+      {
+        "number": 56,
+        "title": "Paper Trellis Citation Verifier — citation support review",
+        "source_url": "https://github.com/MarissaFamularo/citation-verifier",
+        "body_sha256": "72c06471ff93a0d7b476958462138cb883206c171aae58593d12b91a4c26d0ed"
+      },
+      {
+        "number": 57,
+        "title": "Research Desk — staged news and company judgments",
+        "source_url": "https://github.com/0xnairb/research_desk",
+        "body_sha256": "5d697d74b00465e38a7a040630ea3e2707c80d8194b8b7ab1462cf9509316f1d"
+      },
+      {
+        "number": 58,
+        "title": "JevFilterForX — timeline value scoring",
+        "source_url": "https://github.com/grayrepo-byte/jev_filter_for_x",
+        "body_sha256": "e655f0ac34a36c6f707781f94e88314deefaf72a2d2e8ca46743e922321d9410"
+      },
+      {
+        "number": 59,
+        "title": "JevScout — career-page navigation and job matching",
+        "source_url": "https://github.com/hqman/JevScout",
+        "body_sha256": "339a07f8c06e4d9d1e2e7fb8ba4916e5229e2b589c04b50dce1cde29db693eed"
+      },
+      {
+        "number": 60,
+        "title": "TypeSafe AI Playground",
+        "source_url": "https://github.com/markjaquith/typesafe-ai-playground",
+        "body_sha256": "df1d38515764596e83a01046985a73f08a7f35dc0d38061b24883e7f7ee6bc53"
+      },
+      {
+        "number": 61,
+        "title": "Prism's Jev judgment service",
+        "source_url": "https://github.com/irfndi/prism-liquidity-agent",
+        "body_sha256": "9ffe00b1470a047c5f4998f5c38131c075719ba63ab086b6f75872fc1bce414c"
+      },
+      {
+        "number": 62,
+        "title": "1v1 Jev — Quickscope Arena",
+        "source_url": "https://github.com/emrickgarrett/OneVOneJev",
+        "body_sha256": "ba8380e78545aab2417caf0b5caa1c0dea866b934d0b01671012cab230c08d0d"
+      },
+      {
+        "number": 63,
+        "title": "jev-trader",
+        "source_url": "https://github.com/jarrodwatts/jev-trader",
+        "body_sha256": "1b978a808d083974607ea9a30a1774174d0e6ac6a5d1b78cdf528938d2c8d8c9"
+      },
+      {
+        "number": 64,
+        "title": "TypeSafe Mario",
+        "source_url": "https://github.com/fhshaik/typesafe-mario",
+        "body_sha256": "4cd85383364814f778e5b4e5959995380542fb7c87a5e363de263b30abe14b90"
+      },
+      {
+        "number": 65,
+        "title": "jev-drone",
+        "source_url": "https://github.com/RomanSlack/jev-drone",
+        "body_sha256": "206e88fb7011d2d65a9524894091adc6861838e98ae75d701ec709d4e101cf8a"
+      },
+      {
+        "number": 66,
+        "title": "tsai-sc — StarCraft Strongarm",
+        "source_url": "https://github.com/phyous/tsai-sc",
+        "body_sha256": "f08899053468cda12b53ffd40d14772e29a085940d25e25104031858cbc1f3e5"
+      },
+      {
+        "number": 67,
+        "title": "HEIST ONE — stealth-game guards",
+        "source_url": "https://github.com/AbdelStark/heist-one",
+        "body_sha256": "21cd87a0139cb08f125a49e2408a74342ffe2b74e5e8f579c519713ef679a4aa"
+      },
+      {
+        "number": 68,
+        "title": "TypeSafe Minecraft — structured action control",
+        "source_url": "https://github.com/ellistev/typesafe-minecraft-demo",
+        "body_sha256": "88d2f87d1f70eaf9bcb72ef16bbe3c5921722760fb666b24d1e8c9d8b0812a6b"
+      },
+      {
+        "number": 69,
+        "title": "Jev for Engineers",
+        "source_url": "https://github.com/Foadsf/jev-for-engineers",
+        "body_sha256": "2d1cc4c8e60aabb151a64bbc5945494ae2e7aa2045fb9c86adc1ac5b3c0c62f1"
+      },
+      {
+        "number": 70,
+        "title": "Jev literature screening",
+        "source_url": "https://github.com/PistachioAIHQ/jev-synergy-screening",
+        "body_sha256": "dad10efeda977ca844a3a4999d79602c6667b8587923cf2ef3285fa5ce60e497"
+      },
+      {
+        "number": 71,
+        "title": "Jev JFK Simulation — voice-driven airport demo",
+        "source_url": "https://www.reddit.com/r/AgentZero/comments/1wj6li0/i_tested_typesafes_jev_model_and_made_it_run_a/",
+        "body_sha256": "e3dd5f468deaf5127cedef0afc41aba956a628251f764be4f7099b89b1bf82d1"
+      },
+      {
+        "number": 72,
+        "title": "Jev Canvas — voice and gesture canvas demo",
+        "source_url": "https://x.com/jackcheng/status/2100729670991802386",
+        "body_sha256": "24e90f2e549d5803acd522e3377585479068bf4c0238d6a3c0f313987e32a82d"
+      },
+      {
+        "number": 73,
+        "title": "Jev Gomoku — candidate-move selection",
+        "source_url": "https://github.com/XieChengYuan/jev-gomoku",
+        "body_sha256": "c481b436b443566e669ef1b8da2f0a17307d34abf14e4835bf7f931661435b1a"
+      },
+      {
+        "number": 74,
+        "title": "jev-plays-pokemon-red — bounded game decisions on PyBoy",
+        "source_url": "https://github.com/valentynkit/jev-plays-pokemon-red",
+        "body_sha256": "3040b3fed3693055dad7b444d5198a1571c6cb39a2fe92ac3dc3cf8d77c0a9a5"
+      },
+      {
+        "number": 75,
+        "title": "jev-sec-bench — security judgments",
+        "source_url": "https://github.com/Gaurav-Gosain/jev-sec-bench",
+        "body_sha256": "72d82cb74863a57e01ca1da8782f17869ae06e5a7a0d05e2b41b52ab8eedfe4c"
+      },
+      {
+        "number": 76,
+        "title": "Jev Behavior Study",
+        "source_url": "https://github.com/RINNECODER/jev-behavior-study",
+        "body_sha256": "059076f402c092acac9cb8ee41a830997b39f313152a1de565d0846979cf08e6"
+      },
+      {
+        "number": 77,
+        "title": "jev-rerank-bench — retrieval evaluation",
+        "source_url": "https://github.com/anessbelbati/jev-rerank-bench",
+        "body_sha256": "1a47036d61809d86cdc590f014caa6a626fac5cf15d82b03bbcf631d7553552d"
+      },
+      {
+        "number": 78,
+        "title": "jev-phishing-bench — email signals",
+        "source_url": "https://github.com/anisselbd/jev-phishing-bench",
+        "body_sha256": "b554a5950d685eb83912fdaa5262e407bf26cab82ebdc0930c989372df0c03a5"
+      },
+      {
+        "number": 79,
+        "title": "jev-headline-bench — headline selection",
+        "source_url": "https://github.com/Gaurav-Gosain/jev-headline-bench",
+        "body_sha256": "85b27d31e8bf7761c20b4a6b0c678cd89f648f24f35a1d029f1420fc4841baae"
+      },
+      {
+        "number": 80,
+        "title": "Jev judicial-text annotation",
+        "source_url": "https://github.com/lab-dados/jev-anotacao-sentencas",
+        "body_sha256": "6eb9c6e59dd909add7366ab8d820df08ebeb6492e1a7eb89c44aa0473d9a655c"
+      },
+      {
+        "number": 81,
+        "title": "LLM Chess Jev Player — constrained chess evaluation",
+        "source_url": "https://github.com/maxim-saplin/llm_chess",
+        "body_sha256": "233afde3e210922d3d84ba9a2a0d788c9957aa809149210641e833ec24d644bf"
+      },
+      {
+        "number": 82,
+        "title": "Every Judgment Lab — writing and knowledge-work checks",
+        "source_url": "https://every.to/also-true-for-humans/mini-vibe-check-typesafe-s-jev-judged-everything-i-ve-written-in-0-7-seconds",
+        "body_sha256": "9504ccffadee84aaa313f8161edcaac9400021ea3a2f0223db9bc17e281d6f83"
+      },
+      {
+        "number": 83,
+        "title": "Jev Maze Lookahead — a negative planning experiment",
+        "source_url": "https://github.com/Bud-ro/jev-demos",
+        "body_sha256": "6bb2cbc796f29c700c1c4136d557127c9cc61c62146dd47f1075a7a0162c75b2"
+      }
+    ],
+    "zh": [
+      {
+        "number": 1,
+        "title": "Safer with Jev（原 TypeSafe on Neon）",
+        "source_url": "https://github.com/andrelandgraf/typesafe-on-neon",
+        "body_sha256": "649d4070ce062fc5e97c530c91fe9dcd02b664b6fb68108a4f4b87ca90208750"
+      },
+      {
+        "number": 2,
+        "title": "Jev Moderation Bot",
+        "source_url": "https://github.com/brainstormity/Jev-Moderation-Bot",
+        "body_sha256": "7c8be743df1d645aa95d91177c4312f99eedbbd0a4e0142061b9efceb89eb2dd"
+      },
+      {
+        "number": 3,
+        "title": "jev-spam-eval",
+        "source_url": "https://github.com/bitnovus/jev-spam-eval",
+        "body_sha256": "16f5af59a535c013d3a78d2f344fe188b11a4783d66e2107bbb6b505a0dca6f2"
+      },
+      {
+        "number": 4,
+        "title": "Jev MCP（jkudish）",
+        "source_url": "https://github.com/jkudish/jev-mcp",
+        "body_sha256": "43076351be9217e620cf9ea744ba6cdf594b5f6a1335ac6279e17401ebd33941"
+      },
+      {
+        "number": 5,
+        "title": "Capbroker — 权限边界之外的Jev风险提示",
+        "source_url": "https://github.com/suryanshu-singh/capbroker",
+        "body_sha256": "48233ae0d59956d58c32f661ae85939c91d285292e7d9a652bb9a7cf825b37fd"
+      },
+      {
+        "number": 6,
+        "title": "Openroom — 可改规则的实时聊天审核",
+        "source_url": "https://openroom-ivory.vercel.app",
+        "body_sha256": "81ae4b43502d4e6c7c7ab7ee0b08147d9edc28d72c3f4c193ef3a4e4af148499"
+      },
+      {
+        "number": 7,
+        "title": "JEVScan — Etherscan地址与交易风险提示",
+        "source_url": "https://x.com/theRaz0r/status/2100898307186864593",
+        "body_sha256": "f95bbbc22744745aeac93eed203545fb3ec2822e332613543025bc47d5916751"
+      },
+      {
+        "number": 8,
+        "title": "BlueNoise — X 评论区噪声过滤",
+        "source_url": "https://github.com/rokcso/bluenoise",
+        "body_sha256": "5359c0ce172950da19b14651ba5b9838f680e63ddb4131c46291edff6b59238a"
+      },
+      {
+        "number": 9,
+        "title": "Jev Ultrafast",
+        "source_url": "https://github.com/browser-use/jev-ultrafast",
+        "body_sha256": "5b402d1504a4dbc204ba3ace8f71d1732cf7a79af6fa7b46a1741197bac5e816"
+      },
+      {
+        "number": 10,
+        "title": "agent-desktop 中的 Jev 桌面控制",
+        "source_url": "https://github.com/lahfir/agent-desktop",
+        "body_sha256": "c65ff2b5f5174d8a37decae4d7e66b798f63f179c6dfe372e3e3a1a04dbd5287"
+      },
+      {
+        "number": 11,
+        "title": "Typesafe MCP（itsmostafa）",
+        "source_url": "https://github.com/itsmostafa/typesafe-mcp",
+        "body_sha256": "4178bacae2d63c07624e14d24f359abfac2d8363bfd6d903c1970f8db51eaa2e"
+      },
+      {
+        "number": 12,
+        "title": "SemDecide",
+        "source_url": "https://github.com/sharziki/semdecide",
+        "body_sha256": "c31741e631fd3f53cfff8757dff11d2120377de62a982d6d2d6b9e55c4924ac5"
+      },
+      {
+        "number": 13,
+        "title": "typesafe-computer-use",
+        "source_url": "https://github.com/awlevin/typesafe-computer-use",
+        "body_sha256": "3ad98644a36f90ce75b4ed88894124aaa6f55e10a6c37af54525ec9d94858b55"
+      },
+      {
+        "number": 14,
+        "title": "Jev Browser",
+        "source_url": "https://github.com/vlad-terin/jev-browser",
+        "body_sha256": "957242eced82c077e47f89ae11c9e18de1b53419c16cf00e28931ee3dbed2263"
+      },
+      {
+        "number": 15,
+        "title": "Mobile Jev",
+        "source_url": "https://github.com/droidrun/mobile-jev",
+        "body_sha256": "f134ba2941fc795e56c753dd0eba2007134fef219a70e8b03e4cb26be6e07320"
+      },
+      {
+        "number": 16,
+        "title": "zod-jev — 表单语义校验",
+        "source_url": "https://github.com/jomatsu/zod-jev",
+        "body_sha256": "c0be3cd73e5944951041ade998bfeea24c00d8d35b2dc2b6be38b5b149472501"
+      },
+      {
+        "number": 17,
+        "title": "HA-Jev — 家庭状态判断",
+        "source_url": "https://github.com/AboveColin/HA-Jev",
+        "body_sha256": "30fd3d29cf28ae841911ca6bc0584d8a04b9fd55b3aed8f1bfd5557db3fcbb58"
+      },
+      {
+        "number": 18,
+        "title": "n8n TypeSafe 节点 — 工作流判断",
+        "source_url": "https://github.com/DomMonte/n8n-nodes-typesafe-ai",
+        "body_sha256": "c561dd8fc8bce3876039abfbd8ea9a023f989dfa12f0e4b89e0c4c576986800c"
+      },
+      {
+        "number": 19,
+        "title": "Unclutter — 网页杂乱元素分类与隐藏",
+        "source_url": "https://github.com/kitze/unclutter",
+        "body_sha256": "a4554865a541e77e74355554e52e049ba8a5a58b39673008f5adc1ff336ddd9b"
+      },
+      {
+        "number": 20,
+        "title": "jev-mobile — Android设置导航PoC",
+        "source_url": "https://github.com/Friedjof/jev-mobile",
+        "body_sha256": "977dcdf4f3d9b88f152b611576ddc0879b92b40fd5eb25f8043ce59a737c7b6c"
+      },
+      {
+        "number": 21,
+        "title": "triage-guard — 支持、告警与部署风险的判断管线",
+        "source_url": "https://github.com/shivam2003-dev/typesafe-triage-guard",
+        "body_sha256": "32ec1dc237869239c5ab22a5828047bacaf3ac289af2c8c4efba20b5af6918aa"
+      },
+      {
+        "number": 22,
+        "title": "typesafe-jev-workflow — LangGraph 邮件意图分流",
+        "source_url": "https://github.com/GiesN/typesafe-jev-workflow",
+        "body_sha256": "5f86104a91071940f957dd2e98b24dd76b020b85e7cd237055bde2bf595da0b2"
+      },
+      {
+        "number": 23,
+        "title": "Pi Jev Auto Mode — 工具调用概率门控",
+        "source_url": "https://github.com/jomatsu/pi-jev-auto-mode",
+        "body_sha256": "a88e0b3a8af7f4eaee1cbdb03a2b0f15d3cca40618e59549781142b3acea818e"
+      },
+      {
+        "number": 24,
+        "title": "jev-skip — 基于字幕的赞助片段识别",
+        "source_url": "https://github.com/valentynkit/jev-skip",
+        "body_sha256": "1188159fcaff919348d960befc1198aa168c4db1d49780864f48110a75eb18f2"
+      },
+      {
+        "number": 25,
+        "title": "Jev Codex Router",
+        "source_url": "https://github.com/0xNatoshi/jev-codex-router",
+        "body_sha256": "5ec23fffcce34c57f49bf0397983a36e4faf6e640915f1d9d93e2ba16c0a55bd"
+      },
+      {
+        "number": 26,
+        "title": "Winnow",
+        "source_url": "https://github.com/GhalebDweikat/winnow",
+        "body_sha256": "cf54b0da55d68c68445adc42f1932685408d1b3543b5fa3e9722c28ca1b45523"
+      },
+      {
+        "number": 27,
+        "title": "Jev Review",
+        "source_url": "https://github.com/devagrawal09/jev-review",
+        "body_sha256": "87e49268ef764eab71e96cf410ea625f1726059818638a594716b1fbc3beee15"
+      },
+      {
+        "number": 28,
+        "title": "jev-router — gargpratyush",
+        "source_url": "https://github.com/gargpratyush/jev-router",
+        "body_sha256": "6f1f5e9f837a537e46d1f90787204cfcc492d2eb5d86db4ed3149bb30be7d8be"
+      },
+      {
+        "number": 29,
+        "title": "eve — typed evaluation and model selection",
+        "source_url": "https://github.com/vercel/eve",
+        "body_sha256": "899db166d40a5d52fdabd7e6a131c380e3c74decd9ea50554431376c94e151ae"
+      },
+      {
+        "number": 30,
+        "title": "DSPy typesafeify — 混合推理",
+        "source_url": "https://github.com/typesafeainate/dspy-typesafeify",
+        "body_sha256": "d5560e9ec29306830bdf42e75049f3c7df0e685c7edad37a24ef1485abd0e98c"
+      },
+      {
+        "number": 31,
+        "title": "jevlogs — 运维日志语义分流",
+        "source_url": "https://github.com/reachjalil/jevlogs",
+        "body_sha256": "264f12cdbca2e546b28a57952ffd867903e6bcd1d39ec534edce508a319cdaa2"
+      },
+      {
+        "number": 32,
+        "title": "SwarmRouter — 任务分配给专长Agent",
+        "source_url": "https://github.com/ndolinschi/swarmrouter",
+        "body_sha256": "76eec6781c23aa95d98576509ff3a1abe1ff948f8a3c2173d7dd03f44aaa37e6"
+      },
+      {
+        "number": 33,
+        "title": "jev-axi — Agent判断工具与构建日志分诊",
+        "source_url": "https://github.com/shiftynick/jev-axi",
+        "body_sha256": "cba4944d96f57db1cf342f773f8471c11b9ceb79ac34ab7c0e0f507640d577aa"
+      },
+      {
+        "number": 34,
+        "title": "Pi Warden — 规则检查与代理行为提醒",
+        "source_url": "https://github.com/DevMortimer/pi-warden",
+        "body_sha256": "1125e5da8b0b6b028800add7b815e46552f88c1500cb7f730a6dd1afea114e8d"
+      },
+      {
+        "number": 35,
+        "title": "commit-miner — Git 提交差异分类与安全修复线索",
+        "source_url": "https://github.com/devanshbatham/commit-miner",
+        "body_sha256": "e0488ea50d85fa5ef02740565ca7b7eec7b5bfb4267f6f357952489bc568e123"
+      },
+      {
+        "number": 36,
+        "title": "Foreman — 编码代理运行时的语义监督与生命周期编排",
+        "source_url": "https://github.com/thruwire/foreman",
+        "body_sha256": "4518630b16cbd553b7f834bf62f532de3b51ff1109927e8500b36b7999612a65"
+      },
+      {
+        "number": 37,
+        "title": "jev-belay — Claude Code 完成声明核查",
+        "source_url": "https://github.com/valentynkit/jev-belay",
+        "body_sha256": "569fac9b31fec0b40c9ad8cde5461fe72afb5715d1dd4aea7cbb8d8a82523838"
+      },
+      {
+        "number": 38,
+        "title": "jev-commit — 提交信息与差异核查",
+        "source_url": "https://github.com/valentynkit/jev-commit",
+        "body_sha256": "cbd9298c2bc1779c6e082ba7608a5d355ae0b0e7d6c6b18b3db0d07bdbb71582"
+      },
+      {
+        "number": 39,
+        "title": "Blink",
+        "source_url": "https://github.com/ellipsis-dev/blink",
+        "body_sha256": "bf709efb4caab89203c795dafdbe57d3f42aaa48c05180f17cedc8f2bab1b3d1"
+      },
+      {
+        "number": 40,
+        "title": "neo4jev",
+        "source_url": "https://github.com/jexp/neo4jev",
+        "body_sha256": "734532ee6e3b364dfd455d8636e0b0dfaf44aa185df43c16cac8131a15dd2c81"
+      },
+      {
+        "number": 41,
+        "title": "Sift — 搜索结果重排",
+        "source_url": "https://github.com/tylergibbs1/sift",
+        "body_sha256": "4453702b7bf09fd4dc06c1cb56603409c74d6076392c027a2b5f9b0f0b7a5c6f"
+      },
+      {
+        "number": 42,
+        "title": "Every — 逐函数语义代码检索",
+        "source_url": "https://github.com/sufianetaouil/every",
+        "body_sha256": "8498bc4b211cf01835f172eb5a645e8a9701ef27d7d1a849285c2dcdef88d0e5"
+      },
+      {
+        "number": 43,
+        "title": "Jev Search — 自然语言搜索意图识别与结果重排",
+        "source_url": "https://github.com/superagents-lab/jev-search",
+        "body_sha256": "c772aeb47652fede91760ca8ce08442fee0fb95802eb6b0e5f7d8ba89466aa5b"
+      },
+      {
+        "number": 44,
+        "title": "jev.nvim — Neovim 函数级语义检索",
+        "source_url": "https://github.com/valentynkit/jev.nvim",
+        "body_sha256": "29af7ee0c1df9811a6498fda70a5bccb76ccf4cae510c0b239d16dfdd4b1613a"
+      },
+      {
+        "number": 45,
+        "title": "Judge Sheets — predictive spreadsheets",
+        "source_url": "https://github.com/dabit3/jev-experiments/tree/main/judge-sheets",
+        "body_sha256": "dc47439b31fb5a0dcb807ad16553f1908664785429f80c3f521b0ccfe88c32e6"
+      },
+      {
+        "number": 46,
+        "title": "Notra — typed evaluation in analytics",
+        "source_url": "https://github.com/usenotra/notra",
+        "body_sha256": "494d40d8c373b71642a5e2bbba82a9f4046956c28499e19b0597eb43e5bc1653"
+      },
+      {
+        "number": 47,
+        "title": "human-compiler — 文字质量诊断",
+        "source_url": "https://github.com/asfarsadewa/human-compiler",
+        "body_sha256": "9065e1e79044eebfbad7e6c06f1807c9ec7214131b9ae9cc7adeace8285455f5"
+      },
+      {
+        "number": 48,
+        "title": "Kill My Idea — 产品想法多维评分",
+        "source_url": "https://github.com/monteduro/killmyidea",
+        "body_sha256": "7dc932a09d8ebf6ddc7a966938dbe2b04dc31eef4f87609f10a9683fa7e678cf"
+      },
+      {
+        "number": 49,
+        "title": "Jev CV Screening — 简历证据与本地策略评分",
+        "source_url": "https://github.com/gtaras7/typesafe-jev/tree/main/cv-screen",
+        "body_sha256": "f5d26022e6507c82f58cea162e5b3cc886ee9c5454df72bd2ad082b407c92f6b"
+      },
+      {
+        "number": 50,
+        "title": "Jevibe Check — 社交帖子与草稿语气标签",
+        "source_url": "https://github.com/sriganesh/jevibe-check",
+        "body_sha256": "994d8824a12d489a3cc1574ce4ef1280ab12bcab9412830f2874899031aa4b62"
+      },
+      {
+        "number": 51,
+        "title": "JEV Resume Analyzer — 可追溯简历自查",
+        "source_url": "https://github.com/awun8191/jev-resume-analyzer",
+        "body_sha256": "8e3afc7b783d154842008440e26cea601441fb9aa07cc20f2d008bc52f862c8c"
+      },
+      {
+        "number": 52,
+        "title": "LaneBreak — 客服工单分组与优先级",
+        "source_url": "https://github.com/ndolinschi/lanebreak",
+        "body_sha256": "45d2f37306506353fe63db98a70534189bb0c0bbec3a80c009496188d6ca65b3"
+      },
+      {
+        "number": 53,
+        "title": "Jev Column Race — 千条用户评论多列标注",
+        "source_url": "https://github.com/goodrahstar/jev-column-race",
+        "body_sha256": "2102d6b52b79afbbcbe7678c41826471096fba7d5bab45565b1d4d432a1a3758"
+      },
+      {
+        "number": 54,
+        "title": "JevTicketRouter — 带确定性兜底的双语工单分流",
+        "source_url": "https://github.com/GhrezaKh74/JevTicktRouter",
+        "body_sha256": "bf06a58fb62ff8117159889fb3e9543c974a24d6bbbeb31fed28dee50dc52ee7"
+      },
+      {
+        "number": 55,
+        "title": "Transcript Scorecard — 实时客服通话质检",
+        "source_url": "https://github.com/brandonbryant12/transcript-scorecard",
+        "body_sha256": "21544b77a2bdaba9656518b688d795f18e2d7948a82410db22782c37f86c09cf"
+      },
+      {
+        "number": 56,
+        "title": "Paper Trellis Citation Verifier — 论文引文支持度复核",
+        "source_url": "https://github.com/MarissaFamularo/citation-verifier",
+        "body_sha256": "6a8fce3b729d9a8ed2536c8fb1ba7d12950a4b478fdae004155dece3d7c9b414"
+      },
+      {
+        "number": 57,
+        "title": "Research Desk — 新闻与公司多阶段判断",
+        "source_url": "https://github.com/0xnairb/research_desk",
+        "body_sha256": "3492229413954140970c0632a88f3c4b09efe2f732fd7fa52583afa9895ede10"
+      },
+      {
+        "number": 58,
+        "title": "JevFilterForX — 时间线内容价值评分",
+        "source_url": "https://github.com/grayrepo-byte/jev_filter_for_x",
+        "body_sha256": "fb3fa21f91f9bedeb1abdd60b6675e06d2aebdaac979dd83f004ff7c79a317dc"
+      },
+      {
+        "number": 59,
+        "title": "JevScout — 招聘页面导航与岗位匹配",
+        "source_url": "https://github.com/hqman/JevScout",
+        "body_sha256": "2e4db76f5f52da9b36160e32da9d4869a479993b2140426ce90905ad930c4429"
+      },
+      {
+        "number": 60,
+        "title": "TypeSafe AI Playground",
+        "source_url": "https://github.com/markjaquith/typesafe-ai-playground",
+        "body_sha256": "4068b111945115f1724f0085150daddb5cbefbb3fea743c9aac7bf0832e03a1c"
+      },
+      {
+        "number": 61,
+        "title": "Prism 的 Jev 判断服务",
+        "source_url": "https://github.com/irfndi/prism-liquidity-agent",
+        "body_sha256": "dc94f5b64bd2c9b940af0fb1ca41b682c2893e0e2f42e1fc393da4d444f3dd5b"
+      },
+      {
+        "number": 62,
+        "title": "1v1 Jev — Quickscope Arena",
+        "source_url": "https://github.com/emrickgarrett/OneVOneJev",
+        "body_sha256": "595b7e26f81d486367fe6821b4b6b35fc46e52a19a81c4ac356df07f0d7fe1be"
+      },
+      {
+        "number": 63,
+        "title": "jev-trader",
+        "source_url": "https://github.com/jarrodwatts/jev-trader",
+        "body_sha256": "f444d04d84ee40b7ca9dec9edfc8c3607a5eec73e6b0b853529f4e90512ff4c8"
+      },
+      {
+        "number": 64,
+        "title": "TypeSafe Mario",
+        "source_url": "https://github.com/fhshaik/typesafe-mario",
+        "body_sha256": "9ac54fef30f616d5ce613cb5bf8441f581205a561240d9318a2a7c16b85bd4a9"
+      },
+      {
+        "number": 65,
+        "title": "jev-drone",
+        "source_url": "https://github.com/RomanSlack/jev-drone",
+        "body_sha256": "69556dce5980fac757a6faf84638945fc3c9b9c9d0af0d65115b7d9f484d3636"
+      },
+      {
+        "number": 66,
+        "title": "tsai-sc — StarCraft Strongarm",
+        "source_url": "https://github.com/phyous/tsai-sc",
+        "body_sha256": "a1cbead8f6550a212e378e870dad166d63b4f25e223e0b0c5b5b1f77734f1ce6"
+      },
+      {
+        "number": 67,
+        "title": "HEIST ONE — 潜行游戏守卫判断",
+        "source_url": "https://github.com/AbdelStark/heist-one",
+        "body_sha256": "6c0334e80f9d86424e23b664da14e5c4d981cb7046bb15f99dd39f060a3dbd7d"
+      },
+      {
+        "number": 68,
+        "title": "TypeSafe Minecraft — 游戏动作实验",
+        "source_url": "https://github.com/ellistev/typesafe-minecraft-demo",
+        "body_sha256": "6d03a50b4eac245bd7fae248a6afcdf66d43f8d740305f2d96e1ddef90034aef"
+      },
+      {
+        "number": 69,
+        "title": "Jev for Engineers — 工程判断示例集",
+        "source_url": "https://github.com/Foadsf/jev-for-engineers",
+        "body_sha256": "296de209f254374c9a047fe7e1ecf47985014557167d91365ec98cfb5d4d4d00"
+      },
+      {
+        "number": 70,
+        "title": "jev-synergy-screening — 文献标题摘要初筛",
+        "source_url": "https://github.com/PistachioAIHQ/jev-synergy-screening",
+        "body_sha256": "7f65fcce4a7ae4d6f38a083354ce5e0520e0e55c3dab26d23d7065cb5a8cb72f"
+      },
+      {
+        "number": 71,
+        "title": "Jev JFK Simulation — 机场语音调度演示",
+        "source_url": "https://www.reddit.com/r/AgentZero/comments/1wj6li0/i_tested_typesafes_jev_model_and_made_it_run_a/",
+        "body_sha256": "9f4926379144a296ed0555b6cf2fe3fe3996c8024777d6877483012e97f14aca"
+      },
+      {
+        "number": 72,
+        "title": "Jev Canvas — 语音与手势操作画布",
+        "source_url": "https://x.com/jackcheng/status/2100729670991802386",
+        "body_sha256": "50e3a10b2cba797cb92033981dd12088b5b902877c2aca383db521fb79996bbd"
+      },
+      {
+        "number": 73,
+        "title": "Jev Gomoku — 五子棋候选落点选择",
+        "source_url": "https://github.com/XieChengYuan/jev-gomoku",
+        "body_sha256": "6458c7c157827f1774ab9e3b8da390d0d63b94c7f1b65ab2007610ff8799d22e"
+      },
+      {
+        "number": 74,
+        "title": "jev-plays-pokemon-red — PyBoy 上的受限游戏决策",
+        "source_url": "https://github.com/valentynkit/jev-plays-pokemon-red",
+        "body_sha256": "7e091856aa94219a885b887218e51748d1e2cf6ae3c6a7ff549ec675f33e7efe"
+      },
+      {
+        "number": 75,
+        "title": "jev-sec-bench — 安全判断评测",
+        "source_url": "https://github.com/Gaurav-Gosain/jev-sec-bench",
+        "body_sha256": "1c4e981f076a323e5d37ae71b90940d8cf540266a6c98ad910254ffe8f3c22be"
+      },
+      {
+        "number": 76,
+        "title": "Jev Behavior Study — 能力与失败边界",
+        "source_url": "https://github.com/RINNECODER/jev-behavior-study",
+        "body_sha256": "f0d13fa58eb290f63c17897660dad439d3005613f96f6da616f56b00f4dd843f"
+      },
+      {
+        "number": 77,
+        "title": "jev-rerank-bench — 检索重排对照评测",
+        "source_url": "https://github.com/anessbelbati/jev-rerank-bench",
+        "body_sha256": "be30c3be49f458d4698e1e21236584b406ce94c939eb0954ea246d7b3dff162b"
+      },
+      {
+        "number": 78,
+        "title": "jev-phishing-bench — 钓鱼邮件与原子信号",
+        "source_url": "https://github.com/anisselbd/jev-phishing-bench",
+        "body_sha256": "e771d9a3a252a5d77605fc59203e985a877d05d39f893a9a40c09e9960324c58"
+      },
+      {
+        "number": 79,
+        "title": "jev-headline-bench — 标题A/B胜负预测",
+        "source_url": "https://github.com/Gaurav-Gosain/jev-headline-bench",
+        "body_sha256": "28ade1ac69f80bc3c4555dc044b5463bac500cceaeb23f62ad8b7433459998eb"
+      },
+      {
+        "number": 80,
+        "title": "Jev司法文本标注 — 葡语文档多字段研究",
+        "source_url": "https://github.com/lab-dados/jev-anotacao-sentencas",
+        "body_sha256": "967750ed1c4c8687ee00603e25f8010740e6cb115b3ac2e97ffe7dc99af42d09"
+      },
+      {
+        "number": 81,
+        "title": "LLM Chess Jev Player — 合法棋步选择评测",
+        "source_url": "https://github.com/maxim-saplin/llm_chess",
+        "body_sha256": "22099be82300aa2151b24b0a84e713ce9bb377b4f474dc931fc8a972197561a7"
+      },
+      {
+        "number": 82,
+        "title": "Every Judgment Lab — 写作与知识工作检查",
+        "source_url": "https://every.to/also-true-for-humans/mini-vibe-check-typesafe-s-jev-judged-everything-i-ve-written-in-0-7-seconds",
+        "body_sha256": "05b46ca8b4e7f6c662db8e11a2ea9fe78207c54ae09ae27bebd57f388b60b697"
+      },
+      {
+        "number": 83,
+        "title": "Jev Maze Lookahead — 并行多步规划负向实验",
+        "source_url": "https://github.com/Bud-ro/jev-demos",
+        "body_sha256": "2139c169c9e5a61af2877103a6f25f68752592382ce2949bb2cca2e5fd6a481e"
+      }
+    ]
+  }
+}

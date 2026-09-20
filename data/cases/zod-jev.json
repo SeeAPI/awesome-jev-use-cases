@@ -1,0 +1,49 @@
+{
+  "id": "zod-jev",
+  "title": {
+    "en": "zod-jev — semantic validation",
+    "zh": "zod-jev — 表单语义校验"
+  },
+  "summary": {
+    "en": "Adds Jev semantic checks to Zod schemas, turning probabilities into validation issues alongside ordinary shape checks.",
+    "zh": "在 Zod 格式校验之上加入 Jev 语义判断，将概率转为校验结果，适合检查内容含义、分类与描述是否匹配。"
+  },
+  "category": "automation",
+  "task": "decision",
+  "input_type": [
+    "text"
+  ],
+  "jev_primitive": [
+    "noul"
+  ],
+  "software_action": [
+    "accept",
+    "reject",
+    "review"
+  ],
+  "source_url": "https://github.com/jomatsu/zod-jev",
+  "evidence": {
+    "level": "docs-reviewed",
+    "verified_by_seeapi": false,
+    "reviewed_at": "2026-09-18",
+    "sources": [
+      "https://github.com/jomatsu/zod-jev"
+    ],
+    "basis": "Existing repository review and linked documentation; metadata migration on 2026-09-20, no new runtime validation."
+  },
+  "limitations": {
+    "en": [
+      "Uncertain and unavailable judgments need explicit handling; a passing check does not establish factual correctness."
+    ],
+    "zh": [
+      "需要处理不确定和服务不可用的结果；通过校验不代表事实一定正确。"
+    ]
+  },
+  "tags": [
+    "validation",
+    "forms",
+    "semantic",
+    "表单"
+  ],
+  "recipe_ids": []
+}

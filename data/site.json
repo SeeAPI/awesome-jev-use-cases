@@ -1,0 +1,82 @@
+{
+  "updated_at": "2026-09-20",
+  "categories": [
+    {
+      "id": "moderation",
+      "title": {
+        "en": "Content moderation & safety",
+        "zh": "内容审核与安全"
+      },
+      "description": {
+        "en": "Content screening and moderation",
+        "zh": "内容筛查与审核处置"
+      }
+    },
+    {
+      "id": "automation",
+      "title": {
+        "en": "Automation & integrations",
+        "zh": "自动化与开发工具接入"
+      },
+      "description": {
+        "en": "Browser, desktop, mobile and workflow tools",
+        "zh": "浏览器、桌面、手机与工作流工具"
+      }
+    },
+    {
+      "id": "routing",
+      "title": {
+        "en": "Model routing & code workflows",
+        "zh": "模型成本与代码工作流"
+      },
+      "description": {
+        "en": "Model selection, code review and agent workflows",
+        "zh": "模型选择、代码审查与 Agent 工作流"
+      }
+    },
+    {
+      "id": "search",
+      "title": {
+        "en": "Semantic search & graph navigation",
+        "zh": "语义搜索与知识导航"
+      },
+      "description": {
+        "en": "Search, reranking and graph navigation",
+        "zh": "搜索、结果重排与图谱导航"
+      }
+    },
+    {
+      "id": "productivity",
+      "title": {
+        "en": "Data classification & productivity",
+        "zh": "数据分类与办公效率"
+      },
+      "description": {
+        "en": "Tickets, spreadsheets and document analysis",
+        "zh": "工单、表格与文档分析"
+      }
+    },
+    {
+      "id": "experiments",
+      "title": {
+        "en": "Experiments & specialized applications",
+        "zh": "实验与垂直场景"
+      },
+      "description": {
+        "en": "Games, simulation and specialized experiments",
+        "zh": "游戏、仿真与垂直实验"
+      }
+    },
+    {
+      "id": "benchmarks",
+      "title": {
+        "en": "Benchmarks & behavior studies",
+        "zh": "评测与行为研究"
+      },
+      "description": {
+        "en": "Author evaluations and behavior studies",
+        "zh": "作者评测与行为研究"
+      }
+    }
+  ]
+}

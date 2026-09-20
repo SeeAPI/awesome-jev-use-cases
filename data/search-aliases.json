@@ -1,0 +1,43 @@
+[
+  [
+    "caption",
+    "captions",
+    "subtitle",
+    "subtitles",
+    "字幕"
+  ],
+  [
+    "rerank",
+    "reranking",
+    "重排",
+    "重新排序"
+  ],
+  [
+    "model routing",
+    "model router",
+    "model-routing",
+    "模型路由",
+    "模型分流"
+  ],
+  [
+    "support ticket",
+    "support tickets",
+    "ticket triage",
+    "工单",
+    "客服分流"
+  ],
+  [
+    "code review",
+    "代码审查",
+    "代码审核"
+  ],
+  [
+    "browser",
+    "浏览器"
+  ],
+  [
+    "moderation",
+    "内容审核",
+    "社区审核"
+  ]
+]

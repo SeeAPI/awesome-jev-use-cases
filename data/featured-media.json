@@ -1,0 +1,30 @@
+{
+  "jev-codex-router": {
+    "kind": "documentation",
+    "checked_at": "2026-09-20",
+    "source_url": "https://github.com/0xNatoshi/jev-codex-router/blob/8292b519659280884627a962c826ac7721136a64/README.md#how-it-works",
+    "label": {"en": "Author's architecture and routing flow", "zh": "作者架构与路由流程"}
+  },
+  "sift": {
+    "kind": "documentation",
+    "checked_at": "2026-09-20",
+    "source_url": "https://github.com/tylergibbs1/sift/blob/dbfc57371583829be238833332d12537d2f8e68b/README.md#how-it-works",
+    "label": {"en": "Author's ranking and restore-order flow", "zh": "作者的重排与恢复原序流程"}
+  },
+  "ghrezakh74-jevticktrouter": {
+    "kind": "author-screenshot",
+    "checked_at": "2026-09-20",
+    "image_url": "https://raw.githubusercontent.com/GhrezaKh74/JevTicktRouter/ee078fcddd85d339b182fb5ba3cce5ae1021d447/docs/screenshots/03-security-redacted.png",
+    "source_url": "https://github.com/GhrezaKh74/JevTicktRouter/blob/ee078fcddd85d339b182fb5ba3cce5ae1021d447/docs/screenshots/03-security-redacted.png",
+    "gallery_url": "https://github.com/GhrezaKh74/JevTicktRouter/blob/ee078fcddd85d339b182fb5ba3cce5ae1021d447/README.md#screenshots",
+    "license_url": "https://github.com/GhrezaKh74/JevTicktRouter/blob/ee078fcddd85d339b182fb5ba3cce5ae1021d447/README.md#licence",
+    "alt": {"en": "Author screenshot: security ticket held for human review in Mock mode", "zh": "作者截图：Mock 模式下安全工单进入人工复核并脱敏"},
+    "caption": {"en": "GhrezaKh74's application screenshot, explicitly in Mock mode with fictional tickets. The displayed decisions and probabilities are simulated, not Jev measurements or SeeAPI test results. Image loaded from the author's repository; its README declares MIT.", "zh": "GhrezaKh74 原作者应用截图，画面明确为 Mock 模式，使用虚构工单。图中判断和概率是模拟数据，不是 Jev 或 SeeAPI 实测结果。图片引用作者仓库原图；其 README 声明为 MIT。"}
+  },
+  "jev-moderation-bot": {
+    "kind": "documentation",
+    "checked_at": "2026-09-20",
+    "source_url": "https://github.com/brainstormity/Jev-Moderation-Bot/blob/1629ac80bea758883ee7541ffc654c83acfae4b6/README.md",
+    "label": {"en": "Author's moderation and feedback workflow", "zh": "作者审核与反馈工作流说明"}
+  }
+}

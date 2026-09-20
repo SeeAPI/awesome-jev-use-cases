@@ -1,0 +1,48 @@
+{
+  "id": "sift",
+  "title": {
+    "en": "Sift — search result reranking",
+    "zh": "Sift — 搜索结果重排"
+  },
+  "summary": {
+    "en": "A Chrome extension asks Jev about relevance, promotional content and depth, then reranks Google results in code.",
+    "zh": "Chrome 扩展使用 Jev 判断搜索结果的相关性、推广倾向和信息深度，再由代码重排 Google 搜索结果。"
+  },
+  "category": "search",
+  "task": "ranking",
+  "input_type": [
+    "text"
+  ],
+  "jev_primitive": [
+    "noul",
+    "score"
+  ],
+  "software_action": [
+    "rank"
+  ],
+  "source_url": "https://github.com/tylergibbs1/sift",
+  "evidence": {
+    "level": "docs-reviewed",
+    "verified_by_seeapi": false,
+    "reviewed_at": "2026-09-18",
+    "sources": [
+      "https://github.com/tylergibbs1/sift"
+    ],
+    "basis": "Existing repository review and linked documentation; metadata migration on 2026-09-20, no new runtime validation."
+  },
+  "limitations": {
+    "en": [
+      "Judgments use result snippets rather than full pages; search intent affects filtering."
+    ],
+    "zh": [
+      "依据搜索摘要而非网页全文；过滤策略会考虑搜索意图。"
+    ]
+  },
+  "tags": [
+    "rag",
+    "reranking",
+    "search",
+    "重排"
+  ],
+  "recipe_ids": []
+}

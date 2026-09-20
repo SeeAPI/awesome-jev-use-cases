@@ -1,5 +1,23 @@
 # 更新记录 / Changelog
 
+## 2026-09-20
+
+- 首页 83 个案例补充关键边界，55 个有原始模式说明的案例展示可借鉴点；完整正文与原始核查证据保留。
+- 六个精选补充可借鉴点与作者素材入口；新增工单分流作者截图（外链，明确 Mock 模式），共三个精选有截图，另三个使用固定版本实现说明链接。
+
+- 首页首段与导航突出 Jev solution finder Skill；分类目录前增加能力说明、可复制的任务示例及使用安装入口。
+
+- 分类目录前置并增加用途说明；六个精选覆盖不同任务，全部案例保留紧凑摘要，首页弱化内部数据迁移信息。
+- 83 个案例迁为独立双语源文件，固定 ID 与旧锚点保留，分类显式配置、显示编号自动生成；完整 Casebook 为主要详情入口。
+- 全量检索加入双语摘要与常用同义词，修复正文用途无法被检索的问题；增加插入案例、分类重排及检索回归检查。
+- 增加案例推荐、纠错、PR 模板及只读权限的 PR 检查工作流（本地准备，尚未上线运行）。
+
+- 将完整的 83 条双语案例移至 Casebook，首页展示六个精选案例、两张原有截图及全部案例用途摘要；保留原编号锚点、旧中文入口、全部案例正文与素材链接。
+- 首批 12 条案例建立双语 JSON 与证据字段，增加 Schema、生成脚本、检索脚本、迁移保留检查和本地链接检查。
+- 新增模型路由 Recipe、默认离线的请求脚本、合成返回值与业务分支测试；未调用真实模型，不新增实测或 Benchmark 结论。本轮不涉及文本 NSFW 测试。
+- 新增可打包的 Jev solution finder Skill、llms.txt、证据与维护说明。改动不包含部署、发布或流量增长承诺。
+- Preserved all 83 bilingual case narratives in the Casebook; added six expanded featured cases, two attributed screenshots, and purpose summaries for every case on the homepage. Added 12 structured records, schema/generation checks, an offline-tested model-routing recipe, and a portable discovery Skill. No new live-model measurements or independent benchmark results.
+
 ## 2026-09-19
 
 - Added five community contributions from [PR #2](https://github.com/SeeAPI/awesome-jev-use-cases/pull/2): jev-skip, jev-belay, jev-commit, jev.nvim, and jev-plays-pokemon-red (83 projects total), with corrected evidence limits in both languages.

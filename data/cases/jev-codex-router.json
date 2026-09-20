@@ -1,0 +1,48 @@
+{
+  "id": "jev-codex-router",
+  "title": {
+    "en": "Jev Codex Router",
+    "zh": "Jev Codex Router"
+  },
+  "summary": {
+    "en": "Classifies coding turns with Jev and applies a policy to select a model and reasoning depth, with logging and fallback behavior.",
+    "zh": "按编程任务难度选择模型与推理深度。"
+  },
+  "category": "routing",
+  "task": "decision",
+  "input_type": [
+    "text"
+  ],
+  "jev_primitive": [
+    "choice"
+  ],
+  "software_action": [
+    "route-model"
+  ],
+  "source_url": "https://github.com/0xNatoshi/jev-codex-router",
+  "evidence": {
+    "level": "docs-reviewed",
+    "verified_by_seeapi": false,
+    "reviewed_at": "2026-09-18",
+    "sources": [
+      "https://github.com/0xNatoshi/jev-codex-router"
+    ],
+    "basis": "Existing repository review and linked documentation; metadata migration on 2026-09-20, no new runtime validation."
+  },
+  "limitations": {
+    "en": [
+      "the reported roughly 60% savings comes from the author's replay of 237 real turns. It is not a SeeAPI measurement or a guaranteed saving."
+    ],
+    "zh": [
+      "约 60% 成本下降来自作者对 237 个真实 turn 的回放自测，不是 SeeAPI 实测或普遍承诺。"
+    ]
+  },
+  "tags": [
+    "model-routing",
+    "cost",
+    "模型路由"
+  ],
+  "recipe_ids": [
+    "model-routing"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "fixture": true,
+  "note": "Synthetic parser fixture. Not a Jev response or a performance measurement.",
+  "model": "synthetic-fixture",
+  "answers": {
+    "route": {
+      "type": "choice",
+      "choice": "fast",
+      "confidence": 0.85,
+      "probabilities": {"fast": 0.9, "strong": 0.1}
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "jev-sec-bench",
+  "title": {
+    "en": "jev-sec-bench — security judgments",
+    "zh": "jev-sec-bench — 安全判断评测"
+  },
+  "summary": {
+    "en": "Evaluates prompt-injection detection and vulnerable-code judgments with published datasets and per-sample results.",
+    "zh": "用公开数据与逐条结果评测提示注入检测和代码漏洞判断。"
+  },
+  "category": "benchmarks",
+  "task": "evaluation",
+  "input_type": [
+    "text",
+    "code"
+  ],
+  "jev_primitive": [
+    "noul"
+  ],
+  "software_action": [
+    "evaluate"
+  ],
+  "source_url": "https://github.com/Gaurav-Gosain/jev-sec-bench",
+  "evidence": {
+    "level": "docs-reviewed",
+    "verified_by_seeapi": false,
+    "reviewed_at": "2026-09-18",
+    "sources": [
+      "https://github.com/Gaurav-Gosain/jev-sec-bench",
+      "https://github.com/Gaurav-Gosain/jev-sec-bench/blob/fdb16b94d37535db9bad77f8ef0faa971bd7d69a/docs/overview.png"
+    ],
+    "basis": "Existing repository review and linked documentation; metadata migration on 2026-09-20, no new runtime validation."
+  },
+  "limitations": {
+    "en": [
+      "Reported results depend on context and thresholds; this is not an NSFW benchmark or a complete security boundary."
+    ],
+    "zh": [
+      "作者报告的结果受上下文与阈值影响；不是 NSFW 评测，也不构成完整安全边界。"
+    ]
+  },
+  "tags": [
+    "prompt-injection",
+    "security",
+    "benchmark",
+    "注入"
+  ],
+  "recipe_ids": []
+}

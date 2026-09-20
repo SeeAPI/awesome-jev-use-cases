@@ -1,0 +1,49 @@
+{
+  "id": "jev-ultrafast",
+  "title": {
+    "en": "Jev Ultrafast",
+    "zh": "Jev Ultrafast"
+  },
+  "summary": {
+    "en": "A browser agent that turns visible controls into indexed candidates. Jev chooses an operation and target; a separate language model writes text when needed.",
+    "zh": "将浏览器中可见控件整理为候选项，由 Jev 选择操作与目标，需要输入文本时再使用独立语言模型。"
+  },
+  "category": "automation",
+  "task": "decision",
+  "input_type": [
+    "browser-state"
+  ],
+  "jev_primitive": [
+    "choice"
+  ],
+  "software_action": [
+    "select-action"
+  ],
+  "source_url": "https://github.com/browser-use/jev-ultrafast",
+  "evidence": {
+    "level": "docs-reviewed",
+    "verified_by_seeapi": false,
+    "reviewed_at": "2026-09-18",
+    "sources": [
+      "https://github.com/browser-use/jev-ultrafast",
+      "https://github.com/browser-use/jev-ultrafast/blob/main/docs/demo.mp4",
+      "https://github.com/browser-use/jev-ultrafast/blob/452c1ad2dd628008f1d5608f28158d76e49e6cc0/docs/flights-result.png"
+    ],
+    "basis": "Existing repository review and linked documentation; metadata migration on 2026-09-20, no new runtime validation."
+  },
+  "limitations": {
+    "en": [
+      "the reported roughly 7.1-second flight search is a specific author-measured run, timed after the initial page observation. It is not a general browser-task speed guarantee."
+    ],
+    "zh": [
+      "作者报告的约 7.1 秒航班搜索是特定任务演示，计时从首次页面观察之后开始，不是任意网页任务的速度保证。"
+    ]
+  },
+  "tags": [
+    "agent",
+    "tool-selection",
+    "browser",
+    "工具选择"
+  ],
+  "recipe_ids": []
+}

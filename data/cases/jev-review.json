@@ -1,0 +1,49 @@
+{
+  "id": "jev-review",
+  "title": {
+    "en": "Jev Review",
+    "zh": "Jev Review"
+  },
+  "summary": {
+    "en": "Reviews diffs or codebases through staged judgments about risk, file profiles, evidence, mechanisms, severity, and conditional reviewer routing.",
+    "zh": "通过风险定位、文件分析、证据选择、机制分类和严重度判断，为代码审查提供分阶段线索。"
+  },
+  "category": "routing",
+  "task": "decision",
+  "input_type": [
+    "code"
+  ],
+  "jev_primitive": [
+    "choice",
+    "noul",
+    "score"
+  ],
+  "software_action": [
+    "review"
+  ],
+  "source_url": "https://github.com/devagrawal09/jev-review",
+  "evidence": {
+    "level": "docs-reviewed",
+    "verified_by_seeapi": false,
+    "reviewed_at": "2026-09-18",
+    "sources": [
+      "https://github.com/devagrawal09/jev-review",
+      "https://github.com/devagrawal09/jev-review/blob/31f89602797fb7bea007f8a480bf368bf564954e/docs/dashboard.png"
+    ],
+    "basis": "Existing repository review and linked documentation; metadata migration on 2026-09-20, no new runtime validation."
+  },
+  "limitations": {
+    "en": [
+      "an experiment that currently does not integrate compiler diagnostics or static analyzers. Findings are review leads, not proof of defects."
+    ],
+    "zh": [
+      "作者将其定位为实验；当前不集成编译器诊断或静态分析，结果是审查线索而非缺陷证明。"
+    ]
+  },
+  "tags": [
+    "code-review",
+    "risk",
+    "代码审查"
+  ],
+  "recipe_ids": []
+}

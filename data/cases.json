@@ -1,0 +1,588 @@
+[
+  {
+    "id": "jev-codex-router",
+    "title": {
+      "en": "Jev Codex Router",
+      "zh": "Jev Codex Router"
+    },
+    "summary": {
+      "en": "Classifies coding turns with Jev and applies a policy to select a model and reasoning depth, with logging and fallback behavior.",
+      "zh": "按编程任务难度选择模型与推理深度。"
+    },
+    "category": "routing",
+    "task": "decision",
+    "input_type": [
+      "text"
+    ],
+    "jev_primitive": [
+      "choice"
+    ],
+    "software_action": [
+      "route-model"
+    ],
+    "source_url": "https://github.com/0xNatoshi/jev-codex-router",
+    "evidence": {
+      "level": "docs-reviewed",
+      "verified_by_seeapi": false,
+      "reviewed_at": "2026-09-18",
+      "sources": [
+        "https://github.com/0xNatoshi/jev-codex-router"
+      ],
+      "basis": "Existing repository review and linked documentation; metadata migration on 2026-09-20, no new runtime validation."
+    },
+    "limitations": {
+      "en": [
+        "the reported roughly 60% savings comes from the author's replay of 237 real turns. It is not a SeeAPI measurement or a guaranteed saving."
+      ],
+      "zh": [
+        "约 60% 成本下降来自作者对 237 个真实 turn 的回放自测，不是 SeeAPI 实测或普遍承诺。"
+      ]
+    },
+    "tags": [
+      "model-routing",
+      "cost",
+      "模型路由"
+    ],
+    "recipe_ids": [
+      "model-routing"
+    ]
+  },
+  {
+    "id": "jev-moderation-bot",
+    "title": {
+      "en": "Jev Moderation Bot",
+      "zh": "Jev Moderation Bot"
+    },
+    "summary": {
+      "en": "A Discord moderation bot that evaluates messages and context for phishing, spam, and social engineering. Code applies escalating actions, and moderator corrections become safe precedents in later judgment context.",
+      "zh": "Discord 社区中的钓鱼、垃圾信息及社交工程消息审核。"
+    },
+    "category": "moderation",
+    "task": "decision",
+    "input_type": [
+      "text"
+    ],
+    "jev_primitive": [
+      "noul"
+    ],
+    "software_action": [
+      "moderate",
+      "review"
+    ],
+    "source_url": "https://github.com/brainstormity/Jev-Moderation-Bot",
+    "evidence": {
+      "level": "docs-reviewed",
+      "verified_by_seeapi": false,
+      "reviewed_at": "2026-09-18",
+      "sources": [
+        "https://github.com/brainstormity/Jev-Moderation-Bot"
+      ],
+      "basis": "Existing repository review and linked documentation; metadata migration on 2026-09-20, no new runtime validation."
+    },
+    "limitations": {
+      "en": [
+        "a text-message moderation project, not an image or video NSFW benchmark. False-positive performance has not been independently verified here."
+      ],
+      "zh": [
+        "这里核实的是文字消息审核方案，不是图片或视频 NSFW 模型；未独立测量误报率。"
+      ]
+    },
+    "tags": [
+      "moderation",
+      "discord",
+      "spam",
+      "审核"
+    ],
+    "recipe_ids": []
+  },
+  {
+    "id": "jev-rerank-bench",
+    "title": {
+      "en": "jev-rerank-bench — retrieval evaluation",
+      "zh": "jev-rerank-bench — 检索重排对照评测"
+    },
+    "summary": {
+      "en": "Compares Jev relevance rubrics with other rerankers on shared BM25 candidates and publishes saved responses and scoring code.",
+      "zh": "基于相同 BM25 候选，对比 Jev 相关性评分与其他重排模型，公开保存的响应和评分代码。"
+    },
+    "category": "benchmarks",
+    "task": "ranking",
+    "input_type": [
+      "text"
+    ],
+    "jev_primitive": [
+      "noul"
+    ],
+    "software_action": [
+      "rank",
+      "evaluate"
+    ],
+    "source_url": "https://github.com/anessbelbati/jev-rerank-bench",
+    "evidence": {
+      "level": "docs-reviewed",
+      "verified_by_seeapi": false,
+      "reviewed_at": "2026-09-18",
+      "sources": [
+        "https://github.com/anessbelbati/jev-rerank-bench",
+        "https://github.com/anessbelbati/jev-rerank-bench/blob/cd9a35b22aeb4187334f7018a0ee1960a7470586/results/quality.png"
+      ],
+      "basis": "Existing repository review and linked documentation; metadata migration on 2026-09-20, no new runtime validation."
+    },
+    "limitations": {
+      "en": [
+        "The headline averages do not establish a winner; weighting datasets versus queries changes the comparison."
+      ],
+      "zh": [
+        "汇总均值不足以确定胜者；按数据集或按查询加权会改变比较结果。"
+      ]
+    },
+    "tags": [
+      "rag",
+      "reranking",
+      "benchmark",
+      "重排"
+    ],
+    "recipe_ids": []
+  },
+  {
+    "id": "jev-review",
+    "title": {
+      "en": "Jev Review",
+      "zh": "Jev Review"
+    },
+    "summary": {
+      "en": "Reviews diffs or codebases through staged judgments about risk, file profiles, evidence, mechanisms, severity, and conditional reviewer routing.",
+      "zh": "通过风险定位、文件分析、证据选择、机制分类和严重度判断，为代码审查提供分阶段线索。"
+    },
+    "category": "routing",
+    "task": "decision",
+    "input_type": [
+      "code"
+    ],
+    "jev_primitive": [
+      "choice",
+      "noul",
+      "score"
+    ],
+    "software_action": [
+      "review"
+    ],
+    "source_url": "https://github.com/devagrawal09/jev-review",
+    "evidence": {
+      "level": "docs-reviewed",
+      "verified_by_seeapi": false,
+      "reviewed_at": "2026-09-18",
+      "sources": [
+        "https://github.com/devagrawal09/jev-review",
+        "https://github.com/devagrawal09/jev-review/blob/31f89602797fb7bea007f8a480bf368bf564954e/docs/dashboard.png"
+      ],
+      "basis": "Existing repository review and linked documentation; metadata migration on 2026-09-20, no new runtime validation."
+    },
+    "limitations": {
+      "en": [
+        "an experiment that currently does not integrate compiler diagnostics or static analyzers. Findings are review leads, not proof of defects."
+      ],
+      "zh": [
+        "作者将其定位为实验；当前不集成编译器诊断或静态分析，结果是审查线索而非缺陷证明。"
+      ]
+    },
+    "tags": [
+      "code-review",
+      "risk",
+      "代码审查"
+    ],
+    "recipe_ids": []
+  },
+  {
+    "id": "jev-search",
+    "title": {
+      "en": "Jev Search — intent selection and result reranking",
+      "zh": "Jev Search — 自然语言搜索意图识别与结果重排"
+    },
+    "summary": {
+      "en": "A TypeScript application asks Jev to select search sources, time ranges, and query candidates, fetches results through Search1API, then judges title/snippet relevance in batches. Code merges URLs and ranks results by relevance, engine agreement, and original position.",
+      "zh": "TypeScript 应用先让 Jev 选择搜索源、时间范围与检索词候选，经 Search1API 获取结果后，批量判断标题及摘要相关性；代码合并 URL，按相关性、引擎一致性与原始名次排序。"
+    },
+    "category": "search",
+    "task": "ranking",
+    "input_type": [
+      "text"
+    ],
+    "jev_primitive": [
+      "choice",
+      "noul"
+    ],
+    "software_action": [
+      "select-source",
+      "rank"
+    ],
+    "source_url": "https://github.com/superagents-lab/jev-search",
+    "evidence": {
+      "level": "docs-reviewed",
+      "verified_by_seeapi": false,
+      "reviewed_at": "2026-09-18",
+      "sources": [
+        "https://github.com/superagents-lab/jev-search",
+        "https://github.com/superagents-lab/jev-search/blob/369b282489f72e58298ba1abc8b0144b1bc15c59/src/lib/typesafe.ts"
+      ],
+      "basis": "Existing repository review and linked documentation; metadata migration on 2026-09-20, no new runtime validation."
+    },
+    "limitations": {
+      "en": [
+        "Relevance scores do not verify page facts; snippets can be incomplete or stale. A search can make several provider calls. Source and ranking code were inspected, but retrieval quality, latency, and cost were not measured."
+      ],
+      "zh": [
+        "相关性分数不验证网页事实，摘要可能不完整或过时；一次搜索可能触发多次供应商调用。本轮查阅了接口与排序管线代码，未测量检索质量、时延或费用。"
+      ]
+    },
+    "tags": [
+      "search",
+      "reranking",
+      "检索"
+    ],
+    "recipe_ids": []
+  },
+  {
+    "id": "jev-sec-bench",
+    "title": {
+      "en": "jev-sec-bench — security judgments",
+      "zh": "jev-sec-bench — 安全判断评测"
+    },
+    "summary": {
+      "en": "Evaluates prompt-injection detection and vulnerable-code judgments with published datasets and per-sample results.",
+      "zh": "用公开数据与逐条结果评测提示注入检测和代码漏洞判断。"
+    },
+    "category": "benchmarks",
+    "task": "evaluation",
+    "input_type": [
+      "text",
+      "code"
+    ],
+    "jev_primitive": [
+      "noul"
+    ],
+    "software_action": [
+      "evaluate"
+    ],
+    "source_url": "https://github.com/Gaurav-Gosain/jev-sec-bench",
+    "evidence": {
+      "level": "docs-reviewed",
+      "verified_by_seeapi": false,
+      "reviewed_at": "2026-09-18",
+      "sources": [
+        "https://github.com/Gaurav-Gosain/jev-sec-bench",
+        "https://github.com/Gaurav-Gosain/jev-sec-bench/blob/fdb16b94d37535db9bad77f8ef0faa971bd7d69a/docs/overview.png"
+      ],
+      "basis": "Existing repository review and linked documentation; metadata migration on 2026-09-20, no new runtime validation."
+    },
+    "limitations": {
+      "en": [
+        "Reported results depend on context and thresholds; this is not an NSFW benchmark or a complete security boundary."
+      ],
+      "zh": [
+        "作者报告的结果受上下文与阈值影响；不是 NSFW 评测，也不构成完整安全边界。"
+      ]
+    },
+    "tags": [
+      "prompt-injection",
+      "security",
+      "benchmark",
+      "注入"
+    ],
+    "recipe_ids": []
+  },
+  {
+    "id": "jev-spam-eval",
+    "title": {
+      "en": "jev-spam-eval",
+      "zh": "jev-spam-eval"
+    },
+    "summary": {
+      "en": "Email classification experiments comparing natural-language Jev decision criteria with TF-IDF classifiers and combined scores, including tests across different mail sources and time periods.",
+      "zh": "垃圾邮件及钓鱼邮件分类评估。"
+    },
+    "category": "moderation",
+    "task": "decision",
+    "input_type": [
+      "text"
+    ],
+    "jev_primitive": [
+      "noul"
+    ],
+    "software_action": [
+      "classify"
+    ],
+    "source_url": "https://github.com/bitnovus/jev-spam-eval",
+    "evidence": {
+      "level": "docs-reviewed",
+      "verified_by_seeapi": false,
+      "reviewed_at": "2026-09-18",
+      "sources": [
+        "https://github.com/bitnovus/jev-spam-eval"
+      ],
+      "basis": "Existing repository review and linked documentation; metadata migration on 2026-09-20, no new runtime validation."
+    },
+    "limitations": {
+      "en": [
+        "exploratory author-reported experiments. The criteria were refined after inspecting labeled errors, so “no task-specific training” should not be confused with “no supervision.” We have not reproduced the results."
+      ],
+      "zh": [
+        "作者明确标注为探索性实验；分类标准在查看部分标注样本错误后调整，不能描述为完全没有人工监督。未复现实验。"
+      ]
+    },
+    "tags": [
+      "spam",
+      "email",
+      "垃圾邮件"
+    ],
+    "recipe_ids": []
+  },
+  {
+    "id": "jev-ultrafast",
+    "title": {
+      "en": "Jev Ultrafast",
+      "zh": "Jev Ultrafast"
+    },
+    "summary": {
+      "en": "A browser agent that turns visible controls into indexed candidates. Jev chooses an operation and target; a separate language model writes text when needed.",
+      "zh": "将浏览器中可见控件整理为候选项，由 Jev 选择操作与目标，需要输入文本时再使用独立语言模型。"
+    },
+    "category": "automation",
+    "task": "decision",
+    "input_type": [
+      "browser-state"
+    ],
+    "jev_primitive": [
+      "choice"
+    ],
+    "software_action": [
+      "select-action"
+    ],
+    "source_url": "https://github.com/browser-use/jev-ultrafast",
+    "evidence": {
+      "level": "docs-reviewed",
+      "verified_by_seeapi": false,
+      "reviewed_at": "2026-09-18",
+      "sources": [
+        "https://github.com/browser-use/jev-ultrafast",
+        "https://github.com/browser-use/jev-ultrafast/blob/main/docs/demo.mp4",
+        "https://github.com/browser-use/jev-ultrafast/blob/452c1ad2dd628008f1d5608f28158d76e49e6cc0/docs/flights-result.png"
+      ],
+      "basis": "Existing repository review and linked documentation; metadata migration on 2026-09-20, no new runtime validation."
+    },
+    "limitations": {
+      "en": [
+        "the reported roughly 7.1-second flight search is a specific author-measured run, timed after the initial page observation. It is not a general browser-task speed guarantee."
+      ],
+      "zh": [
+        "作者报告的约 7.1 秒航班搜索是特定任务演示，计时从首次页面观察之后开始，不是任意网页任务的速度保证。"
+      ]
+    },
+    "tags": [
+      "agent",
+      "tool-selection",
+      "browser",
+      "工具选择"
+    ],
+    "recipe_ids": []
+  },
+  {
+    "id": "safer-with-jev",
+    "title": {
+      "en": "Safer with Jev — typesafe-on-neon",
+      "zh": "Safer with Jev（原 TypeSafe on Neon）"
+    },
+    "summary": {
+      "en": "An HTTP gate that checks prompt injections, unsafe images, and unsafe replies before optionally forwarding a request. Its image pipeline first uses `gemini-3-flash` to describe the image, then asks Jev to judge risks in that description.",
+      "zh": "在内容转发或上传前检查提示词注入、图片风险及模型回复风险。"
+    },
+    "category": "moderation",
+    "task": "decision",
+    "input_type": [
+      "text",
+      "image-descriptions"
+    ],
+    "jev_primitive": [
+      "noul"
+    ],
+    "software_action": [
+      "allow",
+      "review",
+      "block"
+    ],
+    "source_url": "https://github.com/andrelandgraf/typesafe-on-neon",
+    "evidence": {
+      "level": "docs-reviewed",
+      "verified_by_seeapi": false,
+      "reviewed_at": "2026-09-18",
+      "sources": [
+        "https://github.com/andrelandgraf/typesafe-on-neon",
+        "https://github.com/andrelandgraf/typesafe-on-neon/blob/main/src/lib/vision.ts",
+        "https://github.com/andrelandgraf/typesafe-on-neon/blob/main/src/lib/judge.ts"
+      ],
+      "basis": "Existing repository review and linked documentation; metadata migration on 2026-09-20, no new runtime validation."
+    },
+    "limitations": {
+      "en": [
+        "this is a vision-model-plus-Jev pipeline, not evidence of native image classification by Jev. The current project is a safety gate; earlier descriptions of it as a model router are outdated. We have not measured its detection accuracy."
+      ],
+      "zh": [
+        "不是 Jev 原生视觉 NSFW 检测的证据，也没有在本次核查中验证识别效果。原帖的“模型 Router”介绍已不符合当前 README。"
+      ]
+    },
+    "tags": [
+      "moderation",
+      "nsfw",
+      "prompt-injection",
+      "审核",
+      "图像描述"
+    ],
+    "recipe_ids": []
+  },
+  {
+    "id": "sift",
+    "title": {
+      "en": "Sift — search result reranking",
+      "zh": "Sift — 搜索结果重排"
+    },
+    "summary": {
+      "en": "A Chrome extension asks Jev about relevance, promotional content and depth, then reranks Google results in code.",
+      "zh": "Chrome 扩展使用 Jev 判断搜索结果的相关性、推广倾向和信息深度，再由代码重排 Google 搜索结果。"
+    },
+    "category": "search",
+    "task": "ranking",
+    "input_type": [
+      "text"
+    ],
+    "jev_primitive": [
+      "noul",
+      "score"
+    ],
+    "software_action": [
+      "rank"
+    ],
+    "source_url": "https://github.com/tylergibbs1/sift",
+    "evidence": {
+      "level": "docs-reviewed",
+      "verified_by_seeapi": false,
+      "reviewed_at": "2026-09-18",
+      "sources": [
+        "https://github.com/tylergibbs1/sift"
+      ],
+      "basis": "Existing repository review and linked documentation; metadata migration on 2026-09-20, no new runtime validation."
+    },
+    "limitations": {
+      "en": [
+        "Judgments use result snippets rather than full pages; search intent affects filtering."
+      ],
+      "zh": [
+        "依据搜索摘要而非网页全文；过滤策略会考虑搜索意图。"
+      ]
+    },
+    "tags": [
+      "rag",
+      "reranking",
+      "search",
+      "重排"
+    ],
+    "recipe_ids": []
+  },
+  {
+    "id": "transcript-scorecard",
+    "title": {
+      "en": "Transcript Scorecard — incremental call evaluation",
+      "zh": "Transcript Scorecard — 实时客服通话质检"
+    },
+    "summary": {
+      "en": "A proof of concept replays fictional support-call transcripts incrementally. Each enabled criterion contributes a Score and a Choice selecting an evidence sentence; code normalizes and weights the results, then stores the final evaluation in SQLite.",
+      "zh": "概念验证项目逐句重放虚构客服通话文本。每个启用维度对应一个 Score 和一个选择证据句的 Choice，由代码归一化、加权，并将最终评估存入 SQLite。"
+    },
+    "category": "productivity",
+    "task": "decision",
+    "input_type": [
+      "text"
+    ],
+    "jev_primitive": [
+      "choice",
+      "score"
+    ],
+    "software_action": [
+      "score",
+      "review"
+    ],
+    "source_url": "https://github.com/brandonbryant12/transcript-scorecard",
+    "evidence": {
+      "level": "docs-reviewed",
+      "verified_by_seeapi": false,
+      "reviewed_at": "2026-09-18",
+      "sources": [
+        "https://github.com/brandonbryant12/transcript-scorecard",
+        "https://github.com/brandonbryant12/transcript-scorecard/blob/c9232fffbf8bf23b7cf5402dd02ebc54b19eb9cf/apps/api/src/classifier.ts"
+      ],
+      "basis": "Existing repository review and linked documentation; metadata migration on 2026-09-20, no new runtime validation."
+    },
+    "limitations": {
+      "en": [
+        "This is transcript replay, not verified live audio recognition. Evaluations send the current transcript prefix to TypeSafe; costs can grow with the conversation. The documented local demo has no authentication. Scoring quality and timing were not reproduced."
+      ],
+      "zh": [
+        "展示的是文本重放，不能视为已验证的实时语音识别。每次评估发送当前转写前缀，费用可能随对话增长；文档说明本地演示无认证。未复现评分质量或时延。"
+      ]
+    },
+    "tags": [
+      "support",
+      "scorecard",
+      "客服"
+    ],
+    "recipe_ids": []
+  },
+  {
+    "id": "zod-jev",
+    "title": {
+      "en": "zod-jev — semantic validation",
+      "zh": "zod-jev — 表单语义校验"
+    },
+    "summary": {
+      "en": "Adds Jev semantic checks to Zod schemas, turning probabilities into validation issues alongside ordinary shape checks.",
+      "zh": "在 Zod 格式校验之上加入 Jev 语义判断，将概率转为校验结果，适合检查内容含义、分类与描述是否匹配。"
+    },
+    "category": "automation",
+    "task": "decision",
+    "input_type": [
+      "text"
+    ],
+    "jev_primitive": [
+      "noul"
+    ],
+    "software_action": [
+      "accept",
+      "reject",
+      "review"
+    ],
+    "source_url": "https://github.com/jomatsu/zod-jev",
+    "evidence": {
+      "level": "docs-reviewed",
+      "verified_by_seeapi": false,
+      "reviewed_at": "2026-09-18",
+      "sources": [
+        "https://github.com/jomatsu/zod-jev"
+      ],
+      "basis": "Existing repository review and linked documentation; metadata migration on 2026-09-20, no new runtime validation."
+    },
+    "limitations": {
+      "en": [
+        "Uncertain and unavailable judgments need explicit handling; a passing check does not establish factual correctness."
+      ],
+      "zh": [
+        "需要处理不确定和服务不可用的结果；通过校验不代表事实一定正确。"
+      ]
+    },
+    "tags": [
+      "validation",
+      "forms",
+      "semantic",
+      "表单"
+    ],
+    "recipe_ids": []
+  }
+]

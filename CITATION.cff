@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "Please cite this collection and the original project sources when reusing its summaries."
+title: "Awesome Jev Use Cases: Casebook and Cookbook"
+type: dataset
+authors:
+  - name: SeeAPI contributors
+repository-code: "https://github.com/SeeAPI/awesome-jev-use-cases"
+license: CC-BY-4.0

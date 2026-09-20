@@ -1,0 +1,49 @@
+{
+  "id": "jev-search",
+  "title": {
+    "en": "Jev Search — intent selection and result reranking",
+    "zh": "Jev Search — 自然语言搜索意图识别与结果重排"
+  },
+  "summary": {
+    "en": "A TypeScript application asks Jev to select search sources, time ranges, and query candidates, fetches results through Search1API, then judges title/snippet relevance in batches. Code merges URLs and ranks results by relevance, engine agreement, and original position.",
+    "zh": "TypeScript 应用先让 Jev 选择搜索源、时间范围与检索词候选，经 Search1API 获取结果后，批量判断标题及摘要相关性；代码合并 URL，按相关性、引擎一致性与原始名次排序。"
+  },
+  "category": "search",
+  "task": "ranking",
+  "input_type": [
+    "text"
+  ],
+  "jev_primitive": [
+    "choice",
+    "noul"
+  ],
+  "software_action": [
+    "select-source",
+    "rank"
+  ],
+  "source_url": "https://github.com/superagents-lab/jev-search",
+  "evidence": {
+    "level": "docs-reviewed",
+    "verified_by_seeapi": false,
+    "reviewed_at": "2026-09-18",
+    "sources": [
+      "https://github.com/superagents-lab/jev-search",
+      "https://github.com/superagents-lab/jev-search/blob/369b282489f72e58298ba1abc8b0144b1bc15c59/src/lib/typesafe.ts"
+    ],
+    "basis": "Existing repository review and linked documentation; metadata migration on 2026-09-20, no new runtime validation."
+  },
+  "limitations": {
+    "en": [
+      "Relevance scores do not verify page facts; snippets can be incomplete or stale. A search can make several provider calls. Source and ranking code were inspected, but retrieval quality, latency, and cost were not measured."
+    ],
+    "zh": [
+      "相关性分数不验证网页事实，摘要可能不完整或过时；一次搜索可能触发多次供应商调用。本轮查阅了接口与排序管线代码，未测量检索质量、时延或费用。"
+    ]
+  },
+  "tags": [
+    "search",
+    "reranking",
+    "检索"
+  ],
+  "recipe_ids": []
+}

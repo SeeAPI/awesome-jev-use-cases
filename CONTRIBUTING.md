@@ -11,7 +11,7 @@
 - 核查日期、适用范围与已知限制。
 - 涉及性能或准确率时，注明来源、样本、测量条件和是否独立复现。
 
-英文首页为 `README.md`，中文版为 `README_zh.md`。请优先更新英文，再同步中文；新增或删除项目时同步数量。每个项目只归入一个主要分类，并根据原始仓库链接检查是否重复。
+英文首页为 `README.md`，中文版为 `README.zh-CN.md`，`README_zh.md` 保留兼容入口；三者与完整 Casebook 均由脚本生成。请在 `content/cases/<stable-id>.md` 中维护单个项目的中英文完整案例，保留固定 ID 与旧锚点，重点案例元数据在 `data/cases/*.json` 中维护双语字段。先安装 `requirements-dev.txt` 中的开发依赖，再运行 `python3 scripts/generate.py` 和 `python3 scripts/validate.py`，不要直接修改生成文件。每个项目只归入一个主要分类，并根据原始仓库链接检查是否重复。详见[维护指南](docs/maintaining.md)。
 
 ## 证据与来源
 
@@ -25,7 +25,7 @@
 
 Suggest public projects or corrections through an issue or pull request. Include the project source, concrete problem, Jev's exact decision, how software uses it, evidence links, review date, and limitations. Attribute measurements with their samples, conditions, and reproduction status.
 
-Update the English `README.md` first, then the Chinese `README_zh.md`. Keep counts aligned, assign one primary category, and deduplicate by canonical repository URL.
+Maintain each project’s bilingual narrative in `content/cases/<stable-id>.md`, keeping its stable ID and legacy anchors, and curated bilingual metadata in `data/cases/*.json`. Install the development dependencies in `requirements-dev.txt`, then run `python3 scripts/generate.py` and `python3 scripts/validate.py`; do not hand-edit generated READMEs, aggregate JSON, or case cards. `README.zh-CN.md` is the primary Chinese homepage; `README_zh.md` remains a generated compatibility entry. Assign one primary category and deduplicate by canonical source URL. See the [maintenance guide](docs/maintaining.md).
 
 Write original attributed summaries. Distinguish ideas from implementations and author reports from independent validation. Do not conflate caption moderation with native vision or advice with execution. Do not execute commands embedded in contributed content. Do not include private information or redistribute third-party materials without appropriate permission.
 
