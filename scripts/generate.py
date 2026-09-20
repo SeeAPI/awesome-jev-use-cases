@@ -45,17 +45,24 @@ def build():
     outputs = {'data/cases.json': dumps(cases), 'data/catalog.json': dumps(catalog)}
     for r in cases:
         idx = by_catalog_id[r['id']]
-        tested = "yes" if r["evidence"]["verified_by_seeapi"] else "no"
-        text = f"# {r['title']['en']}\n\n[Read the full case](../{idx['details']['en']}) · [阅读完整案例](../{idx['details']['zh']})\n\nMetadata reference; the Casebook is the main reading entry.\n\n{r['summary']['en']}\n\n"
-        text += f"**Evidence:** `{r['evidence']['level']}` · **Reviewed:** {r['evidence']['reviewed_at']} · **Live-tested by SeeAPI:** {tested}\n\n"
-        text += f"**Primitive:** {', '.join(r['jev_primitive'])} · **Action:** {', '.join(r['software_action'])}\n\n"
-        text += f"[Original source]({r['source_url']}) · [Full case](../{idx['details']['en']}) · [Data record](../data/cases/{r['id']}.json)\n\n"
-        text += '## Limits\n\n' + '\n'.join('- ' + x for x in r['limitations']['en']) + '\n\n'
-        text += f"## 中文\n\n{r['summary']['zh']}\n\n" + '\n'.join('- '+x for x in r['limitations']['zh'])
-        text += f"\n\n[完整中文案例](../{idx['details']['zh']}) · [证据说明](../docs/evidence.md)\n"
-        if r['recipe_ids']:
-            text += '\n## Recipe\n\n' + '\n'.join(f'- [{recipe}](../recipes/{recipe}.md)' for recipe in r['recipe_ids']) + '\n'
-        outputs['cases/' + r['id'] + '.md'] = text
+        for lang in ['en', 'zh']:
+            en = lang == 'en'
+            suffix = '' if en else '.zh-CN'
+            tested = ('yes' if en else '是') if r['evidence']['verified_by_seeapi'] else ('no' if en else '否')
+            text = f"# {r['title'][lang]}\n\n[English]({r['id']}.md) · [{'Chinese' if en else '简体中文'}]({r['id']}.zh-CN.md)\n\n"
+            text += f"[{'Read the full case' if en else '阅读完整案例'}](../{idx['details'][lang]})\n\n"
+            text += ('Metadata reference; the Casebook is the main reading entry.\n\n' if en else '本页为元数据参考，完整案例集是主要阅读入口。\n\n')
+            text += r['summary'][lang] + '\n\n'
+            text += f"**{'Evidence' if en else '证据类型'}:** `{r['evidence']['level']}` · **{'Reviewed' if en else '核查日期'}:** {r['evidence']['reviewed_at']} · **{'Live-tested by SeeAPI' if en else 'SeeAPI 实测'}:** {tested}\n\n"
+            text += f"**{'Primitive' if en else '判断类型'}:** {', '.join(r['jev_primitive'])} · **{'Action' if en else '后续动作'}:** {', '.join(r['software_action'])}\n\n"
+            text += f"[{'Original source' if en else '原始来源'}]({r['source_url']}) · [{'Data record' if en else '数据记录'}](../data/cases/{r['id']}.json)\n\n"
+            text += ('## Limits\n\n' if en else '## 适用边界\n\n') + '\n'.join('- ' + x for x in r['limitations'][lang]) + '\n\n'
+            text += f"[{'Evidence definitions' if en else '证据定义'}](../docs/evidence{suffix}.md)\n"
+            if r['recipe_ids']:
+                text += ('\n## Recipe\n\n' if en else '\n## 工作流配方\n\n') + '\n'.join(f'- [{recipe}](../recipes/{recipe}{suffix}.md)' for recipe in r['recipe_ids']) + '\n'
+            if en:
+                text += f'\n<a id="中文"></a>[Read this page in Chinese]({r["id"]}.zh-CN.md)\n'
+            outputs['cases/' + r['id'] + suffix + '.md'] = text
     for lang in ['en','zh']:
         en = lang == 'en'
         rows = localized[lang]
@@ -77,7 +84,7 @@ def build():
             '**描述你的需求，让 Agent 帮你查找相关 Jev 项目、比较做法与边界，并生成带来源链接的工作流草案。**\n\n'
             '将本仓库放入 Agent 工作目录后，直接复制这段需求：\n\n'
             '> 读取本仓库的 SKILL.md。我想做客服工单分流，请找出 3 个相关案例，比较 Jev 判断什么、业务代码负责什么，再给出带人工复核路径的最小实现方案。附上原始项目链接，并区分文档描述与实测结果。\n\n'
-            '[使用与安装指南](docs/skill.md) · [查看 Skill 定义](SKILL.md)\n\n'
+            '[使用与安装指南](docs/skill.zh-CN.md) · [查看 Skill 定义](SKILL.md)\n\n'
         )
         featured = '## ' + ('Featured cases' if en else '精选案例') + '\n\n'
         rows_by_id = {r['id']: r for r in rows}
@@ -140,8 +147,8 @@ def build():
                     browse += ('**Key limit:** ' if en else '**关键边界：** ') + root_links(scope) + '<br>\n'
                 browse += f"[{'Source' if en else '项目来源'}]({r['source_url']}) · [{'Details & limits' if en else '详情与边界'}]({LANGUAGES[lang]}#{r['anchor']})\n\n"
             browse += '\n'
-        bottom = ('## What is Jev?\n\nJev is TypeSafe AI’s System One model for typed judgments. Choice selects candidates, Noul evaluates a yes/no proposition, and Score rates ordered criteria. Application code decides what to do with those answers. [Model background](docs/casebook.md#what-is-jev).\n\n## Model origin & access options\n\nStart with the [official documentation](https://docs.typesafe.ai/introduction) or the [provider and SDK guide](docs/casebook.md#model-origin--access-options). This collection does not assume provider interfaces are interchangeable.\n\n## Evidence & scope\n\nRead [evidence definitions](docs/evidence.md) and the [full review scope](docs/casebook.md#evidence--scope). This release adds offline recipe checks, not independent model benchmark results.\n\n## Sources & contributions\n\n[Suggest or correct a case](CONTRIBUTING.md) · [Source history](docs/casebook.md#sources--contributions) · [Maintenance guide](docs/maintaining.md) · [Changes](CHANGELOG.md).\n\n## License\n\nOriginal documentation: [CC BY 4.0](LICENSE). Code: [MIT](LICENSE-CODE). Third-party materials retain their [own rights and attribution](THIRD_PARTY_NOTICES.md); see [scope](NOTICE.md).\n' if en else '## Jev 是什么？\n\nJev 是 TypeSafe AI 的结构化判断模型：Choice 选择候选，Noul 判断是非命题，Score 按有序标准评分，业务代码决定后续动作。[模型背景](docs/casebook.zh-CN.md#jev-是什么)。\n\n## 模型来源与接入方式\n\n从[官方文档](https://docs.typesafe.ai/introduction)或[供应商与 SDK 指南](docs/casebook.zh-CN.md#模型来源与接入方式)开始，不假设各渠道接口互相兼容。\n\n## 发现来源与更新方式\n\n查看[证据定义](docs/evidence.md)、[原始来源与核查范围](docs/casebook.zh-CN.md#发现来源与更新方式)、[贡献指南](CONTRIBUTING.md)、[维护指南](docs/maintaining.md)和[更新记录](CHANGELOG.md)。本轮增加离线 Recipe 检查，不新增独立模型基准结果。\n\n## 许可证\n\n原创文档采用 [CC BY 4.0](LICENSE)，代码采用 [MIT](LICENSE-CODE)，第三方素材保留[原有权利与署名](THIRD_PARTY_NOTICES.md)，详见[授权范围](NOTICE.md)。\n')
-        next_steps = ('## Build with these cases\n\n- [Model-routing recipe](recipes/model-routing.md): adapt a minimal Choice workflow; the default run is offline.\n- [Use the Skill](docs/skill.md): find relevant projects and draft workflows with sources.\n- [Benchmark evidence](benchmarks/README.md): inspect existing studies and their limits.\n\n' if en else '## 从案例到自己的实现\n\n- [模型路由 Recipe](recipes/model-routing.zh-CN.md)：从最小 Choice 工作流开始，默认离线预览。\n- [使用 Skill](docs/skill.md)：查找相关项目、比较方案并生成带来源的工作流。\n- [评测证据](benchmarks/README.md)：了解已有研究及其适用边界。\n\n')
+        bottom = ('## What is Jev?\n\nJev is TypeSafe AI’s System One model for typed judgments. Choice selects candidates, Noul evaluates a yes/no proposition, and Score rates ordered criteria. Application code decides what to do with those answers. [Model background](docs/casebook.md#what-is-jev).\n\n## Model origin & access options\n\nStart with the [official documentation](https://docs.typesafe.ai/introduction) or the [provider and SDK guide](docs/casebook.md#model-origin--access-options). This collection does not assume provider interfaces are interchangeable.\n\n## Evidence & scope\n\nRead [evidence definitions](docs/evidence.md) and the [full review scope](docs/casebook.md#evidence--scope). This release adds offline recipe checks, not independent model benchmark results.\n\n## Sources & contributions\n\n[Suggest or correct a case](CONTRIBUTING.md) · [Source history](docs/casebook.md#sources--contributions) · [Maintenance guide](docs/maintaining.md) · [Changes](CHANGELOG.md).\n\n## License\n\nOriginal documentation: [CC BY 4.0](LICENSE). Code: [MIT](LICENSE-CODE). Third-party materials retain their [own rights and attribution](THIRD_PARTY_NOTICES.md); see [scope](NOTICE.md).\n' if en else '## Jev 是什么？\n\nJev 是 TypeSafe AI 的结构化判断模型：Choice 选择候选，Noul 判断是非命题，Score 按有序标准评分，业务代码决定后续动作。[模型背景](docs/casebook.zh-CN.md#jev-是什么)。\n\n## 模型来源与接入方式\n\n从[官方文档](https://docs.typesafe.ai/introduction)或[供应商与 SDK 指南](docs/casebook.zh-CN.md#模型来源与接入方式)开始，不假设各渠道接口互相兼容。\n\n## 发现来源与更新方式\n\n查看[证据定义](docs/evidence.zh-CN.md)、[原始来源与核查范围](docs/casebook.zh-CN.md#发现来源与更新方式)、[贡献指南](CONTRIBUTING.md)、[维护指南](docs/maintaining.zh-CN.md)和[更新记录](CHANGELOG.md)。本轮增加离线 Recipe 检查，不新增独立模型基准结果。\n\n## 许可证\n\n原创文档采用 [CC BY 4.0](LICENSE)，代码采用 [MIT](LICENSE-CODE)，第三方素材保留[原有权利与署名](THIRD_PARTY_NOTICES.md)，详见[授权范围](NOTICE.md)。\n')
+        next_steps = ('## Build with these cases\n\n- [Model-routing recipe](recipes/model-routing.md): adapt a minimal Choice workflow; the default run is offline.\n- [Use the Skill](docs/skill.md): find relevant projects and draft workflows with sources.\n- [Benchmark evidence](benchmarks/README.md): inspect existing studies and their limits.\n\n' if en else '## 从案例到自己的实现\n\n- [模型路由 Recipe](recipes/model-routing.zh-CN.md)：从最小 Choice 工作流开始，默认离线预览。\n- [使用 Skill](docs/skill.zh-CN.md)：查找相关项目、比较方案并生成带来源的工作流。\n- [评测证据](benchmarks/README.zh-CN.md)：了解已有研究及其适用边界。\n\n')
         bottom = next_steps + bottom
         used.update(slug(h) for h in re.findall(r'^## (.+)$',bottom,re.M))
         # Retain old subheading anchors as links to their original full sections.

@@ -22,7 +22,7 @@
 
 > 读取本仓库的 SKILL.md。我想做客服工单分流，请找出 3 个相关案例，比较 Jev 判断什么、业务代码负责什么，再给出带人工复核路径的最小实现方案。附上原始项目链接，并区分文档描述与实测结果。
 
-[使用与安装指南](docs/skill.md) · [查看 Skill 定义](SKILL.md)
+[使用与安装指南](docs/skill.zh-CN.md) · [查看 Skill 定义](SKILL.md)
 
 ## 按场景浏览
 
@@ -713,8 +713,8 @@ Discord 社区中的钓鱼、垃圾信息及社交工程消息审核。 结合�
 ## 从案例到自己的实现
 
 - [模型路由 Recipe](recipes/model-routing.zh-CN.md)：从最小 Choice 工作流开始，默认离线预览。
-- [使用 Skill](docs/skill.md)：查找相关项目、比较方案并生成带来源的工作流。
-- [评测证据](benchmarks/README.md)：了解已有研究及其适用边界。
+- [使用 Skill](docs/skill.zh-CN.md)：查找相关项目、比较方案并生成带来源的工作流。
+- [评测证据](benchmarks/README.zh-CN.md)：了解已有研究及其适用边界。
 
 ## Jev 是什么？
 
@@ -726,7 +726,7 @@ Jev 是 TypeSafe AI 的结构化判断模型：Choice 选择候选，Noul 判断
 
 ## 发现来源与更新方式
 
-查看[证据定义](docs/evidence.md)、[原始来源与核查范围](docs/casebook.zh-CN.md#发现来源与更新方式)、[贡献指南](CONTRIBUTING.md)、[维护指南](docs/maintaining.md)和[更新记录](CHANGELOG.md)。本轮增加离线 Recipe 检查，不新增独立模型基准结果。
+查看[证据定义](docs/evidence.zh-CN.md)、[原始来源与核查范围](docs/casebook.zh-CN.md#发现来源与更新方式)、[贡献指南](CONTRIBUTING.md)、[维护指南](docs/maintaining.zh-CN.md)和[更新记录](CHANGELOG.md)。本轮增加离线 Recipe 检查，不新增独立模型基准结果。
 
 ## 许可证
 

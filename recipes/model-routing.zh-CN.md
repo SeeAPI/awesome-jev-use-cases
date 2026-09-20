@@ -44,7 +44,7 @@
 SeeAPI 是本独立案例集的维护方，不是唯一接入渠道。
 
 - [官方 Quick Start](https://docs.typesafe.ai/introduction/quickstart)
-- [Jev Codex Router 案例](../cases/jev-codex-router.md)
-- [证据定义](../docs/evidence.md)
+- [Jev Codex Router 案例](../cases/jev-codex-router.zh-CN.md)
+- [证据定义](../docs/evidence.zh-CN.md)
 
 这是原创最小工作流，不是对关联项目代码或效果的复现。

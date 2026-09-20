@@ -1,6 +1,8 @@
 # jev-sec-bench — security judgments
 
-[Read the full case](../docs/casebook.md#case-jev-sec-bench) · [阅读完整案例](../docs/casebook.zh-CN.md#case-jev-sec-bench)
+[English](jev-sec-bench.md) · [Chinese](jev-sec-bench.zh-CN.md)
+
+[Read the full case](../docs/casebook.md#case-jev-sec-bench)
 
 Metadata reference; the Casebook is the main reading entry.
 
@@ -10,16 +12,12 @@ Evaluates prompt-injection detection and vulnerable-code judgments with publishe
 
 **Primitive:** noul · **Action:** evaluate
 
-[Original source](https://github.com/Gaurav-Gosain/jev-sec-bench) · [Full case](../docs/casebook.md#case-jev-sec-bench) · [Data record](../data/cases/jev-sec-bench.json)
+[Original source](https://github.com/Gaurav-Gosain/jev-sec-bench) · [Data record](../data/cases/jev-sec-bench.json)
 
 ## Limits
 
 - Reported results depend on context and thresholds; this is not an NSFW benchmark or a complete security boundary.
 
-## 中文
+[Evidence definitions](../docs/evidence.md)
 
-用公开数据与逐条结果评测提示注入检测和代码漏洞判断。
-
-- 作者报告的结果受上下文与阈值影响；不是 NSFW 评测，也不构成完整安全边界。
-
-[完整中文案例](../docs/casebook.zh-CN.md#case-jev-sec-bench) · [证据说明](../docs/evidence.md)
+<a id="中文"></a>[Read this page in Chinese](jev-sec-bench.zh-CN.md)

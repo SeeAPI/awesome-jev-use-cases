@@ -1,5 +1,7 @@
 # Maintaining the casebook
 
+[English](maintaining.md) · [Chinese](maintaining.zh-CN.md)
+
 ## Source ownership
 
 | Editable source | Responsibility | Generated outputs |
@@ -50,6 +52,5 @@ Validation covers case metadata, identity alignment, original body hashes, old R
 - Publish independent benchmarks only after raw evidence is available and reviewed.
 - Measure traffic and referrers separately. Repository structure alone does not establish Star or traffic gains.
 
-中文：每个项目只修改自己的双语源文件；固定 ID 不变，显示编号自动生成。先合并源文件，再重新生成首页和案例集，可减少多人编辑同一长文档的冲突。
 
-Homepage entries also reuse an existing Pattern/可借鉴点/实现模式 when available and the first sentence of Scope/边界. Keep that first sentence self-contained; full limitations remain in the Casebook. No new claims should be inferred to fill an empty pattern field.
+Homepage entries also reuse an existing pattern field in the corresponding language when available and the first sentence of scope field. Keep that first sentence self-contained; full limitations remain in the Casebook. No new claims should be inferred to fill an empty pattern field.
